@@ -1,0 +1,16 @@
+# Entorno
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Modelos entrenados (se regeneran con los notebooks)
+models/
+
+# Secretos
+.env
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
