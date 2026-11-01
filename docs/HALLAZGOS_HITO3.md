@@ -128,6 +128,14 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
 - **Limitación principal:** solo en el **1,1 % de los outfits** se conoce el color de todas las prendas por el texto (en el 20 % no se conoce ninguno). El color sostiene las reglas C1 y C2.
 - **Decisión (01/11/2026):** completar el color con el **color dominante de la foto** del producto (imágenes de Polyvore en Kaggle). El texto manda; la foto solo rellena lo que falta. *(En curso.)*
+
+### Paso 3b · Color desde la foto (`notebooks/hito3/01c_color_imagenes_colab.ipynb`, se ejecuta en Google Colab)
+
+- El dataset de imágenes que cita el README de Polyvore (`dnepozitek/maryland-polyvore-images`) **ya no existe en Kaggle**. Se usa la copia **Re-PolyVore** (`akshaypujari124/polyvore-images`, 3,4 GB), cuyos archivos se llaman `<set_id>_<índice>.jpg`, igual que los ítems de Han et al. (2017). Se verificó con un producto de prueba (`100002074_3`, "givenchy leather medium antigona duffel black" → foto de ese bolso negro). → *Fase 2 · Recolección (fuente secundaria; es una copia subida por un tercero).*
+- Se procesa en **Google Colab** porque la descarga no cabe en el equipo del equipo de trabajo; a la computadora solo vuelve una tabla de colores.
+- **Método** (`src/modelo_fly/color_imagen.py`): la foto se reduce a 64×64; se quita el fondo (píxeles transparentes o casi blancos, los tres canales ≥ 240); cada píxel se asigna al tono más cercano de una paleta de 14 tonos con varios prototipos cada uno, en el espacio CIELAB (ΔE76); el tono con más píxeles es el dominante. Si queda menos del 3 % de la imagen después de quitar el fondo, la prenda es blanca. La familia sigue la misma idea del catálogo: neutros, azul poco saturado (denim, navy) = neutro, claro y poco saturado = suave, el resto = fuerte. → *Fase 3 · Preparación.*
+- **Limitación:** la foto no distingue metales (dorado, plateado); se ven como amarillo/beige y gris. → *Limitaciones.*
+- **Prueba del método:** acierta en la foto real (bolso negro) y en colores sintéticos (rojo, navy, denim, rosa pastel, mostaza, camel, verde oliva, blanco, fondo transparente).
 - **Época:** casi ningún nombre dice la década (97 % contemporáneo), así que la regla Ep1 casi no se puede aplicar en Polyvore. Se mantiene y se declara como limitación; en el catálogo propio sí hay décadas.
 - El nombre y la descripción del outfit **no ayudan** con el estilo: solo el 11 % menciona uno.
 
