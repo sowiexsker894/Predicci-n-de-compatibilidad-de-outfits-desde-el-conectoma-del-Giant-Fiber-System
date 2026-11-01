@@ -71,3 +71,62 @@ def asignar_slots(items, categorias):
     if len(faltan):
         raise ValueError(f"categoryid sin fila en la tabla de categorías: {sorted(faltan)}")
     return out
+
+
+def motivo_invalido(c):
+    """Por qué un outfit no es vestible ('' si lo es). `c` cuenta los ítems de moda por slot.
+
+    Regla (decidida el 01/11/2026): núcleo = un vestido solo, o una prenda de abajo con una o
+    dos de arriba (capas); exactamente un calzado; como mucho un exterior. Bolsos, accesorios
+    y joyería son libres.
+    """
+    if not c:
+        return "sin items de moda"
+    if c["vestido"] == 0 and not (c["arriba"] and c["abajo"]):
+        return "sin nucleo (falta arriba, abajo o vestido)"
+    if c["vestido"] and (c["arriba"] or c["abajo"]):
+        return "vestido junto con arriba o abajo"
+    if c["vestido"] > 1:
+        return "mas de un vestido"
+    if c["abajo"] > 1:
+        return "mas de una prenda abajo"
+    if c["arriba"] > 2:
+        return "mas de dos prendas arriba"
+    if c["calzado"] == 0:
+        return "sin calzado"
+    if c["calzado"] > 1:
+        return "mas de un calzado"
+    if c["exterior"] > 1:
+        return "mas de un exterior"
+    return ""
+
+
+def filtrar_outfits(items):
+    """Tabla de outfits con su composición por slot y si son vestibles.
+
+    Solo cuentan los ítems de moda (los excluidos se quitan del outfit). Los outfits con el
+    mismo conjunto de productos se marcan como duplicados y se queda el primero.
+    """
+    moda = items[items["slot"] != "excluido"]
+    conteo = pd.crosstab(moda["set_id"], moda["slot"])
+    for slot in SLOTS:
+        if slot not in conteo.columns:
+            conteo[slot] = 0
+    outfits = items.groupby("set_id", sort=False).agg(
+        particion_oficial=("particion_oficial", "first"),
+        items_originales=("item_key", "size"),
+    )
+    outfits = outfits.join(conteo[SLOTS]).fillna(0)
+    outfits[SLOTS] = outfits[SLOTS].astype(int)
+    outfits["items_moda"] = outfits[SLOTS].sum(axis=1)
+    outfits["motivo_invalido"] = [
+        motivo_invalido({s: fila[s] for s in SLOTS} if fila["items_moda"] else {})
+        for _, fila in outfits.iterrows()
+    ]
+    productos = moda.groupby("set_id")["tid"].agg(lambda s: "|".join(sorted(s)))
+    outfits["productos"] = productos.reindex(outfits.index).fillna("")
+    vestibles = outfits["motivo_invalido"] == ""
+    duplicado = vestibles & outfits["productos"].duplicated() & outfits["productos"].ne("")
+    outfits.loc[duplicado, "motivo_invalido"] = "duplicado (mismos productos que otro outfit)"
+    outfits["valido"] = outfits["motivo_invalido"] == ""
+    return outfits.reset_index()

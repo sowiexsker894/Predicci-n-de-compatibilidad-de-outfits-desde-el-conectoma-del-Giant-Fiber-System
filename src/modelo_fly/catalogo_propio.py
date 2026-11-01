@@ -10,8 +10,8 @@ Reglas declaradas:
 - Color: tono base + familia (neutro / suave / fuerte). Los denim cuentan como neutros.
   Los valores que no son un color (Vintage, Desteñido, Pastel…) quedan desconocidos.
 - Largo: solo se deduce cuando la categoría lo fija (Short, Pantalón).
-- Talla: en la ropa, la numeración peruana 36–40 pasa a letras (36 XS … 40 XL, decisión del
-  01/11/2026). El calzado conserva su número. La talla original queda en talla_original.
+- Talla: en la ropa, la numeración peruana 36–42 pasa a letras (36 XS … 40 XL, 41 XXL, 42 XXXL;
+  decisión del 01/11/2026). El calzado conserva su número. La talla original queda en talla_original.
 - Texto: `texto` es la descripción en texto plano (minúsculas, sin tildes ni símbolos).
 """
 
@@ -143,7 +143,7 @@ EPOCA = {
     "vintage": "vintage_generico",
 }
 
-TALLA_PERU = {"36": "XS", "37": "S", "38": "M", "39": "L", "40": "XL"}
+TALLA_PERU = {"36": "XS", "37": "S", "38": "M", "39": "L", "40": "XL", "41": "XXL", "42": "XXXL"}
 
 
 def talla_ropa(talla, slot):
