@@ -1,0 +1,10 @@
+﻿bloque,grupo,version,modelo,n,umbral,accuracy,f1,precision,recall,auc_roc,tn,fp,fn,tp,n_excluidas
+test_dos_prendas,test_n_prendas_2,referencia,siempre_1,8236,,0.5446818844099077,0.7052350259393178,0.5446818844099077,1.0,0.5,0.0,3750.0,0.0,4486.0,
+test_dos_prendas,test_n_prendas_2,A,logistica,8236,0.7,0.9663671685284119,0.9700508163044653,0.9418433760235146,1.0,0.9596121860603359,3473.0,277.0,0.0,4486.0,
+test_dos_prendas,test_n_prendas_2,B,logistica,8236,0.7,0.9853084021369597,0.9866930605960629,0.9737356197091382,1.0,0.9864493386833111,3629.0,121.0,0.0,4486.0,
+casos_30_segun_train,en_train,A,logistica,22,0.7,0.9545454545454546,0.9629629629629629,,,,,,,,
+casos_30_segun_train,fuera_de_train,A,logistica,8,0.7,1.0,1.0,,,,,,,,
+casos_30_segun_train,en_train,B,logistica,22,0.7,1.0,1.0,,,,,,,,
+casos_30_segun_train,fuera_de_train,B,logistica,8,0.7,1.0,1.0,,,,,,,,
+casos_30_reajuste,test_30,A,logistica,30,0.7,0.7666666666666667,0.72,0.9,0.6,0.76,,,,,2985.0
+casos_30_reajuste,test_30,B,logistica,30,0.7,0.8,0.75,1.0,0.6,0.7422222222222221,,,,,2985.0
