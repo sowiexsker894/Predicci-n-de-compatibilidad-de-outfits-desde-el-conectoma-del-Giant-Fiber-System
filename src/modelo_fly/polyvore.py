@@ -9,13 +9,14 @@ import re
 import pandas as pd
 
 from .esquema import LARGOS, SLOTS
+from .texto import leer_csv_editable
 
 PARTICIONES = ["train", "valid", "test"]
 
 
 def cargar_categorias(ruta):
     """Tabla de categorías con su slot; valida que todos los valores sean del esquema."""
-    cat = pd.read_csv(ruta, dtype=str, keep_default_na=False)
+    cat = leer_csv_editable(ruta, dtype=str, keep_default_na=False)
     slots_fuera = set(cat["slot"]) - set(SLOTS) - {"excluido"}
     largos_fuera = set(cat["largo"]) - set(LARGOS) - {""}
     if slots_fuera or largos_fuera:
@@ -23,6 +24,9 @@ def cargar_categorias(ruta):
     sin_motivo = cat[(cat["slot"] == "excluido") & (cat["motivo_exclusion"] == "")]
     if len(sin_motivo):
         raise ValueError(f"Categorías excluidas sin motivo: {sin_motivo['nombre'].tolist()}")
+    con_motivo = cat[(cat["slot"] != "excluido") & (cat["motivo_exclusion"] != "")]
+    if len(con_motivo):
+        raise ValueError(f"Categorías con slot que conservan un motivo de exclusión: {con_motivo['nombre'].tolist()}")
     if not cat["categoryid"].is_unique:
         raise ValueError("categoryid repetido en la tabla de categorías")
     return cat

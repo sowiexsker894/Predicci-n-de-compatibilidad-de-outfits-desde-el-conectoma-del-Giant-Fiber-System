@@ -10,6 +10,9 @@ Reglas declaradas:
 - Color: tono base + familia (neutro / suave / fuerte). Los denim cuentan como neutros.
   Los valores que no son un color (Vintage, Desteñido, Pastel…) quedan desconocidos.
 - Largo: solo se deduce cuando la categoría lo fija (Short, Pantalón).
+- Talla: en la ropa, la numeración peruana 36–40 pasa a letras (36 XS … 40 XL, decisión del
+  01/11/2026). El calzado conserva su número. La talla original queda en talla_original.
+- Texto: `texto` es la descripción en texto plano (minúsculas, sin tildes ni símbolos).
 """
 
 import unicodedata
@@ -17,6 +20,7 @@ import unicodedata
 import pandas as pd
 
 from .esquema import COLUMNAS, DESCONOCIDO, NO_APLICA, valores_validos
+from .texto import limpiar_texto
 
 
 def clave(texto):
@@ -139,6 +143,15 @@ EPOCA = {
     "vintage": "vintage_generico",
 }
 
+TALLA_PERU = {"36": "XS", "37": "S", "38": "M", "39": "L", "40": "XL"}
+
+
+def talla_ropa(talla, slot):
+    """Numeración peruana de ropa → letras. El calzado y las tallas sin equivalencia no cambian."""
+    talla = str(talla)
+    return talla if slot == "calzado" else TALLA_PERU.get(talla, talla)
+
+
 ESTILOS_FUENTE = {"casual", "formal", "deportivo", "athleisure", "vintage"}
 CALCES_FUENTE = {"oversize", "ajustado", "recto"}
 
@@ -206,13 +219,15 @@ def transformar(crudo):
             "calce": NO_APLICA if slot == "calzado" else calce,
             "epoca": buscar(EPOCA, r.epoca, "epoca"),
             "largo": LARGO_POR_CATEGORIA.get(cat, DESCONOCIDO),
-            "talla": r.talla,
+            "talla": talla_ropa(r.talla, slot),
+            "talla_original": r.talla,
             "conflicto_estilo": conflicto,
             "color_original": r.color,
             "patron_original": r.patron,
             "estilo_original": r.estilo,
             "estilo_descripcion": estilo_desc,
             "epoca_original": r.epoca,
+            "texto": limpiar_texto(r.descripcion),
             "texto_original": r.descripcion,
         })
     out = pd.DataFrame(filas)

@@ -1,4 +1,4 @@
-columna,valor,prendas
+﻿columna,valor,prendas
 slot,abajo,185
 slot,arriba,141
 slot,vestido,75
@@ -55,7 +55,6 @@ largo,desconocido,348
 largo,largo,75
 largo,corto,44
 largo,no_aplica,33
-calidad,ok,347
-calidad,revisar,153
+calidad,ok,500
 conflicto_estilo,0,295
 conflicto_estilo,1,205

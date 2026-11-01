@@ -1,381 +1,381 @@
-categoryid,nombre,items,slot,motivo_exclusion,largo,genero
-237,Skinny Jeans,2649,abajo,,,
-29,Shorts,2266,abajo,,corto,
-9,Knee Length Skirts,2239,abajo,,midi,
-28,Pants,1697,abajo,,,
-8,Mini Skirts,1199,abajo,,corto,
-27,Jeans,929,abajo,,,
-240,Boyfriend Jeans,636,abajo,,,
-241,Leggings,602,abajo,,,
-332,Capri & Cropped Pants,345,abajo,,midi,
-7,Skirts,320,abajo,,,
-10,Long Skirts,295,abajo,,largo,
-278,Men's Jeans,285,abajo,,,hombre
-310,Straight Leg Jeans,209,abajo,,,
-253,Activewear Pants,141,abajo,,,
-4458,Men's Casual Pants,140,abajo,,,hombre
-4452,Flared Jeans,85,abajo,,,
-238,Bootcut Jeans,64,abajo,,,
-4459,Men's Dress Pants,42,abajo,,,hombre
-280,Men's Shorts,36,abajo,,corto,hombre
-239,Wide Leg Jeans,34,abajo,,,
-255,Activewear Shorts,24,abajo,,corto,
-279,Men's Pants,11,abajo,,,hombre
-287,Men's Activewear Pants,11,abajo,,,hombre
-288,Men's Activewear Shorts,3,abajo,,corto,hombre
-254,Activewear Skirts,1,abajo,,,
-57,Sunglasses,4042,accesorio,,,
-55,Hats,2178,accesorio,,,
-61,Watches,1624,accesorio,,,
-58,Hair Accessories,1030,accesorio,,,
-105,Scarves,917,accesorio,,,
-52,Belts,524,accesorio,,,
-51,Accessories,483,accesorio,,,
-4428,Eyeglasses,428,accesorio,,,
-69,Socks,279,accesorio,,,
-251,Tights,224,accesorio,,,
-305,Men's Watches,224,accesorio,,,hombre
-53,Gloves,206,accesorio,,,
-304,Men's Sunglasses,178,accesorio,,,hombre
-303,Men's Hats,132,accesorio,,,hombre
-300,Men's Belts,71,accesorio,,,hombre
-4426,Eyewear,47,accesorio,,,
-4447,Men's Eyeglasses,40,accesorio,,,hombre
-302,Men's Scarves,38,accesorio,,,hombre
-59,Umbrellas,30,accesorio,,,
-56,Ties,28,accesorio,,,
-299,Men's Accessories,19,accesorio,,,hombre
-4460,Men's Socks,15,accesorio,,,hombre
-301,Men's Gloves,12,accesorio,,,hombre
-4470,Bow Ties,11,accesorio,,,
-68,Hosiery,10,accesorio,,,
-307,Cuff Links,9,accesorio,,,
-306,Suspenders,8,accesorio,,,
-4526,Handkerchiefs,4,accesorio,,,
-4473,Men's Umbrellas,3,accesorio,,,hombre
-11,Tops,4226,arriba,,,
-19,Sweaters,2884,arriba,,,
-21,T-Shirts,2144,arriba,,,
-17,Blouses,2100,arriba,,,
-104,Tank Tops,1825,arriba,,,
-4495,Sweatshirts,694,arriba,,,
-4496,Hoodies,321,arriba,,,
-275,Men's T-Shirts,181,arriba,,,hombre
-4454,Men's Casual Shirts,173,arriba,,,hombre
-15,Tunics,117,arriba,,,
-341,Men's Dress Shirts,49,arriba,,,hombre
-247,Camisoles,33,arriba,,,
-309,Activewear Tank Tops,23,arriba,,,
-273,Men's Sweaters,22,arriba,,,hombre
-342,Men's Polos,22,arriba,,,hombre
-272,Men's Shirts,21,arriba,,,hombre
-343,Men's Tank Tops,13,arriba,,,hombre
-252,Activewear Tops,12,arriba,,,
-4498,Men's Hoodies,11,arriba,,,hombre
-4497,Men's Sweatshirts,8,arriba,,,hombre
-286,Men's Activewear Tops,2,arriba,,,hombre
-37,Shoulder Bags,5098,bolso,,,
-38,Clutches,3459,bolso,,,
-318,Handbags,2667,bolso,,,
-36,Tote Bags,2070,bolso,,,
-259,Backpacks,1737,bolso,,,
-40,Wallets,519,bolso,,,
-35,Bags,275,bolso,,,
-258,Messenger Bags,214,bolso,,,
-4463,Men's Wallets,110,bolso,,,hombre
-4520,Men's Backpacks,71,bolso,,,hombre
-4461,Men's Bags,32,bolso,,,hombre
-4521,Men's Messenger Bags,21,bolso,,,hombre
-260,Briefcases,20,bolso,,,
-4462,Men's Briefcases,14,bolso,,,hombre
-290,Men's Bags & Wallets,9,bolso,,,hombre
-43,Pumps,4113,calzado,,,
-46,Sandals,4101,calzado,,,
-261,Ankle Booties,3904,calzado,,,
-49,Sneakers,2993,calzado,,,
-41,Shoes,1279,calzado,,,
-47,Flats,1203,calzado,,,
-42,Boots,823,calzado,,,
-265,Loafers & Moccasins,344,calzado,,,
-266,Oxfords,271,calzado,,,
-263,Knee High Boots,265,calzado,,,
-264,Over-The-Knee Boots,247,calzado,,,
-297,Men's Sneakers,228,calzado,,,hombre
-262,Mid Calf Boots,129,calzado,,,
-50,Slippers,120,calzado,,,
-48,Flip Flops,109,calzado,,,
-291,Men's Shoes,99,calzado,,,hombre
-292,Men's Boots,77,calzado,,,hombre
-268,Athletic Shoes,61,calzado,,,
-296,Men's Dress Shoes,47,calzado,,,hombre
-267,Clogs,28,calzado,,,
-295,Men's Loafers & Moccasins,24,calzado,,,hombre
-4522,Men's Work Boots,22,calzado,,,hombre
-4464,Men's Oxfords,15,calzado,,,hombre
-298,Men's Athletic Shoes,10,calzado,,,hombre
-293,Men's Sandals,5,calzado,,,hombre
-294,Men's Flip Flops,2,calzado,,,hombre
-4465,Men's Slippers,2,calzado,,,hombre
-25,Jackets,3192,exterior,,,
-24,Coats,2844,exterior,,,
-236,Blazers,889,exterior,,,
-18,Cardigans,693,exterior,,,
-26,Vests,333,exterior,,,
-23,Outerwear,316,exterior,,,
-4456,Men's Jackets,160,exterior,,,hombre
-4455,Men's Coats,42,exterior,,,hombre
-277,Men's Sportcoats & Blazers,20,exterior,,,hombre
-4457,Men's Vests,12,exterior,,,hombre
-256,Activewear Jackets,11,exterior,,,
-276,Men's Outerwear,7,exterior,,,hombre
-289,Men's Activewear Jackets,1,exterior,,,hombre
-64,Earrings,5118,joyeria,,,
-62,Necklaces,4719,joyeria,,,
-106,Bracelets & Bangles,3540,joyeria,,,
-65,Rings,3116,joyeria,,,
-60,Jewelry,578,joyeria,,,
-67,Brooches,300,joyeria,,,
-107,Charms & Pendants,165,joyeria,,,
-4523,Men's Bracelets,60,joyeria,,,hombre
-4525,Men's Rings,21,joyeria,,,hombre
-4524,Men's Necklaces,16,joyeria,,,hombre
-4466,Men's Watches & Jewelry,8,joyeria,,,hombre
-4,Day Dresses,3164,vestido,,,
-5,Cocktail Dresses,1319,vestido,,,
-3,Dresses,491,vestido,,,
-6,Gowns,399,vestido,,largo,
-244,Rompers,176,vestido,,,
-243,Jumpsuits,126,vestido,,,
-4516,Wedding Dresses,13,vestido,,largo,
-1967,Tech Accessories,2654,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-200,Lipstick,2536,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-2,Clothing,1738,excluido,generico o ambiguo,,
-196,Eyeshadow,1628,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-95,Fragrance,1324,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-222,Nail Polish,1236,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-197,Mascara,956,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4438,Floral Decor,915,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-182,Home Decor,807,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-199,Eyeliner,713,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-93,Makeup,600,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-186,Eye Makeup,557,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-201,Lip Gloss,547,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-74,Beauty Products,542,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-316,Office Accessories,481,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-3336,Stationery,432,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-77,Font,427,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-118,Accent Tables,399,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-227,Hair Styling Tools,395,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-319,Makeup Brushes,349,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-144,Throw Pillows,346,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-187,Lip Makeup,342,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-194,Blush,333,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-78,Food & Drink,309,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-190,Face Powder,302,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-245,Bras,280,excluido,ropa interior o de dormir,,
-4244,Holiday Decorations,274,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-136,Rugs,270,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-177,Drinkware,268,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-115,Sofas,249,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4503,Ceiling Lights,248,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-949,Toys,242,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-211,Lip Treatments,240,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-76,Electronics,228,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-189,Foundation,224,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-223,Nail Treatments,219,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-116,Accent Chairs,212,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-39,Luggage,205,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-140,Candles & Candleholders,201,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-171,Kitchen & Dining,198,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-110,Sports & Outdoors,169,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-184,Face Makeup,164,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-102,Baby,158,excluido,ninos o maternidad,,
-162,Blankets,158,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-311,Books,158,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-198,False Eyelashes,155,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4441,Kids,155,excluido,ninos o maternidad,,
-214,Body Moisturizers,152,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4506,Table Lamps,150,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4254,Small Storage,147,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-213,Body Cleansers,142,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-179,Serveware,138,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-139,Vases,132,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-1605,Bikinis,131,excluido,ropa de bano,,
-4472,Men's Tech Accessories,127,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-246,Panties & Thongs,126,excluido,ropa interior o de dormir,,
-4267,Outdoor Decor,117,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-71,Men's Fashion,116,excluido,generico o ambiguo,,hombre
-333,Body Art,114,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-195,Cheek Bronzer,111,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-231,Bags & Cases,109,excluido,generico o ambiguo,,
-340,Gift Sets & Kits,106,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-315,Shapewear,105,excluido,ropa interior o de dormir,,
-4240,Clocks,101,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-204,Face Care,100,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-123,Chairs,96,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4479,Girls,95,excluido,ninos o maternidad,,
-4257,Wallpaper,94,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-1606,One Piece Swimsuits,93,excluido,ropa de bano,,
-335,Men's Fragrance,92,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-4505,Floor Lamps,92,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4517,Bikini Tops,91,excluido,ropa de bano,,
-202,Lip Pencils,84,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-141,Frames,83,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-98,Nail Care,81,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-135,Lighting,81,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-271,Men's Clothing,79,excluido,generico o ambiguo,,hombre
-257,Sports Bras,77,excluido,ropa interior o de dormir,,
-188,Concealer,75,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-97,Haircare,74,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-229,Brushes & Combs,71,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-143,Mirrors,69,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-217,Sun Care,67,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-208,Face Masks,63,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-193,Makeup Primer,58,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-313,Dinnerware,57,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-120,Ottomans,56,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4435,Bar Tools,56,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-126,Beds,55,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-176,Kitchen Gadgets & Tools,50,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-220,Styling Products,50,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-167,Bath Towels,49,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-314,Curtains,49,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4448,Media,49,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-178,Flatware,48,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-207,Face Moisturizers,48,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-75,Costumes,46,excluido,generico o ambiguo,,
-108,Intimates,46,excluido,ropa interior o de dormir,,
-4518,Bikini Bottoms,45,excluido,ropa de bano,,
-205,Face Cleansers,43,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-180,Table Linens,41,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4499,Dining Chairs,39,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-228,Blow Dryers & Irons,38,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-1607,Cover-ups,38,excluido,ropa de bano,,
-221,Hair Color,37,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4500,Dining Tables,37,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-130,Bookcases,36,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-249,Pajamas,36,excluido,ropa interior o de dormir,,
-4478,Boys,36,excluido,ninos o maternidad,,
-4432,Outdoors,35,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-160,Sheets & Pillowcases,34,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-308,Pets,34,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4467,Men's Key Rings & Chains,34,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-4292,Beach Towels,31,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-99,Beauty Accessories,30,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-191,Tinted Moisturizer,29,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4439,Food Storage Containers,29,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4276,Outdoor Lighting,29,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-334,Men's Grooming,27,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-4433,Bed Accessories,27,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4507,Wall Lights,27,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-127,Dressers,26,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-209,Eye Care,26,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-219,Hair Conditioner,22,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-250,Robes,22,excluido,ropa interior o de dormir,,
-339,Manicure Tools,22,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-146,Desks,22,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-33,Activewear,21,excluido,generico o ambiguo,,
-96,Bath & Body,21,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-113,Furniture,21,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-192,Makeup Remover,21,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-203,Lip Stain,21,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4477,Men's Shaving,21,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-31,Swimwear,20,excluido,ropa de bano,,
-147,Office Chairs,20,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4248,Home Fragrance,20,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4440,Teapots,20,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-163,Duvet Covers,19,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-338,Makeup Tools,18,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-159,Bedding,17,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4504,Desk Lamps,17,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-170,Bath Accessories,16,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-174,Small Appliances,15,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-218,Hair Shampoo,15,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4512,Home Improvement,15,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4514,Storage & Organization,15,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-152,Outdoor Chairs,15,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-122,Tables,14,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-129,Storage & Shelves,14,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-154,Patio Umbrellas,14,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-281,Men's Suits,14,excluido,generico o ambiguo,,hombre
-4269,Patio Furniture,14,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4429,Sideboards,14,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-185,Cheek Makeup,13,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-224,Eyelash Curlers,13,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4449,Benches,12,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4431,Nightstands,12,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4436,Cookbooks,12,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4484,Stools,11,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-150,Hammocks & Swings,10,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-321,Gift Cards,10,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4446,Cabinets,10,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4450,Kitchen Linens,10,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4451,Party Supplies,10,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4511,Children's Decor,10,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4513,Paint,10,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-206,Face Toners,9,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-317,Garden Tools,9,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4246,Fireplace Accessories,9,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-94,Skincare,8,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-164,Bed Pillows,8,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4443,Jewelry Storage,8,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-161,Comforters,8,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-173,Cutlery,7,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-175,Cookware,7,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4468,Men's Money Clips,7,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-4486,Aprons,7,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-151,Outdoor Tables,7,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-101,Maternity,6,excluido,ninos o maternidad,,
-124,Barstools,6,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4242,Flooring,6,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-283,Men's Underwear,6,excluido,ropa interior o de dormir,,hombre
-4442,Juniors,6,excluido,ninos o maternidad,,
-4445,Cleaning,6,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4480,Health,6,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4488,Children's Furniture,6,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-132,Entertainment Units,5,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4475,Men's Deodorant,5,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-166,Bath,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-169,Bath Rugs & Mats,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-172,Bakeware,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-181,Panel Screens,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-270,Sports Accessories,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-282,Men's Swimwear,4,excluido,ropa de bano,,hombre
-320,Deodorant,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4476,Men's Gift Sets & Kits,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-4483,Napkin Rings,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4485,Outdoor Stools,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4490,Baby Bedding,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4509,Children's Room,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4434,Quilts & Coverlets,4,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-30,Suits,3,excluido,generico o ambiguo,,
-153,Outdoor Loungers & Day Beds,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-168,Shower Curtains,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-225,Tweezers & Brow Tools,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-226,Sharpeners,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-248,Chemises,3,excluido,ropa interior o de dormir,,
-4501,Bar Cabinets,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-148,File Cabinets,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4430,Armoires,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-337,Men's Skincare,3,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-4241,Fabric,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4247,Decorative Hardware,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-155,Outdoor Benches,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-216,Hair Removal,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-284,Men's Sleepwear,2,excluido,ropa interior o de dormir,,hombre
-4437,Fans,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4487,Bedspreads,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4489,Nursery Furniture,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4492,Window Blinds,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4493,Outdoor Patio Sets,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4502,Standing Fans,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4510,Children's Bedding,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4258,Window Treatments,2,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-85,Sleepwear,1,excluido,ropa interior o de dormir,,
-157,Garden Fountains,1,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-285,Men's Activewear,1,excluido,generico o ambiguo,,hombre
-4474,Men's Grooming Bags,1,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
-4481,Oral Care,1,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4482,Supplements,1,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-4508,Curtain Rods,1,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,
-336,Men's Hair Care,1,excluido,"no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros)",,hombre
+﻿categoryid;nombre;items;slot;motivo_exclusion;largo;genero
+237;Skinny Jeans;2649;abajo;;;
+29;Shorts;2266;abajo;;corto;
+9;Knee Length Skirts;2239;abajo;;midi;
+28;Pants;1697;abajo;;;
+8;Mini Skirts;1199;abajo;;corto;
+27;Jeans;929;abajo;;;
+240;Boyfriend Jeans;636;abajo;;;
+241;Leggings;602;abajo;;;
+332;Capri & Cropped Pants;345;abajo;;midi;
+7;Skirts;320;abajo;;;
+10;Long Skirts;295;abajo;;largo;
+278;Men's Jeans;285;abajo;;;hombre
+310;Straight Leg Jeans;209;abajo;;;
+253;Activewear Pants;141;abajo;;;
+4458;Men's Casual Pants;140;abajo;;;hombre
+4452;Flared Jeans;85;abajo;;;
+238;Bootcut Jeans;64;abajo;;;
+4459;Men's Dress Pants;42;abajo;;;hombre
+280;Men's Shorts;36;abajo;;corto;hombre
+239;Wide Leg Jeans;34;abajo;;;
+255;Activewear Shorts;24;abajo;;corto;
+279;Men's Pants;11;abajo;;;hombre
+287;Men's Activewear Pants;11;abajo;;;hombre
+288;Men's Activewear Shorts;3;abajo;;corto;hombre
+254;Activewear Skirts;1;abajo;;;
+57;Sunglasses;4042;accesorio;;;
+55;Hats;2178;accesorio;;;
+61;Watches;1624;accesorio;;;
+58;Hair Accessories;1030;accesorio;;;
+105;Scarves;917;accesorio;;;
+52;Belts;524;accesorio;;;
+51;Accessories;483;accesorio;;;
+4428;Eyeglasses;428;accesorio;;;
+69;Socks;279;accesorio;;;
+251;Tights;224;accesorio;;;
+305;Men's Watches;224;accesorio;;;hombre
+53;Gloves;206;accesorio;;;
+304;Men's Sunglasses;178;accesorio;;;hombre
+303;Men's Hats;132;accesorio;;;hombre
+300;Men's Belts;71;accesorio;;;hombre
+4426;Eyewear;47;accesorio;;;
+4447;Men's Eyeglasses;40;accesorio;;;hombre
+302;Men's Scarves;38;accesorio;;;hombre
+59;Umbrellas;30;accesorio;;;
+56;Ties;28;accesorio;;;
+299;Men's Accessories;19;accesorio;;;hombre
+4460;Men's Socks;15;accesorio;;;hombre
+301;Men's Gloves;12;accesorio;;;hombre
+4470;Bow Ties;11;accesorio;;;
+68;Hosiery;10;accesorio;;;
+307;Cuff Links;9;accesorio;;;
+306;Suspenders;8;accesorio;;;
+4526;Handkerchiefs;4;accesorio;;;
+4473;Men's Umbrellas;3;accesorio;;;hombre
+11;Tops;4226;arriba;;;
+19;Sweaters;2884;arriba;;;
+21;T-Shirts;2144;arriba;;;
+17;Blouses;2100;arriba;;;
+104;Tank Tops;1825;arriba;;;
+4495;Sweatshirts;694;arriba;;;
+4496;Hoodies;321;arriba;;;
+275;Men's T-Shirts;181;arriba;;;hombre
+4454;Men's Casual Shirts;173;arriba;;;hombre
+15;Tunics;117;arriba;;;
+341;Men's Dress Shirts;49;arriba;;;hombre
+247;Camisoles;33;arriba;;;
+309;Activewear Tank Tops;23;arriba;;;
+273;Men's Sweaters;22;arriba;;;hombre
+342;Men's Polos;22;arriba;;;hombre
+272;Men's Shirts;21;arriba;;;hombre
+343;Men's Tank Tops;13;arriba;;;hombre
+252;Activewear Tops;12;arriba;;;
+4498;Men's Hoodies;11;arriba;;;hombre
+4497;Men's Sweatshirts;8;arriba;;;hombre
+286;Men's Activewear Tops;2;arriba;;;hombre
+37;Shoulder Bags;5098;bolso;;;
+38;Clutches;3459;bolso;;;
+318;Handbags;2667;bolso;;;
+36;Tote Bags;2070;bolso;;;
+259;Backpacks;1737;bolso;;;
+40;Wallets;519;accesorio;;;
+35;Bags;275;bolso;;;
+258;Messenger Bags;214;bolso;;;
+4463;Men's Wallets;110;bolso;;;hombre
+4520;Men's Backpacks;71;bolso;;;hombre
+4461;Men's Bags;32;bolso;;;hombre
+4521;Men's Messenger Bags;21;bolso;;;hombre
+260;Briefcases;20;bolso;;;
+4462;Men's Briefcases;14;bolso;;;hombre
+290;Men's Bags & Wallets;9;accesorio;;;hombre
+43;Pumps;4113;calzado;;;
+46;Sandals;4101;calzado;;;
+261;Ankle Booties;3904;calzado;;;
+49;Sneakers;2993;calzado;;;
+41;Shoes;1279;calzado;;;
+47;Flats;1203;calzado;;;
+42;Boots;823;calzado;;;
+265;Loafers & Moccasins;344;calzado;;;
+266;Oxfords;271;calzado;;;
+263;Knee High Boots;265;calzado;;;
+264;Over-The-Knee Boots;247;calzado;;;
+297;Men's Sneakers;228;calzado;;;hombre
+262;Mid Calf Boots;129;calzado;;;
+50;Slippers;120;calzado;;;
+48;Flip Flops;109;calzado;;;
+291;Men's Shoes;99;calzado;;;hombre
+292;Men's Boots;77;calzado;;;hombre
+268;Athletic Shoes;61;calzado;;;
+296;Men's Dress Shoes;47;calzado;;;hombre
+267;Clogs;28;calzado;;;
+295;Men's Loafers & Moccasins;24;calzado;;;hombre
+4522;Men's Work Boots;22;calzado;;;hombre
+4464;Men's Oxfords;15;calzado;;;hombre
+298;Men's Athletic Shoes;10;calzado;;;hombre
+293;Men's Sandals;5;calzado;;;hombre
+294;Men's Flip Flops;2;calzado;;;hombre
+4465;Men's Slippers;2;calzado;;;hombre
+25;Jackets;3192;exterior;;;
+24;Coats;2844;exterior;;;
+236;Blazers;889;exterior;;;
+18;Cardigans;693;exterior;;;
+26;Vests;333;exterior;;;
+23;Outerwear;316;exterior;;;
+4456;Men's Jackets;160;exterior;;;hombre
+4455;Men's Coats;42;exterior;;;hombre
+277;Men's Sportcoats & Blazers;20;exterior;;;hombre
+4457;Men's Vests;12;exterior;;;hombre
+256;Activewear Jackets;11;exterior;;;
+276;Men's Outerwear;7;exterior;;;hombre
+289;Men's Activewear Jackets;1;exterior;;;hombre
+64;Earrings;5118;joyeria;;;
+62;Necklaces;4719;joyeria;;;
+106;Bracelets & Bangles;3540;joyeria;;;
+65;Rings;3116;joyeria;;;
+60;Jewelry;578;joyeria;;;
+67;Brooches;300;joyeria;;;
+107;Charms & Pendants;165;joyeria;;;
+4523;Men's Bracelets;60;joyeria;;;hombre
+4525;Men's Rings;21;joyeria;;;hombre
+4524;Men's Necklaces;16;joyeria;;;hombre
+4466;Men's Watches & Jewelry;8;joyeria;;;hombre
+4;Day Dresses;3164;vestido;;;
+5;Cocktail Dresses;1319;vestido;;;
+3;Dresses;491;vestido;;;
+6;Gowns;399;vestido;;largo;
+244;Rompers;176;vestido;;;
+243;Jumpsuits;126;vestido;;;
+4516;Wedding Dresses;13;vestido;;largo;
+1967;Tech Accessories;2654;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+200;Lipstick;2536;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+2;Clothing;1738;excluido;generico o ambiguo;;
+196;Eyeshadow;1628;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+95;Fragrance;1324;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+222;Nail Polish;1236;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+197;Mascara;956;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4438;Floral Decor;915;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+182;Home Decor;807;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+199;Eyeliner;713;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+93;Makeup;600;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+186;Eye Makeup;557;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+201;Lip Gloss;547;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+74;Beauty Products;542;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+316;Office Accessories;481;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+3336;Stationery;432;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+77;Font;427;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+118;Accent Tables;399;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+227;Hair Styling Tools;395;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+319;Makeup Brushes;349;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+144;Throw Pillows;346;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+187;Lip Makeup;342;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+194;Blush;333;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+78;Food & Drink;309;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+190;Face Powder;302;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+245;Bras;280;excluido;ropa interior o de dormir;;
+4244;Holiday Decorations;274;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+136;Rugs;270;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+177;Drinkware;268;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+115;Sofas;249;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4503;Ceiling Lights;248;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+949;Toys;242;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+211;Lip Treatments;240;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+76;Electronics;228;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+189;Foundation;224;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+223;Nail Treatments;219;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+116;Accent Chairs;212;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+39;Luggage;205;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+140;Candles & Candleholders;201;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+171;Kitchen & Dining;198;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+110;Sports & Outdoors;169;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+184;Face Makeup;164;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+102;Baby;158;excluido;ninos o maternidad;;
+162;Blankets;158;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+311;Books;158;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+198;False Eyelashes;155;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4441;Kids;155;excluido;ninos o maternidad;;
+214;Body Moisturizers;152;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4506;Table Lamps;150;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4254;Small Storage;147;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+213;Body Cleansers;142;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+179;Serveware;138;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+139;Vases;132;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+1605;Bikinis;131;excluido;ropa de bano;;
+4472;Men's Tech Accessories;127;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+246;Panties & Thongs;126;excluido;ropa interior o de dormir;;
+4267;Outdoor Decor;117;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+71;Men's Fashion;116;excluido;generico o ambiguo;;hombre
+333;Body Art;114;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+195;Cheek Bronzer;111;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+231;Bags & Cases;109;excluido;generico o ambiguo;;
+340;Gift Sets & Kits;106;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+315;Shapewear;105;excluido;ropa interior o de dormir;;
+4240;Clocks;101;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+204;Face Care;100;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+123;Chairs;96;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4479;Girls;95;excluido;ninos o maternidad;;
+4257;Wallpaper;94;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+1606;One Piece Swimsuits;93;excluido;ropa de bano;;
+335;Men's Fragrance;92;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+4505;Floor Lamps;92;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4517;Bikini Tops;91;excluido;ropa de bano;;
+202;Lip Pencils;84;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+141;Frames;83;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+98;Nail Care;81;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+135;Lighting;81;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+271;Men's Clothing;79;excluido;generico o ambiguo;;hombre
+257;Sports Bras;77;excluido;ropa interior o de dormir;;
+188;Concealer;75;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+97;Haircare;74;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+229;Brushes & Combs;71;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+143;Mirrors;69;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+217;Sun Care;67;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+208;Face Masks;63;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+193;Makeup Primer;58;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+313;Dinnerware;57;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+120;Ottomans;56;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4435;Bar Tools;56;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+126;Beds;55;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+176;Kitchen Gadgets & Tools;50;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+220;Styling Products;50;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+167;Bath Towels;49;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+314;Curtains;49;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4448;Media;49;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+178;Flatware;48;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+207;Face Moisturizers;48;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+75;Costumes;46;excluido;generico o ambiguo;;
+108;Intimates;46;excluido;ropa interior o de dormir;;
+4518;Bikini Bottoms;45;excluido;ropa de bano;;
+205;Face Cleansers;43;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+180;Table Linens;41;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4499;Dining Chairs;39;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+228;Blow Dryers & Irons;38;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+1607;Cover-ups;38;excluido;ropa de bano;;
+221;Hair Color;37;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4500;Dining Tables;37;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+130;Bookcases;36;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+249;Pajamas;36;excluido;ropa interior o de dormir;;
+4478;Boys;36;excluido;ninos o maternidad;;
+4432;Outdoors;35;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+160;Sheets & Pillowcases;34;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+308;Pets;34;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4467;Men's Key Rings & Chains;34;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+4292;Beach Towels;31;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+99;Beauty Accessories;30;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+191;Tinted Moisturizer;29;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4439;Food Storage Containers;29;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4276;Outdoor Lighting;29;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+334;Men's Grooming;27;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+4433;Bed Accessories;27;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4507;Wall Lights;27;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+127;Dressers;26;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+209;Eye Care;26;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+219;Hair Conditioner;22;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+250;Robes;22;excluido;ropa interior o de dormir;;
+339;Manicure Tools;22;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+146;Desks;22;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+33;Activewear;21;excluido;generico o ambiguo;;
+96;Bath & Body;21;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+113;Furniture;21;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+192;Makeup Remover;21;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+203;Lip Stain;21;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4477;Men's Shaving;21;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+31;Swimwear;20;excluido;ropa de bano;;
+147;Office Chairs;20;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4248;Home Fragrance;20;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4440;Teapots;20;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+163;Duvet Covers;19;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+338;Makeup Tools;18;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+159;Bedding;17;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4504;Desk Lamps;17;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+170;Bath Accessories;16;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+174;Small Appliances;15;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+218;Hair Shampoo;15;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4512;Home Improvement;15;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4514;Storage & Organization;15;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+152;Outdoor Chairs;15;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+122;Tables;14;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+129;Storage & Shelves;14;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+154;Patio Umbrellas;14;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+281;Men's Suits;14;excluido;generico o ambiguo;;hombre
+4269;Patio Furniture;14;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4429;Sideboards;14;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+185;Cheek Makeup;13;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+224;Eyelash Curlers;13;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4449;Benches;12;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4431;Nightstands;12;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4436;Cookbooks;12;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4484;Stools;11;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+150;Hammocks & Swings;10;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+321;Gift Cards;10;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4446;Cabinets;10;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4450;Kitchen Linens;10;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4451;Party Supplies;10;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4511;Children's Decor;10;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4513;Paint;10;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+206;Face Toners;9;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+317;Garden Tools;9;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4246;Fireplace Accessories;9;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+94;Skincare;8;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+164;Bed Pillows;8;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4443;Jewelry Storage;8;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+161;Comforters;8;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+173;Cutlery;7;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+175;Cookware;7;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4468;Men's Money Clips;7;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+4486;Aprons;7;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+151;Outdoor Tables;7;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+101;Maternity;6;excluido;ninos o maternidad;;
+124;Barstools;6;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4242;Flooring;6;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+283;Men's Underwear;6;excluido;ropa interior o de dormir;;hombre
+4442;Juniors;6;excluido;ninos o maternidad;;
+4445;Cleaning;6;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4480;Health;6;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4488;Children's Furniture;6;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+132;Entertainment Units;5;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4475;Men's Deodorant;5;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+166;Bath;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+169;Bath Rugs & Mats;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+172;Bakeware;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+181;Panel Screens;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+270;Sports Accessories;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+282;Men's Swimwear;4;abajo;;;hombre
+320;Deodorant;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4476;Men's Gift Sets & Kits;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+4483;Napkin Rings;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4485;Outdoor Stools;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4490;Baby Bedding;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4509;Children's Room;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4434;Quilts & Coverlets;4;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+30;Suits;3;arriba;;;
+153;Outdoor Loungers & Day Beds;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+168;Shower Curtains;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+225;Tweezers & Brow Tools;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+226;Sharpeners;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+248;Chemises;3;excluido;ropa interior o de dormir;;
+4501;Bar Cabinets;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+148;File Cabinets;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4430;Armoires;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+337;Men's Skincare;3;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+4241;Fabric;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4247;Decorative Hardware;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+155;Outdoor Benches;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+216;Hair Removal;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+284;Men's Sleepwear;2;excluido;ropa interior o de dormir;;hombre
+4437;Fans;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4487;Bedspreads;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4489;Nursery Furniture;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4492;Window Blinds;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4493;Outdoor Patio Sets;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4502;Standing Fans;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4510;Children's Bedding;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4258;Window Treatments;2;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+85;Sleepwear;1;excluido;ropa interior o de dormir;;
+157;Garden Fountains;1;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+285;Men's Activewear;1;excluido;generico o ambiguo;;hombre
+4474;Men's Grooming Bags;1;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
+4481;Oral Care;1;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4482;Supplements;1;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+4508;Curtain Rods;1;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;
+336;Men's Hair Care;1;excluido;no es ropa ni accesorio (belleza, hogar, tecnologia, comida, otros);;hombre
