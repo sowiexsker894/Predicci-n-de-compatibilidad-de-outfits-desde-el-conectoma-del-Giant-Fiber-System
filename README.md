@@ -11,8 +11,12 @@ data/
   raw/                 Datos originales (catálogo de 500 prendas, 100 000 outfits, 30 casos)
   processed/hito2/     Particiones y outfits_unido.csv (lo genera 01_EDA)
   conectoma/           nodes.csv, edges.csv (lo genera 03_conectoma_neuprint)
+  revision/            Planillas de revisión manual (las llena el equipo)
 notebooks/hito2/       01_EDA → 02_baseline · 03_conectoma_neuprint
+notebooks/hito3/       01b_catalogo_propio → …
+src/modelo_fly/        Código compartido: esquema común de atributos y mapeo del catálogo
 results/hito2/         Métricas y figuras del baseline y del EDA
+results/hito3/         Resúmenes del Hito 3
 docs/                  Revisión del proyecto y guía de exposición
 entregas/hito2/        Informe, presentación y PDF tal como se entregaron
 models/                Modelos entrenados (no se suben)
@@ -33,6 +37,10 @@ Orden de los notebooks del Hito 2:
 3. `notebooks/hito2/03_conectoma_neuprint.ipynb` → necesita un token de [neuPrint](https://neuprint.janelia.org) en la variable de entorno `NEUPRINT_TOKEN` (en Colab, como secreto con ese nombre). Genera `data/conectoma/`.
 
 Los notebooks encuentran solos la raíz del repositorio, así que funcionan abiertos desde cualquier subcarpeta. En Colab: `!git clone <url>` y `%cd <carpeta>` antes de ejecutar.
+
+Hito 3:
+
+- `notebooks/hito3/01b_catalogo_propio.ipynb` → pasa el catálogo de 500 al esquema común (`data/processed/hito3/catalogo_propio.csv`) y genera la planilla `data/revision/catalogo_propio_revision.xlsx`. Después de llenar la columna `decision` de la planilla, se vuelve a ejecutar para aplicar las decisiones.
 
 ## Notas
 

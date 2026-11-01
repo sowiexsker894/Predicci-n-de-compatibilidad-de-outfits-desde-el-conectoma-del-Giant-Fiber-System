@@ -6,6 +6,7 @@ matplotlib==3.11.2
 seaborn==0.13.2
 scikit-learn==1.9.1
 joblib==1.6.0
+openpyxl==3.1.5
 
 # Conectoma (03_conectoma_neuprint.ipynb)
 neuprint-python==0.6.4

@@ -699,19 +699,26 @@ La función `recomendar(user_id)` lee `closets` + `historial`, pasa por las dos 
 1. **Esquema común** con Polyvore: slot, color (familia + tono), patrón, material, estilo, calce, época, largo.
    - `patron` se separa en patrón (Liso, Floral, Gráfico, Holográfico) y material (Cuero, Denim, Encaje, Terciopelo).
    - `estilo` se separa en estilo (Casual, Formal, Deportivo, Athleisure, Vintage) y calce (Oversize, Ajustado, Recto).
-   - `epoca`: las décadas se quedan; Retro, Vintage y Tumblr pasan a estilo y la época queda "contemporáneo" (igual que el supuesto de Polyvore).
+   - `epoca`: las décadas se quedan; Tumblr → 2010s; Retro y Vintage → `vintage_generico` (pista retro sin década; no cuenta como década en Ep1). El mismo valor se usará para "vintage"/"retro" en Polyvore.
    - `color`: se unifican sinónimos (§2.5) y se traducen al mismo vocabulario que Polyvore.
    - `largo`: por categoría (Short/minifalda = corto…) o "desconocido".
-2. **Conflicto columna vs descripción:** se toma una regla única y se declara (propuesta: la descripción manda para el calce, la columna para el estilo).
+2. **Conflicto columna vs descripción (decidido el 31/10/2026):** la columna y la descripción se reparten entre estilo y calce (229 prendas se complementan, 66 coinciden). En las **205 contradicciones** (los dos son estilo, o los dos son calce, y difieren) **manda la columna** y la prenda queda con `conflicto_estilo = 1` para el análisis de errores.
 3. **Revisión manual** de las 500 (es barato): columna `calidad` = ok / corregido / excluido. Se excluyen las imposibles (p. ej., calzado de encaje holográfico) y se reporta cuántas quedan.
 4. **Validación cruzada de vocabulario:** comprobar que cada valor del catálogo existe en Polyvore. Lo que no exista no lo podrá aprender el modelo.
 
 **Cómo entra en el pipeline:**
 - **Fase 2 (TTMn/DLMn):** se entrena **solo con Polyvore**. Las prendas propias no tienen verdad de compatibilidad.
-- **Clósets simulados (§12.3):** mezcla de prendas Polyvore y propias (propuesta: 70 / 30). El historial se simula igual para ambas.
+- **Clósets simulados (§12.3):** mezcla de prendas Polyvore y propias, **70 / 30 (confirmado el 31/10/2026)**. El historial se simula igual para ambas.
 - **Prueba de transferencia (nueva evaluación):** usuarios cuyo clóset es **100 % catálogo propio**. Se compara NDCG@K entre clósets Polyvore, mixtos y propios. Si cae mucho en los propios, es un análisis de errores por **cambio de dominio** (muy buen material para el informe).
 - **DLMn:** las 7 reglas sí se pueden calcular sobre prendas propias, así que el score de armonía se reporta también ahí.
 - **Demo `recomendar(user_id)`:** se muestra con un usuario de clóset 100 % propio, que es el caso de la app.
+
+**Resultado de la etapa 1b (31/10/2026, `notebooks/hito3/01b_catalogo_propio.ipynb`):**
+- 69 colores → 15 tonos + familia (neutro 297, fuerte 114, suave 71, desconocido 18). 20 prendas tienen un "color" que no es color.
+- Patrón: 312 lisas (incluye las 240 que en el crudo tenían un material), 67 holográficas, 63 florales, 58 gráficas.
+- Desconocidos: estilo 14 %, calce 41 % (sin contar el calzado, que no aplica), largo 70 %.
+- **153 prendas marcadas `revisar`** (camiseta de cuero/denim/terciopelo 38, deportivo/athleisure de cuero/encaje/terciopelo 65, formal con patrón gráfico u holográfico 24, calzado con talla de ropa 22, color ilegible 20). Se revisan a mano en `data/revision/catalogo_propio_revision.xlsx`.
+- La talla del crudo también parece aleatoria (calzado con talla XL, camisetas con talla 36). No entra al modelo.
 
 **Riesgos de la combinación:**
 | Riesgo | Mitigación |
