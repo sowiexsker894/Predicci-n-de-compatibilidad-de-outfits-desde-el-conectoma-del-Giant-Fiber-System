@@ -6,7 +6,10 @@ La asignación categoría → slot vive en data/mappings/polyvore_categorias.csv
 import json
 import re
 
+import numpy as np
 import pandas as pd
+from scipy.sparse import coo_matrix
+from scipy.sparse.csgraph import connected_components
 
 from .esquema import LARGOS, SLOTS
 from .texto import leer_csv_editable
@@ -130,3 +133,57 @@ def filtrar_outfits(items):
     outfits.loc[duplicado, "motivo_invalido"] = "duplicado (mismos productos que otro outfit)"
     outfits["valido"] = outfits["motivo_invalido"] == ""
     return outfits.reset_index()
+
+
+def componentes(items):
+    """Grupos de outfits unidos por productos compartidos (grafo outfit–producto)."""
+    sid = items["set_id"].astype("category")
+    pid = items["tid"].astype("category").cat.codes.to_numpy()
+    n_o, n_p = len(sid.cat.categories), pid.max() + 1
+    filas, cols = sid.cat.codes.to_numpy(), n_o + pid
+    grafo = coo_matrix((np.ones(len(items)), (filas, cols)), shape=(n_o + n_p, n_o + n_p))
+    _, etiqueta = connected_components(grafo, directed=False)
+    return pd.Series(etiqueta[:n_o], index=sid.cat.categories, name="componente")
+
+
+def particion_sin_fuga(items, proporcion=(0.70, 0.15, 0.15), semilla=2026):
+    """Partición train/valid/test de outfits sin productos compartidos entre particiones.
+
+    Parte de la partición oficial de Han et al. (ya disjunta por producto) y mueve a valid y
+    test grupos completos de outfits de train que no comparten productos con el resto de train,
+    hasta acercarse a la proporción pedida. Cada grupo va a la partición que esté más lejos de
+    su meta. Devuelve una fila por outfit: set_id, componente, particion_oficial, particion.
+    """
+    comp = componentes(items)
+    oficial = items.drop_duplicates("set_id").set_index("set_id")["particion_oficial"]
+    df = pd.DataFrame({"componente": comp, "particion_oficial": oficial.reindex(comp.index)})
+    df["particion"] = df["particion_oficial"]
+    meta = dict(zip(PARTICIONES, (p * len(df) for p in proporcion)))
+
+    grupos = df.groupby("componente")["particion_oficial"].agg(["size", lambda s: set(s) == {"train"}])
+    grupos.columns = ["outfits", "solo_train"]
+    gigante = grupos["outfits"].idxmax()
+    movibles = grupos[grupos["solo_train"] & (grupos.index != gigante)].index.to_numpy().copy()
+    np.random.default_rng(semilla).shuffle(movibles)
+
+    cuenta = df["particion"].value_counts().reindex(PARTICIONES, fill_value=0).astype(float)
+    destino = {}
+    for c in movibles:
+        if cuenta["train"] <= meta["train"]:
+            break
+        falta = {p: (meta[p] - cuenta[p]) / meta[p] for p in ("valid", "test")}
+        p = max(falta, key=falta.get)
+        if falta[p] <= 0:
+            break
+        destino[c] = p
+        cuenta[p] += grupos.at[c, "outfits"]
+        cuenta["train"] -= grupos.at[c, "outfits"]
+    mover = df["componente"].map(destino)
+    df.loc[mover.notna(), "particion"] = mover[mover.notna()]
+    return df.rename_axis("set_id").reset_index()
+
+
+def fuga(items, particion):
+    """Productos que aparecen en más de una partición (debe ser 0)."""
+    p = items[["set_id", "tid"]].merge(particion[["set_id", "particion"]], on="set_id")
+    return int((p.groupby("tid")["particion"].nunique() > 1).sum())

@@ -153,13 +153,28 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 - **Época:** casi ningún nombre dice la década (97 % contemporáneo), así que la regla Ep1 casi no se puede aplicar en Polyvore. Se mantiene y se declara como limitación; en el catálogo propio sí hay décadas.
 - El nombre y la descripción del outfit **no ayudan** con el estilo: solo el 11 % menciona uno.
 
+### Paso 4a · Validación manual de atributos (`notebooks/hito3/02_validacion_muestra.ipynb`)
+
+- **Por qué:** responde a la crítica del profesor sobre datos sin verificar. Una persona compara los atributos que sacamos con la foto real y se mide la **precisión** de cada atributo con intervalo de confianza del 95 % (Wilson). → *Fase 5 · Evaluación de la calidad de datos.*
+- **Muestra:** 25 prendas por slot (8 slots → **200**), al azar con semilla fija (2026), entre las 60 486 prendas de outfits vestibles **que tienen foto** (hace falta verla para juzgar). En la muestra, el tono de 141 prendas viene de la foto y el de 59 del nombre, así que también se mide la precisión de cada fuente.
+- Solo se bajan esas 200 fotos de Kaggle (7 MB; no se suben a git). Planilla: `data/revision/polyvore_muestra_revision.xlsx`, con la miniatura de la foto y columnas `ok_<atributo>` (si / no / `-` si es desconocido o no aplica).
+- **Regla escrita antes de revisar** (en el notebook): qué cuenta como neutro, suave y fuerte; liso = no se ve estampado; el estilo solo se marca `no` si claramente no corresponde.
+- **Resultado:** *pendiente de la revisión de Nicole* → `results/hito3/validacion_atributos.csv`.
+
+### Paso 4b · Partición 70/15/15 sin fuga de productos (`notebooks/hito3/03_particion.ipynb`)
+
+- **Hallazgo:** los productos se repiten mucho entre outfits. Al unir outfits que comparten productos, **un solo grupo junta 10 625 outfits (70,8 %)**; el resto son 3 795 grupos chicos (3 382 outfits no comparten nada). Una partición al azar 70/15/15 dejaría al **70 % de los outfits de valid/test con algún producto ya visto en train** (5 199 productos en dos particiones): la evaluación saldría inflada. → *Fase 3 · Preparación / Fase 5.*
+- **Método:** se parte de la partición oficial de Han et al. (2017), que ya no comparte productos, y se mueven a valid y test **grupos completos** de outfits de train que no tocan el resto de train (cada grupo va a la partición que está más lejos de su meta; semilla 2026). Se verifica que **0 productos** quedan en dos particiones.
+- **Resultado:** train **10 625 (70,8 %)**, valid **2 194 (14,6 %)**, test **2 193 (14,6 %)**. Es lo más cerca de 70/15/15 que se puede llegar sin fuga: train ya es exactamente el grupo grande. Salida: `data/processed/hito3/particion_outfits.csv` (se sube a git para que todo el equipo use la misma). → *Fase 3.*
+- **Diferencia entre particiones:** valid/test tienen más outfits con vestido (36,6–36,9 % frente a 24,1 % en train) y algo menos de prendas (5,1 frente a 5,55), porque los grupos que se pueden mover son outfits con productos poco repetidos. Conviene informar las métricas también por tipo de outfit (vestido / arriba+abajo). → *Fase 5 / Limitaciones.*
+
 ---
 
 ## Limitaciones para la sección de conclusiones
 
 1. El gusto de los usuarios es **simulado**; lo real es qué combinan las personas (Polyvore).
 2. Polyvore es mayoritariamente ropa de mujer (3 441 ítems de categorías de hombre de 142 480).
-3. Los atributos de Polyvore salen del texto y de la foto, no de etiquetas de expertos; se validan con una muestra manual de 200 prendas (paso 4, pendiente).
+3. Los atributos de Polyvore salen del texto y de la foto, no de etiquetas de expertos; se validan con una muestra manual de 200 prendas con foto (paso 4a; la muestra no cubre las prendas sin foto).
 4. El catálogo propio fue generado por una IA y sus atributos son casi aleatorios; se usa solo como prendas de clóset.
 5. El color de la foto coincide con el del nombre en el 57 % de los tonos y el 77 % de las familias (valid + test); el 17,3 % de las prendas sigue sin color (el nombre no lo dice y la copia Re-PolyVore no trae la foto).
-6. 9 362 productos aparecen en más de un outfit vestible: la partición 70/15/15 debe evitar que un mismo producto quede en train y en test (se decide en el paso 4).
+6. Para que ningún producto quede en dos particiones, la partición es 70,8/14,6/14,6 y valid/test tienen más vestidos que train (37 % frente a 24 %); los productos más populares (el grupo grande) solo están en train.

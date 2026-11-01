@@ -18,3 +18,6 @@ desktop.ini
 # Datos externos descargados (se regeneran con notebooks/hito3/00_polyvore_descarga.ipynb)
 data/external/
 data/processed/hito3/polyvore_*
+
+# Fotos de la muestra de revisión (se bajan de Kaggle con notebooks/hito3/02_validacion_muestra.ipynb)
+data/revision/fotos_muestra/
