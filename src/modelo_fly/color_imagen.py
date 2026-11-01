@@ -36,6 +36,17 @@ PROTOTIPOS = {
 }
 NEUTROS = {"negro", "blanco", "crema", "gris", "beige", "marron"}
 
+# Ajustes después de leer la foto, calibrados el 01/11/2026 con la partición oficial train
+# (ver docs/HALLAZGOS_HITO3.md). El gris se queda con las sombras de las prendas blancas y con
+# los azules apagados: si el segundo tono tiene al menos MIN_SEGUNDO de los píxeles, gana él;
+# un gris muy claro es blanco y uno muy oscuro es negro.
+MIN_SEGUNDO = 0.15
+L_BLANCO = 80
+L_NEGRO = 35
+# En joyería la foto no distingue el metal: los tonos cálidos son dorado y los claros fríos plateado.
+METAL_JOYERIA = {"amarillo": "dorado", "beige": "dorado", "crema": "dorado", "marron": "dorado",
+                 "naranja": "dorado", "gris": "plateado", "blanco": "plateado"}
+
 
 def rgb_a_lab(rgb):
     """RGB (0-255, forma [..., 3]) → CIELAB con iluminante D65."""
@@ -89,3 +100,24 @@ def color_dominante(imagen):
         "frac_prenda": round(frac_prenda, 4),
         "L": round(float(lab1[0]), 1), "a": round(float(lab1[1]), 1), "b": round(float(lab1[2]), 1),
     }
+
+
+def ajustar(color, slot):
+    """Salida de `color_dominante` (una fila por prenda) + slot → tono y familia finales de la foto."""
+    tono, fam = [], []
+    for c, s in zip(color.to_dict("records"), slot):
+        t, segundo = c["tono_img"], c["tono2_img"] if isinstance(c["tono2_img"], str) else ""
+        if t == "gris" and segundo and c["frac_tono2"] >= MIN_SEGUNDO:
+            # No hay L*a*b* medio del segundo tono: se toma como acento fuerte si no es neutro.
+            t, f = segundo, "neutro" if segundo in NEUTROS else "fuerte"
+        else:
+            if t == "gris" and c["L"] >= L_BLANCO:
+                t = "blanco"
+            elif t == "gris" and c["L"] < L_NEGRO:
+                t = "negro"
+            f = familia(t, (c["L"], c["a"], c["b"]))
+        if s == "joyeria" and t in METAL_JOYERIA:
+            t, f = METAL_JOYERIA[t], "neutro"
+        tono.append(t)
+        fam.append(f)
+    return tono, fam

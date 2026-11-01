@@ -127,15 +127,29 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 | Largo (solo ropa) | 27,5 % | — | 72,5 % |
 
 - **Limitación principal:** solo en el **1,1 % de los outfits** se conoce el color de todas las prendas por el texto (en el 20 % no se conoce ninguno). El color sostiene las reglas C1 y C2.
-- **Decisión (01/11/2026):** completar el color con el **color dominante de la foto** del producto (imágenes de Polyvore en Kaggle). El texto manda; la foto solo rellena lo que falta. *(En curso.)*
+- **Decisión (01/11/2026):** completar el color con el **color dominante de la foto** del producto (imágenes de Polyvore en Kaggle). El texto manda; la foto solo rellena lo que falta. *(Hecho: ver paso 3b.)*
 
 ### Paso 3b · Color desde la foto (`notebooks/hito3/01c_color_imagenes_colab.ipynb`, se ejecuta en Google Colab)
 
 - El dataset de imágenes que cita el README de Polyvore (`dnepozitek/maryland-polyvore-images`) **ya no existe en Kaggle**. Se usa la copia **Re-PolyVore** (`akshaypujari124/polyvore-images`, 3,4 GB), cuyos archivos se llaman `<set_id>_<índice>.jpg`, igual que los ítems de Han et al. (2017). Se verificó con un producto de prueba (`100002074_3`, "givenchy leather medium antigona duffel black" → foto de ese bolso negro). → *Fase 2 · Recolección (fuente secundaria; es una copia subida por un tercero).*
 - Se procesa en **Google Colab** porque la descarga no cabe en el equipo del equipo de trabajo; a la computadora solo vuelve una tabla de colores.
 - **Método** (`src/modelo_fly/color_imagen.py`): la foto se reduce a 64×64; se quita el fondo (píxeles transparentes o casi blancos, los tres canales ≥ 240); cada píxel se asigna al tono más cercano de una paleta de 14 tonos con varios prototipos cada uno, en el espacio CIELAB (ΔE76); el tono con más píxeles es el dominante. Si queda menos del 3 % de la imagen después de quitar el fondo, la prenda es blanca. La familia sigue la misma idea del catálogo: neutros, azul poco saturado (denim, navy) = neutro, claro y poco saturado = suave, el resto = fuerte. → *Fase 3 · Preparación.*
-- **Limitación:** la foto no distingue metales (dorado, plateado); se ven como amarillo/beige y gris. → *Limitaciones.*
+- **Limitación:** la foto no distingue metales (dorado, plateado); se ven como amarillo/beige y gris. Se corrige solo en joyería (ver el ajuste más abajo). → *Limitaciones.*
 - **Prueba del método:** acierta en la foto real (bolso negro) y en colores sintéticos (rojo, navy, denim, rosa pastel, mostaza, camel, verde oliva, blanco, fondo transparente).
+- **Resultado de Colab (01/11/2026):** 126 928 fotos procesadas, **0 con error**.
+- **La copia guarda cada producto una sola vez.** Solo 76 543 de sus claves coinciden con un ítem de Polyvore (la copia trae además ~10 900 outfits que no están en la versión de Han et al.), y dentro de un outfit falta la foto de los productos que ya aparecieron antes. Por eso la unión se hace por **producto** (`tid`), no por `item_key`. Se comprobó que es correcta: la carpeta de la copia coincide con la categoría de Polyvore (p. ej. *Pumps* → `shoes` en 2 904 de 2 910) y solo 2 de 61 000 productos reciben dos colores distintos. → *Fase 2 · Recolección / calidad de datos.*
+- **Cobertura:** 60 486 de 81 372 prendas de outfits vestibles tienen foto (**74,3 %**; de 62,8 % en joyería a 85,6 % en bolsos). → *Fase 2.*
+- **Ajuste del gris (hallazgo):** al comparar con el texto, el tono "gris" se quedaba con las sombras de las prendas blancas y con los azules apagados (de las prendas que el nombre llama negras, 882 salían grises). Se añadió un ajuste (`ajustar` en `color_imagen.py`): si el segundo tono tiene ≥ 15 % de los píxeles gana él; un gris con L* ≥ 80 es blanco y con L* < 35 es negro. En joyería, los tonos cálidos de la foto pasan a **dorado** y los claros fríos a **plateado**. Los tres umbrales se eligieron con la partición oficial *train*; se informan las cifras de *valid + test*. → *Fase 3 · Preparación.*
+- **Validación del método (prendas donde el nombre sí dice el color):**
+
+  | | prendas | mismo tono sin ajuste | mismo tono | misma familia |
+  |---|---|---|---|---|
+  | train (calibración) | 15 486 | 48,1 % | 61,1 % | 80,7 % |
+  | **valid + test** | 2 377 | 43,7 % | **57,0 %** | **76,9 %** |
+
+  Por slot, la familia coincide entre 72,9 % (vestidos) y 84,9 % (calzado); en joyería el tono exacto solo coincide 54,4 %. El error más común es texto "fuerte" → foto "neutro" (2 245 prendas): el color que dice el nombre a veces es un detalle (un estampado, un ribete) y no el de la mayor parte de la prenda. → *Fase 5 · Evaluación / Limitaciones.*
+- **Decisión: manda el texto.** La foto solo rellena el tono y la familia cuando el nombre no dice el color (42 623 prendas, `origen_tono = foto`). Las columnas `tono_foto` y `familia_foto` se guardan para todas las prendas con foto. → *Fase 3.*
+- **Efecto:** prendas con color conocido **30,3 % → 82,7 %**; outfits con el color de todas sus prendas **1,1 % → 40,0 %**; con al menos la mitad 95,7 %; sin ningún color 0,3 %. Con esto las reglas de color ya se pueden aplicar en Polyvore. → *Fase 3 / Fase 4.*
 - **Época:** casi ningún nombre dice la década (97 % contemporáneo), así que la regla Ep1 casi no se puede aplicar en Polyvore. Se mantiene y se declara como limitación; en el catálogo propio sí hay décadas.
 - El nombre y la descripción del outfit **no ayudan** con el estilo: solo el 11 % menciona uno.
 
@@ -147,4 +161,5 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 2. Polyvore es mayoritariamente ropa de mujer (3 441 ítems de categorías de hombre de 142 480).
 3. Los atributos de Polyvore salen del texto y de la foto, no de etiquetas de expertos; se validan con una muestra manual de 200 prendas (paso 4, pendiente).
 4. El catálogo propio fue generado por una IA y sus atributos son casi aleatorios; se usa solo como prendas de clóset.
-5. 9 362 productos aparecen en más de un outfit vestible: la partición 70/15/15 debe evitar que un mismo producto quede en train y en test (se decide en el paso 4).
+5. El color de la foto coincide con el del nombre en el 57 % de los tonos y el 77 % de las familias (valid + test); el 17,3 % de las prendas sigue sin color (el nombre no lo dice y la copia Re-PolyVore no trae la foto).
+6. 9 362 productos aparecen en más de un outfit vestible: la partición 70/15/15 debe evitar que un mismo producto quede en train y en test (se decide en el paso 4).
