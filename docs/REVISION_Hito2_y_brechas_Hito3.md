@@ -576,8 +576,10 @@ Para cada usuario *u* (propuesta: 300 usuarios):
 
 ### 12.5 Partición y validación cruzada
 
-- **Fase 2 (TTMn/DLMn):** partición por outfit con la clave `frozenset`. Un positivo y sus negativos van siempre a la misma partición. Para afinar hiperparámetros: `StratifiedGroupKFold` (5 folds) dentro de train.
-- **Fase 1 (DeepFM):** partición temporal por usuario: las primeras 40 interacciones a train y las últimas 10 a test, más un bloque de validación.
+**Proporción: 70 / 15 / 15 (train / validación / test), decidida el 01/11/2026.**
+
+- **Fase 2 (TTMn/DLMn):** partición 70/15/15 por outfit con la clave `frozenset`. Un positivo y sus negativos van siempre a la misma partición. Para afinar hiperparámetros: `StratifiedGroupKFold` (5 folds) dentro de train.
+- **Fase 1 (DeepFM):** partición temporal por usuario con la misma proporción: de unas 50 interacciones, las primeras 35 a train, las 7 siguientes a validación y las últimas 8 a test.
 - **Regla extra:** un outfit que está en el test de algún usuario no puede aparecer en el train de ningún otro.
 - **Evaluación extra de la fase 2:** accuracy en la tarea **fill-in-the-blank** oficial de Polyvore (`fill_in_blank_test.json`, 4 opciones). Es un benchmark externo comparable con la literatura.
 
@@ -708,7 +710,7 @@ La función `recomendar(user_id)` lee `closets` + `historial`, pasa por las dos 
 
 **Cómo entra en el pipeline:**
 - **Fase 2 (TTMn/DLMn):** se entrena **solo con Polyvore**. Las prendas propias no tienen verdad de compatibilidad.
-- **Clósets simulados (§12.3):** mezcla de prendas Polyvore y propias, **70 / 30 (confirmado el 31/10/2026)**. El historial se simula igual para ambas.
+- **Clósets simulados (§12.3):** mezcla de prendas Polyvore y propias, **70 % Polyvore / 30 % propias (confirmado el 01/11/2026)**. Es la composición del clóset, no la partición de los datos (esa es 70/15/15, §12.5). El historial se simula igual para ambas.
 - **Prueba de transferencia (nueva evaluación):** usuarios cuyo clóset es **100 % catálogo propio**. Se compara NDCG@K entre clósets Polyvore, mixtos y propios. Si cae mucho en los propios, es un análisis de errores por **cambio de dominio** (muy buen material para el informe).
 - **DLMn:** las 7 reglas sí se pueden calcular sobre prendas propias, así que el score de armonía se reporta también ahí.
 - **Demo `recomendar(user_id)`:** se muestra con un usuario de clóset 100 % propio, que es el caso de la app.
