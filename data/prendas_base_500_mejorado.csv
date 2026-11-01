@@ -1,0 +1,501 @@
+prenda_id;categoria;epoca;color;patron;estilo;tamaño;fuente;descripcion
+P0001;Camiseta;Años 50;Azul Cielo;Denim;Vintage;M;Pinterest;Azul Cielo camiseta Años 50 - Estilo Oversize
+P0002;Camiseta;Años 50;Blanco;Cuero;Formal;38;H&M;Blanco camiseta Años 50 - Estilo Recto
+P0003;Camiseta;Años 50;Amarillo Mantequilla;Encaje;Vintage;L;Pinterest;Amarillo Mantequilla camiseta Años 50 - Estilo Vintage
+P0004;Camiseta;Años 50;Amarillo Mantequilla;Holográfico;Oversize;OneSize;Grailed;Amarillo Mantequilla camiseta Años 50 - Estilo Oversize
+P0005;Camiseta;Años 50;Rosa Pastel;Floral;Casual;40;Uniqlo;Rosa Pastel camiseta Años 50 - Estilo Ajustado
+P0006;Camiseta;Años 50;Rosa Pastel;Denim;Oversize;41;Uniqlo;Rosa Pastel camiseta Años 50 - Estilo Recto
+P0007;Camiseta;Años 50;Amarillo Mantequilla;Cuero;Vintage;39;Zara;Amarillo Mantequilla camiseta Años 50 - Estilo Recto
+P0008;Camiseta;Años 50;Azul Cielo;Encaje;Ajustado;S;Zara;Azul Cielo camiseta Años 50 - Estilo Formal
+P0009;Camiseta;Años 60;Amarillo Limón;Cuero;Casual;37;Grailed;Amarillo Limón camiseta Años 60 - Estilo Vintage
+P0010;Camiseta;Años 60;Naranja Retro;Encaje;Formal;L;Uniqlo;Naranja Retro camiseta Años 60 - Estilo Oversize
+P0011;Camiseta;Años 60;Púrpura Pálido;Gráfico;Formal;XS;Depop;Púrpura Pálido camiseta Años 60 - Estilo Casual
+P0012;Camiseta;Años 60;Verde Menta;Liso;Formal;42;Uniqlo;Verde Menta camiseta Años 60 - Estilo Casual
+P0013;Camiseta;Años 60;Verde Menta;Denim;Recto;42;Vintage;Verde Menta camiseta Años 60 - Estilo Ajustado
+P0014;Camiseta;Años 60;Amarillo Limón;Encaje;Recto;XS;Depop;Amarillo Limón camiseta Años 60 - Estilo Ajustado
+P0015;Camiseta;Años 60;Púrpura Pálido;Holográfico;Deportivo;36;Depop;Púrpura Pálido camiseta Años 60 - Estilo Athleisure
+P0016;Camiseta;Años 60;Verde Menta;Encaje;Athleisure;37;Vintage;Verde Menta camiseta Años 60 - Estilo Ajustado
+P0017;Camiseta;Años 70;Naranja Quemado;Gráfico;Deportivo;L;Vestiaire;Naranja Quemado camiseta Años 70 - Estilo Deportivo
+P0018;Camiseta;Años 70;Teal;Denim;Athleisure;40;Pinterest;Teal camiseta Años 70 - Estilo Recto
+P0019;Camiseta;Años 70;Mostaza;Liso;Deportivo;XL;Grailed;Mostaza camiseta Años 70 - Estilo Ajustado
+P0020;Camiseta;Años 70;Mostaza;Floral;Formal;40;Pinterest;Mostaza camiseta Años 70 - Estilo Athleisure
+P0021;Camiseta;Años 70;Naranja Quemado;Terciopelo;Vintage;S;Pinterest;Naranja Quemado camiseta Años 70 - Estilo Casual
+P0022;Camiseta;Años 70;Mostaza;Holográfico;Formal;37;Pinterest;Mostaza camiseta Años 70 - Estilo Oversize
+P0023;Camiseta;Años 70;Mostaza;Terciopelo;Oversize;37;Zara;Mostaza camiseta Años 70 - Estilo Formal
+P0024;Camiseta;Años 70;Marrón Tierra;Holográfico;Athleisure;L;H&M;Marrón Tierra camiseta Años 70 - Estilo Oversize
+P0025;Camiseta;Años 80;Neón Amarillo;Holográfico;Formal;36;Uniqlo;Neón Amarillo camiseta Años 80 - Estilo Formal
+P0026;Camiseta;Años 80;Plateado;Holográfico;Formal;42;Pinterest;Plateado camiseta Años 80 - Estilo Recto
+P0027;Camiseta;Años 80;Negro;Encaje;Athleisure;XS;Vestiaire;Negro camiseta Años 80 - Estilo Recto
+P0028;Camiseta;Años 80;Neón Rosa;Cuero;Casual;38;Grailed;Neón Rosa camiseta Años 80 - Estilo Casual
+P0029;Camiseta;Años 80;Plateado;Cuero;Deportivo;37;Uniqlo;Plateado camiseta Años 80 - Estilo Ajustado
+P0030;Camiseta;Años 80;Neón Rosa;Terciopelo;Deportivo;OneSize;Depop;Neón Rosa camiseta Años 80 - Estilo Casual
+P0031;Camiseta;Años 80;Neón Rosa;Holográfico;Recto;M;Grailed;Neón Rosa camiseta Años 80 - Estilo Formal
+P0032;Camiseta;Años 80;Neón Amarillo;Encaje;Athleisure;37;Uniqlo;Neón Amarillo camiseta Años 80 - Estilo Deportivo
+P0033;Camiseta;Años 80;Negro;Floral;Recto;OneSize;Vestiaire;Negro camiseta Años 80 - Estilo Deportivo
+P0034;Camiseta;Años 80;Plateado;Floral;Deportivo;XL;Vestiaire;Plateado camiseta Años 80 - Estilo Ajustado
+P0035;Camiseta;Años 80;Neón Rosa;Encaje;Formal;37;Pinterest;Neón Rosa camiseta Años 80 - Estilo Recto
+P0036;Camiseta;Años 80;Plateado;Denim;Vintage;OneSize;Uniqlo;Plateado camiseta Años 80 - Estilo Vintage
+P0037;Camiseta;Años 90;Beige;Holográfico;Casual;38;Vintage;Beige camiseta Años 90 - Estilo Oversize
+P0038;Camiseta;Años 90;Negro;Gráfico;Oversize;L;Grailed;Negro camiseta Años 90 - Estilo Recto
+P0039;Camiseta;Años 90;Gris;Cuero;Recto;42;Pinterest;Gris camiseta Años 90 - Estilo Formal
+P0040;Camiseta;Años 90;Gris;Floral;Vintage;M;Zara;Gris camiseta Años 90 - Estilo Athleisure
+P0041;Camiseta;Años 90;Negro;Denim;Formal;XL;Uniqlo;Negro camiseta Años 90 - Estilo Vintage
+P0042;Camiseta;Años 90;Beige;Holográfico;Formal;XS;Depop;Beige camiseta Años 90 - Estilo Formal
+P0043;Camiseta;Años 90;Gris;Denim;Casual;38;Vestiaire;Gris camiseta Años 90 - Estilo Deportivo
+P0044;Camiseta;Años 90;Blanco;Encaje;Ajustado;39;Grailed;Blanco camiseta Años 90 - Estilo Formal
+P0045;Camiseta;Años 90;Gris;Liso;Casual;XL;Uniqlo;Gris camiseta Años 90 - Estilo Ajustado
+P0046;Camiseta;Años 90;Beige;Holográfico;Oversize;M;Vintage;Beige camiseta Años 90 - Estilo Formal
+P0047;Camiseta;Años 90;Blanco;Cuero;Ajustado;M;H&M;Blanco camiseta Años 90 - Estilo Oversize
+P0048;Camiseta;Años 90;Blanco;Liso;Oversize;40;Grailed;Blanco camiseta Años 90 - Estilo Recto
+P0049;Camiseta;Retro;Crudo;Denim;Vintage;42;H&M;Crudo camiseta Retro - Estilo Athleisure
+P0050;Camiseta;Retro;Vintage;Liso;Oversize;37;Zara;Vintage camiseta Retro - Estilo Oversize
+P0051;Camiseta;Retro;Faded Blue;Cuero;Ajustado;38;H&M;Faded Blue camiseta Retro - Estilo Deportivo
+P0052;Camiseta;Retro;Faded Blue;Floral;Formal;42;Zara;Faded Blue camiseta Retro - Estilo Recto
+P0053;Camiseta;Retro;Vintage;Gráfico;Recto;41;Uniqlo;Vintage camiseta Retro - Estilo Oversize
+P0054;Camiseta;Retro;Vintage;Terciopelo;Casual;XS;Vestiaire;Vintage camiseta Retro - Estilo Deportivo
+P0055;Camiseta;Retro;Crudo;Cuero;Oversize;S;Grailed;Crudo camiseta Retro - Estilo Athleisure
+P0056;Camiseta;Retro;Faded Blue;Cuero;Vintage;OneSize;H&M;Faded Blue camiseta Retro - Estilo Vintage
+P0057;Camiseta;Retro;Faded Blue;Cuero;Casual;42;Depop;Faded Blue camiseta Retro - Estilo Deportivo
+P0058;Camiseta;Retro;Crudo;Terciopelo;Athleisure;41;Vestiaire;Crudo camiseta Retro - Estilo Oversize
+P0059;Camiseta;Retro;Crudo;Denim;Recto;M;H&M;Crudo camiseta Retro - Estilo Vintage
+P0060;Camiseta;Retro;Faded Blue;Holográfico;Deportivo;L;Pinterest;Faded Blue camiseta Retro - Estilo Casual
+P0061;Camiseta;Vintage;Beige Antiguo;Encaje;Casual;42;Grailed;Beige Antiguo camiseta Vintage - Estilo Casual
+P0062;Camiseta;Vintage;Teal Desteñido;Terciopelo;Recto;40;Grailed;Teal Desteñido camiseta Vintage - Estilo Deportivo
+P0063;Camiseta;Vintage;Beige Antiguo;Liso;Oversize;M;Grailed;Beige Antiguo camiseta Vintage - Estilo Athleisure
+P0064;Camiseta;Vintage;Marfil;Encaje;Casual;XS;H&M;Marfil camiseta Vintage - Estilo Ajustado
+P0065;Camiseta;Vintage;Rosa Pálido;Liso;Casual;OneSize;Vintage;Rosa Pálido camiseta Vintage - Estilo Casual
+P0066;Camiseta;Vintage;Rosa Pálido;Encaje;Oversize;39;Vestiaire;Rosa Pálido camiseta Vintage - Estilo Recto
+P0067;Camiseta;Vintage;Marfil;Denim;Oversize;36;Zara;Marfil camiseta Vintage - Estilo Recto
+P0068;Camiseta;Vintage;Marfil;Holográfico;Vintage;S;Zara;Marfil camiseta Vintage - Estilo Deportivo
+P0069;Camiseta;Vintage;Beige Antiguo;Cuero;Athleisure;42;Grailed;Beige Antiguo camiseta Vintage - Estilo Casual
+P0070;Camiseta;Vintage;Rosa Pálido;Terciopelo;Ajustado;38;Vintage;Rosa Pálido camiseta Vintage - Estilo Casual
+P0071;Camiseta;Vintage;Marfil;Terciopelo;Formal;XL;Depop;Marfil camiseta Vintage - Estilo Casual
+P0072;Camiseta;Vintage;Rosa Pálido;Terciopelo;Oversize;42;Vestiaire;Rosa Pálido camiseta Vintage - Estilo Vintage
+P0073;Camiseta;Tumblr;Nude;Denim;Ajustado;41;Pinterest;Nude camiseta Tumblr - Estilo Vintage
+P0074;Camiseta;Tumblr;Blanco;Denim;Ajustado;XS;Depop;Blanco camiseta Tumblr - Estilo Oversize
+P0075;Camiseta;Tumblr;Nude;Gráfico;Deportivo;37;Grailed;Nude camiseta Tumblr - Estilo Casual
+P0076;Camiseta;Tumblr;Gris Carbón;Cuero;Recto;38;Uniqlo;Gris Carbón camiseta Tumblr - Estilo Athleisure
+P0077;Camiseta;Tumblr;Nude;Floral;Formal;37;Depop;Nude camiseta Tumblr - Estilo Vintage
+P0078;Camiseta;Tumblr;Negro;Liso;Vintage;L;Zara;Negro camiseta Tumblr - Estilo Formal
+P0079;Camiseta;Tumblr;Gris Carbón;Floral;Oversize;42;Depop;Gris Carbón camiseta Tumblr - Estilo Deportivo
+P0080;Camiseta;Tumblr;Negro;Floral;Casual;39;Zara;Negro camiseta Tumblr - Estilo Deportivo
+P0081;Camiseta;Tumblr;Negro;Liso;Recto;41;Zara;Negro camiseta Tumblr - Estilo Oversize
+P0082;Camiseta;Tumblr;Gris Carbón;Terciopelo;Ajustado;37;Depop;Gris Carbón camiseta Tumblr - Estilo Athleisure
+P0083;Camiseta;Tumblr;Gris Carbón;Cuero;Ajustado;38;Grailed;Gris Carbón camiseta Tumblr - Estilo Recto
+P0084;Camiseta;Tumblr;Nude;Encaje;Vintage;S;Grailed;Nude camiseta Tumblr - Estilo Casual
+P0085;Camiseta;Tumblr;Nude;Denim;Oversize;42;Pinterest;Nude camiseta Tumblr - Estilo Athleisure
+P0086;Camiseta;Tumblr;Blanco;Floral;Recto;XS;Zara;Blanco camiseta Tumblr - Estilo Casual
+P0087;Camiseta;Tumblr;Negro;Cuero;Casual;40;Vestiaire;Negro camiseta Tumblr - Estilo Deportivo
+P0088;Camiseta;Tumblr;Blanco;Encaje;Vintage;36;Depop;Blanco camiseta Tumblr - Estilo Formal
+P0089;Pantalon;Años 50;Negro;Cuero;Recto;OneSize;Vestiaire;Negro pantalon Años 50 - Estilo Oversize
+P0090;Pantalon;Años 50;Negro;Floral;Formal;38;Uniqlo;Negro pantalon Años 50 - Estilo Casual
+P0091;Pantalon;Años 50;Azul Clásico;Cuero;Athleisure;M;Vintage;Azul Clásico pantalon Años 50 - Estilo Formal
+P0092;Pantalon;Años 50;Gris;Cuero;Recto;42;Grailed;Gris pantalon Años 50 - Estilo Athleisure
+P0093;Pantalon;Años 50;Negro;Denim;Casual;41;Uniqlo;Negro pantalon Años 50 - Estilo Vintage
+P0094;Pantalon;Años 50;Azul Clásico;Denim;Oversize;OneSize;H&M;Azul Clásico pantalon Años 50 - Estilo Deportivo
+P0095;Pantalon;Años 50;Azul Clásico;Terciopelo;Ajustado;42;Depop;Azul Clásico pantalon Años 50 - Estilo Recto
+P0096;Pantalon;Años 60;Verde Menta;Denim;Deportivo;38;Grailed;Verde Menta pantalon Años 60 - Estilo Oversize
+P0097;Pantalon;Años 60;Naranja Retro;Gráfico;Oversize;38;Pinterest;Naranja Retro pantalon Años 60 - Estilo Deportivo
+P0098;Pantalon;Años 60;Verde Menta;Denim;Oversize;40;Zara;Verde Menta pantalon Años 60 - Estilo Athleisure
+P0099;Pantalon;Años 60;Naranja Retro;Holográfico;Athleisure;37;Vestiaire;Naranja Retro pantalon Años 60 - Estilo Formal
+P0100;Pantalon;Años 60;Naranja Retro;Gráfico;Vintage;41;Zara;Naranja Retro pantalon Años 60 - Estilo Formal
+P0101;Pantalon;Años 60;Naranja Retro;Floral;Athleisure;36;Depop;Naranja Retro pantalon Años 60 - Estilo Casual
+P0102;Pantalon;Años 60;Blanco;Denim;Formal;42;Grailed;Blanco pantalon Años 60 - Estilo Recto
+P0103;Pantalon;Años 70;Gris Humo;Cuero;Athleisure;L;Vintage;Gris Humo pantalon Años 70 - Estilo Recto
+P0104;Pantalon;Años 70;Marrón Tierra;Floral;Casual;M;Vintage;Marrón Tierra pantalon Años 70 - Estilo Recto
+P0105;Pantalon;Años 70;Marrón Tierra;Encaje;Athleisure;41;H&M;Marrón Tierra pantalon Años 70 - Estilo Deportivo
+P0106;Pantalon;Años 70;Gris Humo;Encaje;Recto;S;Uniqlo;Gris Humo pantalon Años 70 - Estilo Formal
+P0107;Pantalon;Años 70;Gris Humo;Holográfico;Athleisure;37;Grailed;Gris Humo pantalon Años 70 - Estilo Vintage
+P0108;Pantalon;Años 70;Gris Humo;Liso;Vintage;38;Uniqlo;Gris Humo pantalon Años 70 - Estilo Athleisure
+P0109;Pantalon;Años 70;Gris Humo;Floral;Casual;S;Vestiaire;Gris Humo pantalon Años 70 - Estilo Vintage
+P0110;Pantalon;Años 80;Plateado;Terciopelo;Formal;38;Pinterest;Plateado pantalon Años 80 - Estilo Formal
+P0111;Pantalon;Años 80;Negro;Terciopelo;Deportivo;37;Zara;Negro pantalon Años 80 - Estilo Athleisure
+P0112;Pantalon;Años 80;Plateado;Cuero;Athleisure;37;Vestiaire;Plateado pantalon Años 80 - Estilo Athleisure
+P0113;Pantalon;Años 80;Rojo;Floral;Casual;37;H&M;Rojo pantalon Años 80 - Estilo Recto
+P0114;Pantalon;Años 80;Rojo;Gráfico;Ajustado;41;Pinterest;Rojo pantalon Años 80 - Estilo Recto
+P0115;Pantalon;Años 80;Plateado;Cuero;Vintage;L;Vestiaire;Plateado pantalon Años 80 - Estilo Recto
+P0116;Pantalon;Años 80;Negro;Gráfico;Vintage;XL;Uniqlo;Negro pantalon Años 80 - Estilo Vintage
+P0117;Pantalon;Años 80;Plateado;Terciopelo;Ajustado;40;H&M;Plateado pantalon Años 80 - Estilo Deportivo
+P0118;Pantalon;Años 80;Plateado;Cuero;Athleisure;40;Vestiaire;Plateado pantalon Años 80 - Estilo Oversize
+P0119;Pantalon;Años 80;Negro;Encaje;Deportivo;41;Vestiaire;Negro pantalon Años 80 - Estilo Deportivo
+P0120;Pantalon;Años 90;Azul Denim;Liso;Ajustado;38;H&M;Azul Denim pantalon Años 90 - Estilo Casual
+P0121;Pantalon;Años 90;Caqui;Liso;Vintage;S;Uniqlo;Caqui pantalon Años 90 - Estilo Athleisure
+P0122;Pantalon;Años 90;Gris;Gráfico;Oversize;OneSize;Pinterest;Gris pantalon Años 90 - Estilo Ajustado
+P0123;Pantalon;Años 90;Caqui;Terciopelo;Formal;OneSize;Vintage;Caqui pantalon Años 90 - Estilo Vintage
+P0124;Pantalon;Años 90;Gris;Floral;Formal;M;Vestiaire;Gris pantalon Años 90 - Estilo Deportivo
+P0125;Pantalon;Años 90;Gris;Floral;Ajustado;37;Vintage;Gris pantalon Años 90 - Estilo Casual
+P0126;Pantalon;Años 90;Caqui;Floral;Formal;OneSize;Pinterest;Caqui pantalon Años 90 - Estilo Ajustado
+P0127;Pantalon;Años 90;Caqui;Gráfico;Casual;37;Uniqlo;Caqui pantalon Años 90 - Estilo Casual
+P0128;Pantalon;Años 90;Azul Denim;Terciopelo;Athleisure;41;Vestiaire;Azul Denim pantalon Años 90 - Estilo Casual
+P0129;Pantalon;Años 90;Azul Denim;Floral;Ajustado;L;Pinterest;Azul Denim pantalon Años 90 - Estilo Deportivo
+P0130;Pantalon;Retro;Azul Desteñido;Holográfico;Oversize;37;Vestiaire;Azul Desteñido pantalon Retro - Estilo Ajustado
+P0131;Pantalon;Retro;Azul Desteñido;Cuero;Oversize;41;Vintage;Azul Desteñido pantalon Retro - Estilo Oversize
+P0132;Pantalon;Retro;Negro Vintage;Terciopelo;Vintage;XS;Depop;Negro Vintage pantalon Retro - Estilo Ajustado
+P0133;Pantalon;Retro;Negro Vintage;Holográfico;Oversize;38;Vestiaire;Negro Vintage pantalon Retro - Estilo Vintage
+P0134;Pantalon;Retro;Negro Vintage;Holográfico;Athleisure;38;Vintage;Negro Vintage pantalon Retro - Estilo Ajustado
+P0135;Pantalon;Retro;Azul Desteñido;Floral;Recto;S;H&M;Azul Desteñido pantalon Retro - Estilo Athleisure
+P0136;Pantalon;Retro;Azul Desteñido;Floral;Casual;M;Grailed;Azul Desteñido pantalon Retro - Estilo Deportivo
+P0137;Pantalon;Retro;Azul Desteñido;Cuero;Casual;XL;Grailed;Azul Desteñido pantalon Retro - Estilo Ajustado
+P0138;Pantalon;Retro;Caqui Faded;Cuero;Deportivo;41;Vintage;Caqui Faded pantalon Retro - Estilo Oversize
+P0139;Pantalon;Retro;Caqui Faded;Terciopelo;Recto;41;Uniqlo;Caqui Faded pantalon Retro - Estilo Ajustado
+P0140;Pantalon;Vintage;Azul Oscuro;Cuero;Formal;38;Vestiaire;Azul Oscuro pantalon Vintage - Estilo Ajustado
+P0141;Pantalon;Vintage;Marrón;Liso;Vintage;38;Vintage;Marrón pantalon Vintage - Estilo Deportivo
+P0142;Pantalon;Vintage;Azul Oscuro;Floral;Vintage;38;Pinterest;Azul Oscuro pantalon Vintage - Estilo Casual
+P0143;Pantalon;Vintage;Negro;Denim;Oversize;L;Grailed;Negro pantalon Vintage - Estilo Deportivo
+P0144;Pantalon;Vintage;Marrón;Cuero;Athleisure;XS;Zara;Marrón pantalon Vintage - Estilo Vintage
+P0145;Pantalon;Vintage;Negro;Holográfico;Recto;L;Zara;Negro pantalon Vintage - Estilo Deportivo
+P0146;Pantalon;Vintage;Marrón;Denim;Deportivo;XL;Vintage;Marrón pantalon Vintage - Estilo Formal
+P0147;Pantalon;Vintage;Azul Oscuro;Gráfico;Deportivo;S;Vintage;Azul Oscuro pantalon Vintage - Estilo Vintage
+P0148;Pantalon;Vintage;Marrón;Denim;Vintage;40;Pinterest;Marrón pantalon Vintage - Estilo Recto
+P0149;Pantalon;Vintage;Negro;Holográfico;Vintage;L;Vestiaire;Negro pantalon Vintage - Estilo Casual
+P0150;Pantalon;Tumblr;Negro;Denim;Oversize;XS;Vestiaire;Negro pantalon Tumblr - Estilo Oversize
+P0151;Pantalon;Tumblr;Gris Charcoal;Encaje;Vintage;42;Uniqlo;Gris Charcoal pantalon Tumblr - Estilo Recto
+P0152;Pantalon;Tumblr;Blanco;Terciopelo;Casual;37;Vintage;Blanco pantalon Tumblr - Estilo Casual
+P0153;Pantalon;Tumblr;Blanco;Terciopelo;Deportivo;40;Vintage;Blanco pantalon Tumblr - Estilo Formal
+P0154;Pantalon;Tumblr;Negro;Liso;Ajustado;XL;Vintage;Negro pantalon Tumblr - Estilo Casual
+P0155;Pantalon;Tumblr;Gris Charcoal;Encaje;Ajustado;OneSize;Vintage;Gris Charcoal pantalon Tumblr - Estilo Formal
+P0156;Pantalon;Tumblr;Blanco;Gráfico;Vintage;42;Pinterest;Blanco pantalon Tumblr - Estilo Vintage
+P0157;Pantalon;Tumblr;Gris Charcoal;Terciopelo;Athleisure;40;Grailed;Gris Charcoal pantalon Tumblr - Estilo Vintage
+P0158;Pantalon;Tumblr;Gris Charcoal;Encaje;Ajustado;OneSize;H&M;Gris Charcoal pantalon Tumblr - Estilo Oversize
+P0159;Pantalon;Tumblr;Blanco;Liso;Formal;XL;Uniqlo;Blanco pantalon Tumblr - Estilo Formal
+P0160;Pantalon;Tumblr;Negro;Holográfico;Deportivo;39;Zara;Negro pantalon Tumblr - Estilo Formal
+P0161;Pantalon;Tumblr;Blanco;Encaje;Oversize;38;Vestiaire;Blanco pantalon Tumblr - Estilo Casual
+P0162;Pantalon;Tumblr;Blanco;Holográfico;Deportivo;XS;Uniqlo;Blanco pantalon Tumblr - Estilo Vintage
+P0163;Pantalon;Tumblr;Negro;Gráfico;Oversize;41;Zara;Negro pantalon Tumblr - Estilo Ajustado
+P0164;Vestido;Años 50;Rosa Pastel;Liso;Oversize;38;H&M;Rosa Pastel vestido Años 50 - Estilo Oversize
+P0165;Vestido;Años 50;Blanco;Holográfico;Vintage;42;Vintage;Blanco vestido Años 50 - Estilo Athleisure
+P0166;Vestido;Años 50;Blanco;Floral;Casual;M;Grailed;Blanco vestido Años 50 - Estilo Vintage
+P0167;Vestido;Años 50;Rojo Clásico;Encaje;Vintage;S;Pinterest;Rojo Clásico vestido Años 50 - Estilo Recto
+P0168;Vestido;Años 50;Azul Cielo;Gráfico;Ajustado;42;Uniqlo;Azul Cielo vestido Años 50 - Estilo Deportivo
+P0169;Vestido;Años 50;Azul Cielo;Terciopelo;Formal;XS;Vestiaire;Azul Cielo vestido Años 50 - Estilo Athleisure
+P0170;Vestido;Años 50;Azul Cielo;Gráfico;Oversize;XL;Grailed;Azul Cielo vestido Años 50 - Estilo Oversize
+P0171;Vestido;Años 60;Amarillo Chillón;Cuero;Ajustado;S;H&M;Amarillo Chillón vestido Años 60 - Estilo Recto
+P0172;Vestido;Años 60;Amarillo Chillón;Denim;Deportivo;OneSize;Vestiaire;Amarillo Chillón vestido Años 60 - Estilo Casual
+P0173;Vestido;Años 60;Naranja Retro;Gráfico;Recto;40;Uniqlo;Naranja Retro vestido Años 60 - Estilo Oversize
+P0174;Vestido;Años 60;Púrpura;Cuero;Casual;37;Zara;Púrpura vestido Años 60 - Estilo Deportivo
+P0175;Vestido;Años 60;Verde Lima;Liso;Formal;40;H&M;Verde Lima vestido Años 60 - Estilo Oversize
+P0176;Vestido;Años 60;Amarillo Chillón;Denim;Recto;39;Vestiaire;Amarillo Chillón vestido Años 60 - Estilo Vintage
+P0177;Vestido;Años 60;Verde Lima;Floral;Recto;37;H&M;Verde Lima vestido Años 60 - Estilo Casual
+P0178;Vestido;Años 70;Teal;Denim;Ajustado;38;Uniqlo;Teal vestido Años 70 - Estilo Vintage
+P0179;Vestido;Años 70;Marrón Tierra;Denim;Deportivo;42;Vintage;Marrón Tierra vestido Años 70 - Estilo Deportivo
+P0180;Vestido;Años 70;Marrón Tierra;Liso;Oversize;XS;Zara;Marrón Tierra vestido Años 70 - Estilo Vintage
+P0181;Vestido;Años 70;Marrón Tierra;Encaje;Oversize;40;Depop;Marrón Tierra vestido Años 70 - Estilo Recto
+P0182;Vestido;Años 70;Naranja Quemado;Gráfico;Recto;41;Depop;Naranja Quemado vestido Años 70 - Estilo Ajustado
+P0183;Vestido;Años 70;Crema;Terciopelo;Athleisure;39;Pinterest;Crema vestido Años 70 - Estilo Ajustado
+P0184;Vestido;Años 70;Naranja Quemado;Floral;Athleisure;L;Depop;Naranja Quemado vestido Años 70 - Estilo Deportivo
+P0185;Vestido;Años 80;Púrpura Neón;Denim;Vintage;38;H&M;Púrpura Neón vestido Años 80 - Estilo Deportivo
+P0186;Vestido;Años 80;Negro;Terciopelo;Athleisure;S;Vestiaire;Negro vestido Años 80 - Estilo Ajustado
+P0187;Vestido;Años 80;Púrpura Neón;Cuero;Recto;XL;Vintage;Púrpura Neón vestido Años 80 - Estilo Ajustado
+P0188;Vestido;Años 80;Púrpura Neón;Encaje;Vintage;42;Grailed;Púrpura Neón vestido Años 80 - Estilo Ajustado
+P0189;Vestido;Años 80;Negro;Liso;Oversize;L;Depop;Negro vestido Años 80 - Estilo Ajustado
+P0190;Vestido;Años 80;Neón Rosa;Holográfico;Athleisure;XL;Vintage;Neón Rosa vestido Años 80 - Estilo Formal
+P0191;Vestido;Años 80;Plateado;Terciopelo;Recto;42;Zara;Plateado vestido Años 80 - Estilo Formal
+P0192;Vestido;Años 80;Plateado;Floral;Athleisure;M;Zara;Plateado vestido Años 80 - Estilo Deportivo
+P0193;Vestido;Años 80;Neón Rosa;Gráfico;Ajustado;OneSize;Grailed;Neón Rosa vestido Años 80 - Estilo Formal
+P0194;Vestido;Años 80;Neón Rosa;Terciopelo;Ajustado;XL;Vintage;Neón Rosa vestido Años 80 - Estilo Formal
+P0195;Vestido;Años 90;Negro;Holográfico;Oversize;42;Depop;Negro vestido Años 90 - Estilo Athleisure
+P0196;Vestido;Años 90;Gris;Floral;Deportivo;38;H&M;Gris vestido Años 90 - Estilo Formal
+P0197;Vestido;Años 90;Blanco;Holográfico;Ajustado;40;Grailed;Blanco vestido Años 90 - Estilo Recto
+P0198;Vestido;Años 90;Blanco;Terciopelo;Deportivo;L;Vintage;Blanco vestido Años 90 - Estilo Athleisure
+P0199;Vestido;Años 90;Gris;Liso;Formal;42;H&M;Gris vestido Años 90 - Estilo Vintage
+P0200;Vestido;Años 90;Blanco;Encaje;Oversize;XL;H&M;Blanco vestido Años 90 - Estilo Recto
+P0201;Vestido;Años 90;Negro;Denim;Formal;41;Vestiaire;Negro vestido Años 90 - Estilo Athleisure
+P0202;Vestido;Años 90;Gris;Gráfico;Vintage;42;Grailed;Gris vestido Años 90 - Estilo Ajustado
+P0203;Vestido;Años 90;Blanco;Denim;Athleisure;41;Depop;Blanco vestido Años 90 - Estilo Vintage
+P0204;Vestido;Años 90;Negro;Floral;Ajustado;37;Zara;Negro vestido Años 90 - Estilo Formal
+P0205;Vestido;Retro;Estampado Vintage;Liso;Vintage;M;Vestiaire;Estampado Vintage vestido Retro - Estilo Deportivo
+P0206;Vestido;Retro;Teal Pálido;Cuero;Vintage;XS;Pinterest;Teal Pálido vestido Retro - Estilo Ajustado
+P0207;Vestido;Retro;Desteñido;Terciopelo;Deportivo;L;H&M;Desteñido vestido Retro - Estilo Ajustado
+P0208;Vestido;Retro;Desteñido;Holográfico;Deportivo;L;Zara;Desteñido vestido Retro - Estilo Casual
+P0209;Vestido;Retro;Teal Pálido;Floral;Deportivo;39;Uniqlo;Teal Pálido vestido Retro - Estilo Deportivo
+P0210;Vestido;Retro;Estampado Vintage;Liso;Casual;38;Depop;Estampado Vintage vestido Retro - Estilo Formal
+P0211;Vestido;Retro;Desteñido;Encaje;Oversize;L;Uniqlo;Desteñido vestido Retro - Estilo Recto
+P0212;Vestido;Retro;Crudo;Denim;Athleisure;41;Pinterest;Crudo vestido Retro - Estilo Formal
+P0213;Vestido;Retro;Desteñido;Encaje;Formal;42;H&M;Desteñido vestido Retro - Estilo Vintage
+P0214;Vestido;Retro;Estampado Vintage;Encaje;Deportivo;40;Depop;Estampado Vintage vestido Retro - Estilo Vintage
+P0215;Vestido;Vintage;Rojo Vino;Encaje;Vintage;36;H&M;Rojo Vino vestido Vintage - Estilo Athleisure
+P0216;Vestido;Vintage;Crema;Liso;Vintage;36;Vintage;Crema vestido Vintage - Estilo Recto
+P0217;Vestido;Vintage;Crema;Floral;Ajustado;38;Depop;Crema vestido Vintage - Estilo Vintage
+P0218;Vestido;Vintage;Crema;Holográfico;Deportivo;M;Grailed;Crema vestido Vintage - Estilo Casual
+P0219;Vestido;Vintage;Crema;Terciopelo;Vintage;L;H&M;Crema vestido Vintage - Estilo Ajustado
+P0220;Vestido;Vintage;Blanco Marfil;Terciopelo;Ajustado;S;Zara;Blanco Marfil vestido Vintage - Estilo Formal
+P0221;Vestido;Vintage;Crema;Cuero;Athleisure;XL;Vestiaire;Crema vestido Vintage - Estilo Athleisure
+P0222;Vestido;Vintage;Crema;Floral;Casual;OneSize;Grailed;Crema vestido Vintage - Estilo Deportivo
+P0223;Vestido;Vintage;Teal Antiguo;Liso;Casual;XS;Zara;Teal Antiguo vestido Vintage - Estilo Deportivo
+P0224;Vestido;Vintage;Crema;Denim;Deportivo;OneSize;Depop;Crema vestido Vintage - Estilo Formal
+P0225;Vestido;Tumblr;Blanco;Denim;Oversize;40;Pinterest;Blanco vestido Tumblr - Estilo Ajustado
+P0226;Vestido;Tumblr;Negro;Liso;Vintage;XL;Uniqlo;Negro vestido Tumblr - Estilo Casual
+P0227;Vestido;Tumblr;Beige Neutro;Floral;Casual;39;Vintage;Beige Neutro vestido Tumblr - Estilo Ajustado
+P0228;Vestido;Tumblr;Beige Neutro;Gráfico;Formal;39;Uniqlo;Beige Neutro vestido Tumblr - Estilo Recto
+P0229;Vestido;Tumblr;Negro;Liso;Athleisure;OneSize;Pinterest;Negro vestido Tumblr - Estilo Athleisure
+P0230;Vestido;Tumblr;Beige Neutro;Holográfico;Oversize;XS;Vintage;Beige Neutro vestido Tumblr - Estilo Formal
+P0231;Vestido;Tumblr;Negro;Terciopelo;Oversize;41;Vestiaire;Negro vestido Tumblr - Estilo Vintage
+P0232;Vestido;Tumblr;Blanco;Floral;Formal;XS;H&M;Blanco vestido Tumblr - Estilo Casual
+P0233;Vestido;Tumblr;Negro;Holográfico;Ajustado;38;H&M;Negro vestido Tumblr - Estilo Athleisure
+P0234;Vestido;Tumblr;Beige Neutro;Cuero;Vintage;39;Depop;Beige Neutro vestido Tumblr - Estilo Ajustado
+P0235;Vestido;Tumblr;Blanco;Encaje;Ajustado;OneSize;Zara;Blanco vestido Tumblr - Estilo Deportivo
+P0236;Vestido;Tumblr;Beige Neutro;Liso;Formal;XS;Uniqlo;Beige Neutro vestido Tumblr - Estilo Vintage
+P0237;Vestido;Tumblr;Gris Claro;Terciopelo;Recto;38;H&M;Gris Claro vestido Tumblr - Estilo Athleisure
+P0238;Vestido;Tumblr;Gris Claro;Holográfico;Vintage;38;Uniqlo;Gris Claro vestido Tumblr - Estilo Formal
+P0239;Chaqueta;Años 50;Marrón;Liso;Athleisure;OneSize;H&M;Marrón chaqueta Años 50 - Estilo Oversize
+P0240;Chaqueta;Años 50;Gris;Liso;Oversize;XL;Depop;Gris chaqueta Años 50 - Estilo Vintage
+P0241;Chaqueta;Años 50;Negro;Holográfico;Athleisure;S;Zara;Negro chaqueta Años 50 - Estilo Formal
+P0242;Chaqueta;Años 50;Negro;Floral;Athleisure;OneSize;H&M;Negro chaqueta Años 50 - Estilo Athleisure
+P0243;Chaqueta;Años 50;Gris;Liso;Deportivo;XS;Grailed;Gris chaqueta Años 50 - Estilo Recto
+P0244;Chaqueta;Años 50;Marrón;Encaje;Casual;41;Zara;Marrón chaqueta Años 50 - Estilo Casual
+P0245;Chaqueta;Años 60;Verde Pálido;Floral;Oversize;M;Zara;Verde Pálido chaqueta Años 60 - Estilo Oversize
+P0246;Chaqueta;Años 60;Verde Pálido;Denim;Ajustado;40;H&M;Verde Pálido chaqueta Años 60 - Estilo Vintage
+P0247;Chaqueta;Años 60;Verde Pálido;Holográfico;Ajustado;40;Depop;Verde Pálido chaqueta Años 60 - Estilo Casual
+P0248;Chaqueta;Años 60;Naranja Retro;Encaje;Oversize;41;Uniqlo;Naranja Retro chaqueta Años 60 - Estilo Formal
+P0249;Chaqueta;Años 60;Amarillo Mostaza;Floral;Vintage;XS;Pinterest;Amarillo Mostaza chaqueta Años 60 - Estilo Ajustado
+P0250;Chaqueta;Años 60;Naranja Retro;Holográfico;Casual;37;Grailed;Naranja Retro chaqueta Años 60 - Estilo Deportivo
+P0251;Chaqueta;Años 70;Naranja Quemado;Cuero;Oversize;L;Depop;Naranja Quemado chaqueta Años 70 - Estilo Casual
+P0252;Chaqueta;Años 70;Marrón Tierra;Liso;Recto;40;Zara;Marrón Tierra chaqueta Años 70 - Estilo Deportivo
+P0253;Chaqueta;Años 70;Naranja Quemado;Terciopelo;Recto;39;Grailed;Naranja Quemado chaqueta Años 70 - Estilo Athleisure
+P0254;Chaqueta;Años 70;Marrón Tierra;Gráfico;Recto;XL;Uniqlo;Marrón Tierra chaqueta Años 70 - Estilo Ajustado
+P0255;Chaqueta;Años 70;Naranja Quemado;Denim;Vintage;40;Pinterest;Naranja Quemado chaqueta Años 70 - Estilo Vintage
+P0256;Chaqueta;Años 70;Caqui;Gráfico;Formal;39;Pinterest;Caqui chaqueta Años 70 - Estilo Casual
+P0257;Chaqueta;Años 80;Negro;Encaje;Ajustado;41;Zara;Negro chaqueta Años 80 - Estilo Recto
+P0258;Chaqueta;Años 80;Negro;Holográfico;Ajustado;40;Grailed;Negro chaqueta Años 80 - Estilo Oversize
+P0259;Chaqueta;Años 80;Rojo;Floral;Athleisure;XS;Pinterest;Rojo chaqueta Años 80 - Estilo Formal
+P0260;Chaqueta;Años 80;Negro;Liso;Athleisure;38;Grailed;Negro chaqueta Años 80 - Estilo Casual
+P0261;Chaqueta;Años 80;Púrpura;Encaje;Deportivo;39;Uniqlo;Púrpura chaqueta Años 80 - Estilo Oversize
+P0262;Chaqueta;Años 80;Rojo;Liso;Athleisure;42;Vintage;Rojo chaqueta Años 80 - Estilo Recto
+P0263;Chaqueta;Años 80;Rojo;Gráfico;Oversize;OneSize;H&M;Rojo chaqueta Años 80 - Estilo Ajustado
+P0264;Chaqueta;Años 80;Negro;Terciopelo;Vintage;37;Pinterest;Negro chaqueta Años 80 - Estilo Athleisure
+P0265;Chaqueta;Años 80;Rojo;Holográfico;Deportivo;36;Uniqlo;Rojo chaqueta Años 80 - Estilo Deportivo
+P0266;Chaqueta;Años 90;Denim;Encaje;Recto;41;Uniqlo;Denim chaqueta Años 90 - Estilo Athleisure
+P0267;Chaqueta;Años 90;Gris;Floral;Formal;38;Vestiaire;Gris chaqueta Años 90 - Estilo Vintage
+P0268;Chaqueta;Años 90;Denim;Liso;Deportivo;XL;Pinterest;Denim chaqueta Años 90 - Estilo Recto
+P0269;Chaqueta;Años 90;Denim;Holográfico;Deportivo;XS;Vestiaire;Denim chaqueta Años 90 - Estilo Formal
+P0270;Chaqueta;Años 90;Negro;Cuero;Oversize;42;Depop;Negro chaqueta Años 90 - Estilo Deportivo
+P0271;Chaqueta;Años 90;Beige;Encaje;Deportivo;38;Depop;Beige chaqueta Años 90 - Estilo Athleisure
+P0272;Chaqueta;Años 90;Denim;Floral;Formal;37;Pinterest;Denim chaqueta Años 90 - Estilo Ajustado
+P0273;Chaqueta;Años 90;Negro;Terciopelo;Vintage;S;Depop;Negro chaqueta Años 90 - Estilo Deportivo
+P0274;Chaqueta;Años 90;Denim;Floral;Vintage;L;H&M;Denim chaqueta Años 90 - Estilo Athleisure
+P0275;Chaqueta;Retro;Cuero Desteñido;Terciopelo;Recto;XS;Grailed;Cuero Desteñido chaqueta Retro - Estilo Athleisure
+P0276;Chaqueta;Retro;Azul Faded;Encaje;Deportivo;S;H&M;Azul Faded chaqueta Retro - Estilo Formal
+P0277;Chaqueta;Retro;Marrón Vintage;Liso;Casual;L;Uniqlo;Marrón Vintage chaqueta Retro - Estilo Formal
+P0278;Chaqueta;Retro;Marrón Vintage;Gráfico;Ajustado;36;Zara;Marrón Vintage chaqueta Retro - Estilo Deportivo
+P0279;Chaqueta;Retro;Cuero Desteñido;Denim;Vintage;S;Depop;Cuero Desteñido chaqueta Retro - Estilo Casual
+P0280;Chaqueta;Retro;Marrón Vintage;Holográfico;Athleisure;36;Vestiaire;Marrón Vintage chaqueta Retro - Estilo Casual
+P0281;Chaqueta;Retro;Azul Faded;Gráfico;Deportivo;37;Vestiaire;Azul Faded chaqueta Retro - Estilo Formal
+P0282;Chaqueta;Retro;Azul Faded;Gráfico;Athleisure;41;H&M;Azul Faded chaqueta Retro - Estilo Formal
+P0283;Chaqueta;Retro;Cuero Desteñido;Floral;Athleisure;M;H&M;Cuero Desteñido chaqueta Retro - Estilo Ajustado
+P0284;Chaqueta;Vintage;Teal;Floral;Oversize;40;Grailed;Teal chaqueta Vintage - Estilo Deportivo
+P0285;Chaqueta;Vintage;Teal;Gráfico;Recto;39;Vestiaire;Teal chaqueta Vintage - Estilo Formal
+P0286;Chaqueta;Vintage;Marrón Cuero;Liso;Ajustado;OneSize;Depop;Marrón Cuero chaqueta Vintage - Estilo Deportivo
+P0287;Chaqueta;Vintage;Negro;Gráfico;Recto;XL;Zara;Negro chaqueta Vintage - Estilo Deportivo
+P0288;Chaqueta;Vintage;Teal;Holográfico;Recto;XL;Grailed;Teal chaqueta Vintage - Estilo Casual
+P0289;Chaqueta;Vintage;Negro;Gráfico;Recto;XL;Vintage;Negro chaqueta Vintage - Estilo Ajustado
+P0290;Chaqueta;Vintage;Marrón Cuero;Cuero;Formal;37;Vestiaire;Marrón Cuero chaqueta Vintage - Estilo Athleisure
+P0291;Chaqueta;Vintage;Negro;Gráfico;Oversize;38;Zara;Negro chaqueta Vintage - Estilo Vintage
+P0292;Chaqueta;Vintage;Marrón Cuero;Denim;Deportivo;39;Zara;Marrón Cuero chaqueta Vintage - Estilo Casual
+P0293;Chaqueta;Tumblr;Beige Neutral;Liso;Vintage;36;Vintage;Beige Neutral chaqueta Tumblr - Estilo Deportivo
+P0294;Chaqueta;Tumblr;Gris Charcoal;Floral;Vintage;OneSize;Pinterest;Gris Charcoal chaqueta Tumblr - Estilo Vintage
+P0295;Chaqueta;Tumblr;Gris Charcoal;Holográfico;Oversize;OneSize;Uniqlo;Gris Charcoal chaqueta Tumblr - Estilo Vintage
+P0296;Chaqueta;Tumblr;Beige Neutral;Cuero;Recto;XL;Uniqlo;Beige Neutral chaqueta Tumblr - Estilo Casual
+P0297;Chaqueta;Tumblr;Gris Charcoal;Holográfico;Recto;XS;Pinterest;Gris Charcoal chaqueta Tumblr - Estilo Athleisure
+P0298;Chaqueta;Tumblr;Gris Charcoal;Terciopelo;Oversize;36;Depop;Gris Charcoal chaqueta Tumblr - Estilo Formal
+P0299;Chaqueta;Tumblr;Gris Charcoal;Holográfico;Casual;OneSize;Zara;Gris Charcoal chaqueta Tumblr - Estilo Athleisure
+P0300;Chaqueta;Tumblr;Gris Charcoal;Floral;Ajustado;M;Depop;Gris Charcoal chaqueta Tumblr - Estilo Recto
+P0301;Chaqueta;Tumblr;Negro;Liso;Casual;M;Pinterest;Negro chaqueta Tumblr - Estilo Casual
+P0302;Chaqueta;Tumblr;Negro;Liso;Casual;XS;Zara;Negro chaqueta Tumblr - Estilo Recto
+P0303;Chaqueta;Tumblr;Negro;Encaje;Casual;36;Grailed;Negro chaqueta Tumblr - Estilo Vintage
+P0304;Chaqueta;Tumblr;Gris Charcoal;Cuero;Vintage;39;H&M;Gris Charcoal chaqueta Tumblr - Estilo Recto
+P0305;Faldas y minifaldas;Años 50;Gris;Liso;Oversize;M;Zara;Gris faldas y minifaldas Años 50 - Estilo Casual
+P0306;Faldas y minifaldas;Años 50;Azul Clásico;Cuero;Athleisure;37;Depop;Azul Clásico faldas y minifaldas Años 50 - Estilo Formal
+P0307;Faldas y minifaldas;Años 50;Gris;Liso;Recto;XS;Zara;Gris faldas y minifaldas Años 50 - Estilo Athleisure
+P0308;Faldas y minifaldas;Años 50;Negro;Holográfico;Athleisure;M;Vintage;Negro faldas y minifaldas Años 50 - Estilo Vintage
+P0309;Faldas y minifaldas;Años 50;Negro;Encaje;Casual;40;Grailed;Negro faldas y minifaldas Años 50 - Estilo Vintage
+P0310;Faldas y minifaldas;Años 50;Gris;Holográfico;Deportivo;XS;Uniqlo;Gris faldas y minifaldas Años 50 - Estilo Deportivo
+P0311;Faldas y minifaldas;Años 60;Púrpura;Terciopelo;Casual;OneSize;Grailed;Púrpura faldas y minifaldas Años 60 - Estilo Recto
+P0312;Faldas y minifaldas;Años 60;Púrpura;Holográfico;Formal;XL;Pinterest;Púrpura faldas y minifaldas Años 60 - Estilo Oversize
+P0313;Faldas y minifaldas;Años 60;Naranja Retro;Holográfico;Oversize;41;Uniqlo;Naranja Retro faldas y minifaldas Años 60 - Estilo Oversize
+P0314;Faldas y minifaldas;Años 60;Púrpura;Encaje;Athleisure;L;Vintage;Púrpura faldas y minifaldas Años 60 - Estilo Athleisure
+P0315;Faldas y minifaldas;Años 60;Blanco;Encaje;Recto;39;Zara;Blanco faldas y minifaldas Años 60 - Estilo Oversize
+P0316;Faldas y minifaldas;Años 60;Blanco;Encaje;Vintage;M;Uniqlo;Blanco faldas y minifaldas Años 60 - Estilo Ajustado
+P0317;Faldas y minifaldas;Años 70;Crema;Cuero;Oversize;37;Vestiaire;Crema faldas y minifaldas Años 70 - Estilo Deportivo
+P0318;Faldas y minifaldas;Años 70;Crema;Gráfico;Vintage;L;Vintage;Crema faldas y minifaldas Años 70 - Estilo Ajustado
+P0319;Faldas y minifaldas;Años 70;Marrón Tierra;Liso;Formal;36;Vintage;Marrón Tierra faldas y minifaldas Años 70 - Estilo Oversize
+P0320;Faldas y minifaldas;Años 70;Teal;Gráfico;Ajustado;L;H&M;Teal faldas y minifaldas Años 70 - Estilo Recto
+P0321;Faldas y minifaldas;Años 70;Marrón Tierra;Liso;Deportivo;XL;Uniqlo;Marrón Tierra faldas y minifaldas Años 70 - Estilo Vintage
+P0322;Faldas y minifaldas;Años 70;Crema;Holográfico;Recto;OneSize;Pinterest;Crema faldas y minifaldas Años 70 - Estilo Ajustado
+P0323;Faldas y minifaldas;Años 80;Rojo;Floral;Deportivo;37;Uniqlo;Rojo faldas y minifaldas Años 80 - Estilo Casual
+P0324;Faldas y minifaldas;Años 80;Púrpura Neón;Liso;Casual;XS;Pinterest;Púrpura Neón faldas y minifaldas Años 80 - Estilo Recto
+P0325;Faldas y minifaldas;Años 80;Púrpura Neón;Liso;Deportivo;37;Vestiaire;Púrpura Neón faldas y minifaldas Años 80 - Estilo Vintage
+P0326;Faldas y minifaldas;Años 80;Rojo;Liso;Formal;38;Vestiaire;Rojo faldas y minifaldas Años 80 - Estilo Ajustado
+P0327;Faldas y minifaldas;Años 80;Plateado;Floral;Vintage;36;Depop;Plateado faldas y minifaldas Años 80 - Estilo Recto
+P0328;Faldas y minifaldas;Años 80;Rojo;Gráfico;Formal;XL;Grailed;Rojo faldas y minifaldas Años 80 - Estilo Formal
+P0329;Faldas y minifaldas;Años 80;Púrpura Neón;Holográfico;Formal;XL;Vestiaire;Púrpura Neón faldas y minifaldas Años 80 - Estilo Oversize
+P0330;Faldas y minifaldas;Años 80;Plateado;Terciopelo;Oversize;40;H&M;Plateado faldas y minifaldas Años 80 - Estilo Athleisure
+P0331;Faldas y minifaldas;Años 80;Negro;Denim;Vintage;M;Vintage;Negro faldas y minifaldas Años 80 - Estilo Vintage
+P0332;Faldas y minifaldas;Años 90;Beige;Gráfico;Ajustado;39;Uniqlo;Beige faldas y minifaldas Años 90 - Estilo Ajustado
+P0333;Faldas y minifaldas;Años 90;Gris Denim;Gráfico;Athleisure;36;Pinterest;Gris Denim faldas y minifaldas Años 90 - Estilo Recto
+P0334;Faldas y minifaldas;Años 90;Caqui;Denim;Deportivo;XL;Vestiaire;Caqui faldas y minifaldas Años 90 - Estilo Formal
+P0335;Faldas y minifaldas;Años 90;Negro;Denim;Athleisure;40;Vestiaire;Negro faldas y minifaldas Años 90 - Estilo Recto
+P0336;Faldas y minifaldas;Años 90;Beige;Gráfico;Vintage;40;Zara;Beige faldas y minifaldas Años 90 - Estilo Vintage
+P0337;Faldas y minifaldas;Años 90;Gris Denim;Cuero;Vintage;S;Grailed;Gris Denim faldas y minifaldas Años 90 - Estilo Formal
+P0338;Faldas y minifaldas;Años 90;Negro;Gráfico;Athleisure;39;Grailed;Negro faldas y minifaldas Años 90 - Estilo Casual
+P0339;Faldas y minifaldas;Años 90;Beige;Gráfico;Formal;L;Pinterest;Beige faldas y minifaldas Años 90 - Estilo Ajustado
+P0340;Faldas y minifaldas;Años 90;Negro;Cuero;Ajustado;XS;Zara;Negro faldas y minifaldas Años 90 - Estilo Formal
+P0341;Faldas y minifaldas;Retro;Teal Pálido;Floral;Athleisure;36;Uniqlo;Teal Pálido faldas y minifaldas Retro - Estilo Vintage
+P0342;Faldas y minifaldas;Retro;Crudo;Holográfico;Formal;OneSize;H&M;Crudo faldas y minifaldas Retro - Estilo Deportivo
+P0343;Faldas y minifaldas;Retro;Teal Pálido;Liso;Ajustado;41;Zara;Teal Pálido faldas y minifaldas Retro - Estilo Deportivo
+P0344;Faldas y minifaldas;Retro;Teal Pálido;Floral;Deportivo;M;Vintage;Teal Pálido faldas y minifaldas Retro - Estilo Casual
+P0345;Faldas y minifaldas;Retro;Crudo;Cuero;Ajustado;S;Grailed;Crudo faldas y minifaldas Retro - Estilo Oversize
+P0346;Faldas y minifaldas;Retro;Azul Desteñido;Gráfico;Athleisure;41;H&M;Azul Desteñido faldas y minifaldas Retro - Estilo Athleisure
+P0347;Faldas y minifaldas;Retro;Azul Desteñido;Terciopelo;Athleisure;XL;Vintage;Azul Desteñido faldas y minifaldas Retro - Estilo Vintage
+P0348;Faldas y minifaldas;Retro;Teal Pálido;Denim;Ajustado;42;Grailed;Teal Pálido faldas y minifaldas Retro - Estilo Vintage
+P0349;Faldas y minifaldas;Retro;Azul Desteñido;Gráfico;Deportivo;XL;H&M;Azul Desteñido faldas y minifaldas Retro - Estilo Ajustado
+P0350;Faldas y minifaldas;Vintage;Rojo Vino;Liso;Casual;M;Uniqlo;Rojo Vino faldas y minifaldas Vintage - Estilo Oversize
+P0351;Faldas y minifaldas;Vintage;Negro;Liso;Oversize;37;Grailed;Negro faldas y minifaldas Vintage - Estilo Deportivo
+P0352;Faldas y minifaldas;Vintage;Teal Antiguo;Gráfico;Recto;M;Depop;Teal Antiguo faldas y minifaldas Vintage - Estilo Recto
+P0353;Faldas y minifaldas;Vintage;Rojo Vino;Encaje;Formal;40;Depop;Rojo Vino faldas y minifaldas Vintage - Estilo Athleisure
+P0354;Faldas y minifaldas;Vintage;Negro;Liso;Oversize;37;Pinterest;Negro faldas y minifaldas Vintage - Estilo Vintage
+P0355;Faldas y minifaldas;Vintage;Rojo Vino;Floral;Casual;40;Vintage;Rojo Vino faldas y minifaldas Vintage - Estilo Vintage
+P0356;Faldas y minifaldas;Vintage;Teal Antiguo;Terciopelo;Formal;XL;Grailed;Teal Antiguo faldas y minifaldas Vintage - Estilo Ajustado
+P0357;Faldas y minifaldas;Vintage;Rojo Vino;Cuero;Casual;XS;Zara;Rojo Vino faldas y minifaldas Vintage - Estilo Casual
+P0358;Faldas y minifaldas;Vintage;Teal Antiguo;Holográfico;Deportivo;38;Uniqlo;Teal Antiguo faldas y minifaldas Vintage - Estilo Oversize
+P0359;Faldas y minifaldas;Tumblr;Beige;Terciopelo;Formal;39;Vintage;Beige faldas y minifaldas Tumblr - Estilo Deportivo
+P0360;Faldas y minifaldas;Tumblr;Blanco;Gráfico;Casual;XL;Uniqlo;Blanco faldas y minifaldas Tumblr - Estilo Formal
+P0361;Faldas y minifaldas;Tumblr;Negro;Terciopelo;Casual;XS;Vintage;Negro faldas y minifaldas Tumblr - Estilo Oversize
+P0362;Faldas y minifaldas;Tumblr;Negro;Cuero;Deportivo;36;Zara;Negro faldas y minifaldas Tumblr - Estilo Casual
+P0363;Faldas y minifaldas;Tumblr;Blanco;Cuero;Athleisure;38;Depop;Blanco faldas y minifaldas Tumblr - Estilo Oversize
+P0364;Faldas y minifaldas;Tumblr;Negro;Holográfico;Athleisure;XS;Vintage;Negro faldas y minifaldas Tumblr - Estilo Vintage
+P0365;Faldas y minifaldas;Tumblr;Beige;Cuero;Athleisure;S;Grailed;Beige faldas y minifaldas Tumblr - Estilo Athleisure
+P0366;Faldas y minifaldas;Tumblr;Gris;Denim;Oversize;S;Depop;Gris faldas y minifaldas Tumblr - Estilo Casual
+P0367;Faldas y minifaldas;Tumblr;Gris;Liso;Athleisure;38;Vestiaire;Gris faldas y minifaldas Tumblr - Estilo Recto
+P0368;Faldas y minifaldas;Tumblr;Blanco;Gráfico;Oversize;39;Grailed;Blanco faldas y minifaldas Tumblr - Estilo Formal
+P0369;Faldas y minifaldas;Tumblr;Gris;Denim;Oversize;XL;Zara;Gris faldas y minifaldas Tumblr - Estilo Oversize
+P0370;Faldas y minifaldas;Tumblr;Negro;Terciopelo;Recto;S;Grailed;Negro faldas y minifaldas Tumblr - Estilo Oversize
+P0371;Blusas;Años 50;Azul Suave;Terciopelo;Formal;38;H&M;Azul Suave blusas Años 50 - Estilo Vintage
+P0372;Blusas;Años 50;Pastel;Floral;Vintage;XL;Pinterest;Pastel blusas Años 50 - Estilo Vintage
+P0373;Blusas;Años 50;Blanco;Gráfico;Recto;M;H&M;Blanco blusas Años 50 - Estilo Vintage
+P0374;Blusas;Años 50;Pastel;Cuero;Ajustado;40;Depop;Pastel blusas Años 50 - Estilo Formal
+P0375;Blusas;Años 50;Blanco;Encaje;Formal;XL;Pinterest;Blanco blusas Años 50 - Estilo Casual
+P0376;Blusas;Años 60;Verde Menta;Terciopelo;Casual;39;Depop;Verde Menta blusas Años 60 - Estilo Casual
+P0377;Blusas;Años 60;Amarillo Limón;Liso;Deportivo;OneSize;Uniqlo;Amarillo Limón blusas Años 60 - Estilo Recto
+P0378;Blusas;Años 60;Verde Menta;Terciopelo;Oversize;42;Uniqlo;Verde Menta blusas Años 60 - Estilo Athleisure
+P0379;Blusas;Años 60;Verde Menta;Cuero;Vintage;L;Vestiaire;Verde Menta blusas Años 60 - Estilo Casual
+P0380;Blusas;Años 60;Naranja Retro;Encaje;Deportivo;36;Grailed;Naranja Retro blusas Años 60 - Estilo Deportivo
+P0381;Blusas;Años 70;Naranja Quemado;Encaje;Oversize;XS;Depop;Naranja Quemado blusas Años 70 - Estilo Vintage
+P0382;Blusas;Años 70;Marrón Tierra;Gráfico;Athleisure;XL;Grailed;Marrón Tierra blusas Años 70 - Estilo Casual
+P0383;Blusas;Años 70;Naranja Quemado;Holográfico;Ajustado;XS;H&M;Naranja Quemado blusas Años 70 - Estilo Ajustado
+P0384;Blusas;Años 70;Teal;Liso;Formal;OneSize;Zara;Teal blusas Años 70 - Estilo Ajustado
+P0385;Blusas;Años 70;Marrón Tierra;Floral;Formal;41;Uniqlo;Marrón Tierra blusas Años 70 - Estilo Casual
+P0386;Blusas;Años 80;Neón Rosa;Encaje;Casual;XL;Pinterest;Neón Rosa blusas Años 80 - Estilo Casual
+P0387;Blusas;Años 80;Neón Rosa;Liso;Formal;42;Vintage;Neón Rosa blusas Años 80 - Estilo Casual
+P0388;Blusas;Años 80;Neón Rosa;Holográfico;Formal;41;Vestiaire;Neón Rosa blusas Años 80 - Estilo Vintage
+P0389;Blusas;Años 80;Neón Rosa;Floral;Vintage;39;H&M;Neón Rosa blusas Años 80 - Estilo Casual
+P0390;Blusas;Años 80;Plateado;Terciopelo;Athleisure;M;H&M;Plateado blusas Años 80 - Estilo Recto
+P0391;Blusas;Años 80;Plateado;Holográfico;Deportivo;39;Uniqlo;Plateado blusas Años 80 - Estilo Formal
+P0392;Blusas;Años 80;Negro;Encaje;Recto;40;Vintage;Negro blusas Años 80 - Estilo Deportivo
+P0393;Blusas;Años 90;Blanco;Floral;Recto;41;Pinterest;Blanco blusas Años 90 - Estilo Athleisure
+P0394;Blusas;Años 90;Beige;Holográfico;Oversize;S;Zara;Beige blusas Años 90 - Estilo Oversize
+P0395;Blusas;Años 90;Gris;Holográfico;Vintage;XL;Zara;Gris blusas Años 90 - Estilo Formal
+P0396;Blusas;Años 90;Blanco;Gráfico;Recto;XS;Vintage;Blanco blusas Años 90 - Estilo Recto
+P0397;Blusas;Años 90;Beige;Holográfico;Casual;XS;Vintage;Beige blusas Años 90 - Estilo Recto
+P0398;Blusas;Años 90;Gris;Liso;Deportivo;L;Pinterest;Gris blusas Años 90 - Estilo Formal
+P0399;Blusas;Años 90;Gris;Liso;Recto;36;Grailed;Gris blusas Años 90 - Estilo Casual
+P0400;Blusas;Retro;Faded Colors;Terciopelo;Ajustado;S;Zara;Faded Colors blusas Retro - Estilo Casual
+P0401;Blusas;Retro;Vintage;Gráfico;Formal;OneSize;Uniqlo;Vintage blusas Retro - Estilo Recto
+P0402;Blusas;Retro;Vintage;Floral;Oversize;38;Vintage;Vintage blusas Retro - Estilo Ajustado
+P0403;Blusas;Retro;Crudo;Denim;Deportivo;XS;Vestiaire;Crudo blusas Retro - Estilo Formal
+P0404;Blusas;Retro;Crudo;Liso;Casual;S;Uniqlo;Crudo blusas Retro - Estilo Formal
+P0405;Blusas;Retro;Vintage;Holográfico;Athleisure;XL;Pinterest;Vintage blusas Retro - Estilo Athleisure
+P0406;Blusas;Retro;Faded Colors;Terciopelo;Recto;OneSize;Uniqlo;Faded Colors blusas Retro - Estilo Casual
+P0407;Blusas;Vintage;Teal Pálido;Terciopelo;Deportivo;36;Vestiaire;Teal Pálido blusas Vintage - Estilo Formal
+P0408;Blusas;Vintage;Rosa Antiguo;Encaje;Casual;L;Grailed;Rosa Antiguo blusas Vintage - Estilo Ajustado
+P0409;Blusas;Vintage;Teal Pálido;Encaje;Athleisure;36;Zara;Teal Pálido blusas Vintage - Estilo Athleisure
+P0410;Blusas;Vintage;Rosa Antiguo;Denim;Casual;42;Vintage;Rosa Antiguo blusas Vintage - Estilo Ajustado
+P0411;Blusas;Vintage;Teal Pálido;Liso;Deportivo;OneSize;Grailed;Teal Pálido blusas Vintage - Estilo Athleisure
+P0412;Blusas;Vintage;Rosa Antiguo;Gráfico;Oversize;36;Vintage;Rosa Antiguo blusas Vintage - Estilo Casual
+P0413;Blusas;Vintage;Marfil;Encaje;Formal;39;Pinterest;Marfil blusas Vintage - Estilo Recto
+P0414;Blusas;Tumblr;Beige;Holográfico;Oversize;XL;Depop;Beige blusas Tumblr - Estilo Athleisure
+P0415;Blusas;Tumblr;Beige;Floral;Formal;40;Zara;Beige blusas Tumblr - Estilo Vintage
+P0416;Blusas;Tumblr;Negro;Cuero;Casual;M;H&M;Negro blusas Tumblr - Estilo Deportivo
+P0417;Blusas;Tumblr;Gris;Holográfico;Athleisure;S;Vestiaire;Gris blusas Tumblr - Estilo Formal
+P0418;Blusas;Tumblr;Gris;Terciopelo;Formal;37;H&M;Gris blusas Tumblr - Estilo Athleisure
+P0419;Blusas;Tumblr;Negro;Terciopelo;Ajustado;XS;Depop;Negro blusas Tumblr - Estilo Deportivo
+P0420;Blusas;Tumblr;Negro;Holográfico;Vintage;L;Pinterest;Negro blusas Tumblr - Estilo Deportivo
+P0421;Blusas;Tumblr;Gris;Denim;Oversize;M;Vintage;Gris blusas Tumblr - Estilo Ajustado
+P0422;Blusas;Tumblr;Negro;Denim;Vintage;42;Grailed;Negro blusas Tumblr - Estilo Athleisure
+P0423;Blusas;Tumblr;Gris;Encaje;Casual;M;Depop;Gris blusas Tumblr - Estilo Deportivo
+P0424;Short;Años 50;Blanco;Cuero;Oversize;37;Pinterest;Blanco short Años 50 - Estilo Deportivo
+P0425;Short;Años 50;Negro;Encaje;Vintage;41;Pinterest;Negro short Años 50 - Estilo Athleisure
+P0426;Short;Años 50;Azul;Holográfico;Oversize;XL;Pinterest;Azul short Años 50 - Estilo Deportivo
+P0427;Short;Años 50;Azul;Liso;Casual;OneSize;Vestiaire;Azul short Años 50 - Estilo Recto
+P0428;Short;Años 60;Verde;Encaje;Recto;36;Vintage;Verde short Años 60 - Estilo Vintage
+P0429;Short;Años 60;Verde;Liso;Ajustado;42;Vintage;Verde short Años 60 - Estilo Formal
+P0430;Short;Años 60;Verde;Encaje;Casual;M;Zara;Verde short Años 60 - Estilo Casual
+P0431;Short;Años 60;Verde;Liso;Formal;S;H&M;Verde short Años 60 - Estilo Vintage
+P0432;Short;Años 70;Teal;Liso;Ajustado;S;Depop;Teal short Años 70 - Estilo Casual
+P0433;Short;Años 70;Teal;Denim;Casual;S;Vestiaire;Teal short Años 70 - Estilo Casual
+P0434;Short;Años 70;Teal;Encaje;Casual;M;Depop;Teal short Años 70 - Estilo Ajustado
+P0435;Short;Años 70;Caqui;Denim;Vintage;XS;Zara;Caqui short Años 70 - Estilo Ajustado
+P0436;Short;Años 80;Plateado;Terciopelo;Vintage;42;Vestiaire;Plateado short Años 80 - Estilo Recto
+P0437;Short;Años 80;Rojo;Terciopelo;Deportivo;L;Uniqlo;Rojo short Años 80 - Estilo Recto
+P0438;Short;Años 80;Negro;Gráfico;Recto;40;Vestiaire;Negro short Años 80 - Estilo Recto
+P0439;Short;Años 80;Negro;Denim;Oversize;S;Zara;Negro short Años 80 - Estilo Oversize
+P0440;Short;Años 80;Negro;Cuero;Oversize;40;Vintage;Negro short Años 80 - Estilo Formal
+P0441;Short;Años 80;Negro;Encaje;Vintage;42;H&M;Negro short Años 80 - Estilo Recto
+P0442;Short;Años 90;Negro;Encaje;Ajustado;36;Vintage;Negro short Años 90 - Estilo Ajustado
+P0443;Short;Años 90;Caqui;Terciopelo;Formal;OneSize;Pinterest;Caqui short Años 90 - Estilo Oversize
+P0444;Short;Años 90;Caqui;Denim;Recto;OneSize;Vestiaire;Caqui short Años 90 - Estilo Formal
+P0445;Short;Años 90;Negro;Holográfico;Athleisure;OneSize;H&M;Negro short Años 90 - Estilo Oversize
+P0446;Short;Años 90;Negro;Cuero;Ajustado;S;Pinterest;Negro short Años 90 - Estilo Ajustado
+P0447;Short;Años 90;Negro;Terciopelo;Deportivo;XS;Depop;Negro short Años 90 - Estilo Deportivo
+P0448;Short;Retro;Azul Desteñido;Denim;Ajustado;XL;Vestiaire;Azul Desteñido short Retro - Estilo Vintage
+P0449;Short;Retro;Caqui Faded;Terciopelo;Athleisure;M;Uniqlo;Caqui Faded short Retro - Estilo Recto
+P0450;Short;Retro;Azul Desteñido;Denim;Vintage;XS;Zara;Azul Desteñido short Retro - Estilo Recto
+P0451;Short;Retro;Caqui Faded;Holográfico;Oversize;36;Vintage;Caqui Faded short Retro - Estilo Casual
+P0452;Short;Retro;Caqui Faded;Denim;Vintage;41;H&M;Caqui Faded short Retro - Estilo Oversize
+P0453;Short;Retro;Caqui Faded;Liso;Oversize;40;Vestiaire;Caqui Faded short Retro - Estilo Recto
+P0454;Short;Vintage;Negro;Denim;Casual;39;Vestiaire;Negro short Vintage - Estilo Casual
+P0455;Short;Vintage;Teal Antiguo;Liso;Formal;38;Grailed;Teal Antiguo short Vintage - Estilo Deportivo
+P0456;Short;Vintage;Teal Antiguo;Denim;Recto;42;Zara;Teal Antiguo short Vintage - Estilo Formal
+P0457;Short;Vintage;Teal Antiguo;Liso;Formal;S;Pinterest;Teal Antiguo short Vintage - Estilo Recto
+P0458;Short;Vintage;Teal Antiguo;Floral;Ajustado;XS;Pinterest;Teal Antiguo short Vintage - Estilo Vintage
+P0459;Short;Vintage;Teal Antiguo;Cuero;Deportivo;40;Zara;Teal Antiguo short Vintage - Estilo Recto
+P0460;Short;Tumblr;Gris;Gráfico;Oversize;37;Grailed;Gris short Tumblr - Estilo Deportivo
+P0461;Short;Tumblr;Negro;Liso;Ajustado;XS;Grailed;Negro short Tumblr - Estilo Deportivo
+P0462;Short;Tumblr;Gris;Terciopelo;Vintage;40;Pinterest;Gris short Tumblr - Estilo Recto
+P0463;Short;Tumblr;Gris;Gráfico;Formal;S;H&M;Gris short Tumblr - Estilo Vintage
+P0464;Short;Tumblr;Gris;Liso;Oversize;40;Pinterest;Gris short Tumblr - Estilo Casual
+P0465;Short;Tumblr;Blanco;Gráfico;Vintage;XL;Zara;Blanco short Tumblr - Estilo Oversize
+P0466;Short;Tumblr;Blanco;Terciopelo;Oversize;42;Grailed;Blanco short Tumblr - Estilo Recto
+P0467;Short;Tumblr;Blanco;Encaje;Athleisure;OneSize;Grailed;Blanco short Tumblr - Estilo Athleisure
+P0468;Calzado;Años 50;Marrón;Encaje;Casual;OneSize;Uniqlo;Marrón calzado Años 50 - Estilo Ajustado
+P0469;Calzado;Años 50;Marrón;Cuero;Athleisure;36;Vintage;Marrón calzado Años 50 - Estilo Recto
+P0470;Calzado;Años 50;Marrón;Gráfico;Casual;L;Grailed;Marrón calzado Años 50 - Estilo Recto
+P0471;Calzado;Años 50;Negro;Terciopelo;Oversize;M;Uniqlo;Negro calzado Años 50 - Estilo Ajustado
+P0472;Calzado;Años 60;Blanco;Liso;Recto;S;Uniqlo;Blanco calzado Años 60 - Estilo Ajustado
+P0473;Calzado;Años 60;Blanco;Denim;Casual;S;Zara;Blanco calzado Años 60 - Estilo Ajustado
+P0474;Calzado;Años 60;Naranja;Floral;Deportivo;L;Vestiaire;Naranja calzado Años 60 - Estilo Oversize
+P0475;Calzado;Años 60;Negro;Encaje;Deportivo;42;Zara;Negro calzado Años 60 - Estilo Oversize
+P0476;Calzado;Años 70;Teal;Gráfico;Recto;OneSize;Vestiaire;Teal calzado Años 70 - Estilo Ajustado
+P0477;Calzado;Años 70;Teal;Floral;Deportivo;39;Pinterest;Teal calzado Años 70 - Estilo Vintage
+P0478;Calzado;Años 70;Marrón;Gráfico;Recto;37;Pinterest;Marrón calzado Años 70 - Estilo Formal
+P0479;Calzado;Años 70;Caqui;Gráfico;Formal;L;Uniqlo;Caqui calzado Años 70 - Estilo Oversize
+P0480;Calzado;Años 80;Negro;Holográfico;Athleisure;39;H&M;Negro calzado Años 80 - Estilo Recto
+P0481;Calzado;Años 80;Blanco;Floral;Formal;L;Uniqlo;Blanco calzado Años 80 - Estilo Ajustado
+P0482;Calzado;Años 80;Negro;Terciopelo;Recto;36;Vintage;Negro calzado Años 80 - Estilo Oversize
+P0483;Calzado;Años 80;Negro;Liso;Casual;S;Depop;Negro calzado Años 80 - Estilo Deportivo
+P0484;Calzado;Años 80;Negro;Encaje;Vintage;XS;Vintage;Negro calzado Años 80 - Estilo Ajustado
+P0485;Calzado;Años 80;Blanco;Floral;Athleisure;OneSize;Vintage;Blanco calzado Años 80 - Estilo Athleisure
+P0486;Calzado;Años 90;Negro;Floral;Athleisure;S;Uniqlo;Negro calzado Años 90 - Estilo Casual
+P0487;Calzado;Años 90;Blanco;Liso;Ajustado;36;Vintage;Blanco calzado Años 90 - Estilo Casual
+P0488;Calzado;Años 90;Blanco;Holográfico;Formal;XS;Vestiaire;Blanco calzado Años 90 - Estilo Casual
+P0489;Calzado;Años 90;Marrón;Floral;Recto;XS;Grailed;Marrón calzado Años 90 - Estilo Deportivo
+P0490;Calzado;Años 90;Negro;Encaje;Oversize;39;Vintage;Negro calzado Años 90 - Estilo Athleisure
+P0491;Calzado;Años 90;Gris;Floral;Vintage;L;H&M;Gris calzado Años 90 - Estilo Formal
+P0492;Calzado;Retro;Negro Vintage;Holográfico;Ajustado;M;Vestiaire;Negro Vintage calzado Retro - Estilo Recto
+P0493;Calzado;Retro;Negro Vintage;Denim;Formal;41;Vintage;Negro Vintage calzado Retro - Estilo Ajustado
+P0494;Calzado;Retro;Blanco Desteñido;Cuero;Vintage;XL;Depop;Blanco Desteñido calzado Retro - Estilo Vintage
+P0495;Calzado;Retro;Blanco Desteñido;Cuero;Ajustado;XS;Depop;Blanco Desteñido calzado Retro - Estilo Recto
+P0496;Calzado;Retro;Blanco Desteñido;Liso;Ajustado;L;Uniqlo;Blanco Desteñido calzado Retro - Estilo Recto
+P0497;Calzado;Retro;Negro Vintage;Holográfico;Casual;37;Zara;Negro Vintage calzado Retro - Estilo Vintage
+P0498;Calzado;Vintage;Marrón Cuero;Gráfico;Oversize;L;Zara;Marrón Cuero calzado Vintage - Estilo Casual
+P0499;Calzado;Vintage;Marrón Cuero;Liso;Oversize;42;Vintage;Marrón Cuero calzado Vintage - Estilo Casual
+P0500;Calzado;Vintage;Negro;Denim;Vintage;XS;Depop;Negro calzado Vintage - Estilo Recto

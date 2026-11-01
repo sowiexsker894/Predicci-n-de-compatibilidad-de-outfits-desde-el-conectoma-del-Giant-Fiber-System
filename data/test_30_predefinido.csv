@@ -1,0 +1,31 @@
+test_id,prenda_1,prenda_2,prenda_3,compatible,score_compatibilidad,razon
+T001,P0275,P0148,P0482,1,0.98,Classic monochrome - black + white never fails
+T002,P0296,P0063,P0209,1,0.8,Neutral base (beige) + statement piece works
+T003,P0332,P0371,P0381,1,0.85,Same era styling - cohesive 90s look
+T004,P0027,P0128,,1,0.82,Complementary colors - blue + tan is timeless
+T005,P0024,P0151,P0278,1,0.98,Denim + white tee - eternal basic combo
+T006,P0024,P0151,P0135,1,0.97,Oversize jacket + fitted pants - balanced proportion
+T007,P0167,P0473,,1,0.99,All vintage pieces - era consistency
+T008,P0259,P0182,,1,0.9,Neutral layer + pattern pop - sophisticated
+T009,P0081,P0312,,1,0.81,Soft tones - pastels coordinate naturally
+T010,P0167,P0473,P0046,1,0.72,Leather jacket + classic jeans - iconic pairing
+T011,P0024,P0151,P0135,1,0.97,Floral dress + denim jacket - classic contrast
+T012,P0017,P0323,,1,0.8,Burgundy + cream - warm neutral harmony
+T013,P0035,P0455,,1,0.76,Same color family - monochromatic elegance
+T014,P0259,P0182,P0395,1,0.75,Casual tee + dress pants - smart casual baseline
+T015,P0376,P0344,P0402,1,0.93,Vintage mix - all pieces from same decade
+T016,P0286,P0127,,0,0.06,Neon 80s + vintage 50s - eras too far apart
+T017,P0010,P0168,,0,0.07,Formal blazer + athleisure leggings - mixed codes
+T018,P0392,P0341,,0,0.09,Burgundy 70s + neon pink - clashing color scheme
+T019,P0180,P0453,,0,0.01,Three bold patterns - visual chaos
+T020,P0074,P0302,,0,0.11,Retro + Tumblr - incompatible aesthetics
+T021,P0188,P0342,,0,0.32,Heavy formal wear + sportswear - style contradiction
+T022,P0245,P0016,,0,0.07,Mustard + hot pink - colors fight
+T023,P0494,P0474,,0,0.31,Ball gown + sneakers - occasion mismatch
+T024,P0239,P0349,,0,0.09,Oversized coat + oversized pants - proportion disaster
+T025,P0112,P0425,,0,0.13,All bright neons - overwhelming chromatic clash
+T026,P0416,P0107,,0,0.05,1950s polka dot + Y2K cargo - era collision
+T027,P0148,P0332,,0,0.11,Silk dress + motorcycle boots + floral blouse - no cohesion
+T028,P0109,P0403,,0,0.21,Black formal + rainbow accesories - vibe mismatch
+T029,P0265,P0255,,0,0.1,Grunge + glam - opposite aesthetics
+T030,P0440,P0320,,0,0.1,Three different patterns - no visual anchor
