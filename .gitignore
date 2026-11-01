@@ -14,3 +14,6 @@ models/
 Thumbs.db
 desktop.ini
 ~$*
+
+# Datos externos descargados (se regeneran con notebooks/hito3/00_polyvore_descarga.ipynb)
+data/external/
