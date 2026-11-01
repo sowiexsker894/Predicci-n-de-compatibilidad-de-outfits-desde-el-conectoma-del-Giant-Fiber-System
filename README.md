@@ -4,6 +4,8 @@ Proyecto del curso de Machine Learning (UPC). Recomendador de outfits en dos eta
 
 El plan vigente del Hito 3 está en [`docs/REVISION_Hito2_y_brechas_Hito3.md`](docs/REVISION_Hito2_y_brechas_Hito3.md), §12.
 
+Los hallazgos y decisiones con sus cifras, listos para el informe, están en [`docs/HALLAZGOS_HITO3.md`](docs/HALLAZGOS_HITO3.md).
+
 ## Estructura
 
 ```
