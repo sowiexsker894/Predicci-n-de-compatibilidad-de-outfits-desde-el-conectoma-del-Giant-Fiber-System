@@ -159,7 +159,24 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 - **Muestra:** 25 prendas por slot (8 slots → **200**), al azar con semilla fija (2026), entre las 60 486 prendas de outfits vestibles **que tienen foto** (hace falta verla para juzgar). En la muestra, el tono de 141 prendas viene de la foto y el de 59 del nombre, así que también se mide la precisión de cada fuente.
 - Solo se bajan esas 200 fotos de Kaggle (7 MB; no se suben a git). Planilla: `data/revision/polyvore_muestra_revision.xlsx`, con la miniatura de la foto y columnas `ok_<atributo>` (si / no / `-` si es desconocido o no aplica).
 - **Regla escrita antes de revisar** (en el notebook): qué cuenta como neutro, suave y fuerte; liso = no se ve estampado; el estilo solo se marca `no` si claramente no corresponde.
-- **Resultado:** *pendiente de la revisión de Nicole* → `results/hito3/validacion_atributos.csv`.
+- **Cómo se revisó (02/11/2026):** Nicole revisó las 200 filas y corrigió escribiendo directamente sobre la columna del atributo; lo que no cambió lo dio por correcto. El notebook convierte eso en marcas (`incorporar_ediciones`): valor conocido cambiado = `no`; valor sin cambio = `si` (*aceptación implícita*); desconocido rellenado = etiqueta manual, que no cuenta como error. La planilla tal como ella la guardó queda en el historial de git (commit `ed88f5f`).
+- **Resultado** (`results/hito3/validacion_atributos.csv`, IC 95 % de Wilson):
+
+  | atributo | revisadas | correctas | precisión | IC 95 % |
+  |---|---|---|---|---|
+  | slot | 200 | 200 | 100 % | 98,1–100 |
+  | tono | 200 | 200 | 100 % | 98,1–100 |
+  | familia de color | 200 | 200 | 100 % | 98,1–100 |
+  | patrón | 199 | 198 | 99,5 % | 97,2–99,9 |
+  | material | 70 | 70 | 100 % | 94,8–100 |
+  | estilo | 30 | 28 | 93,3 % | 78,7–98,2 |
+  | calce | 20 | 20 | 100 % | 83,9–100 |
+  | largo | 23 | 23 | 100 % | 85,7–100 |
+
+  Errores encontrados: un bolso marcado *liso* que es de cuadros, y dos zapatillas urbanas (Converse, Stan Smith) marcadas *athleisure* que la revisora considera *casual*. → *Fase 5 · Evaluación.*
+- **⚠ Cautela al informar el color:** el 100 % de tono no cuadra con el acuerdo texto–foto del paso 3b (57 % de tono exacto). Con aceptación implícita, un error que no se ve a simple vista cuenta como correcto. En el informe, estas cifras deben presentarse como **cota superior**, junto con el 57 % / 77 % del paso 3b. *(Pendiente: re-chequeo dirigido del color.)* → *Limitaciones.*
+- **Hallazgo — estilo desconocido:** donde el método dejó el estilo *desconocido*, la revisora pudo asignarlo en 66 prendas: formal 24, casual 23, vintage 8, athleisure 6, deportivo 2 (más 3 valores fuera del vocabulario: "verano" ×2, "collar" ×1, que no se cuentan). Es decir, el 82 % de estilo desconocido no significa que la prenda no tenga estilo, sino que el nombre no lo dice; la mayoría son casual o formal. → *Fase 2 · Calidad / Limitaciones.*
+- También rellenó 5 materiales desconocidos (cuero 2, seda 2, lana 1).
 
 ### Paso 4b · Partición 70/15/15 sin fuga de productos (`notebooks/hito3/03_particion.ipynb`)
 

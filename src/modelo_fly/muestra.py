@@ -21,7 +21,7 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.worksheet.datavalidation import DataValidation
 from PIL import Image
 
-from .esquema import DESCONOCIDO, NO_APLICA
+from .esquema import DESCONOCIDO, NO_APLICA, valores_validos
 
 DATASET = "akshaypujari124/polyvore-images"
 PREFIJO = "Re-PolyVore/Re-PolyVore/Re-PolyVore"
@@ -76,12 +76,14 @@ def escribir_planilla(muestra, carpeta_fotos, ruta, previa=None):
     Si `previa` trae respuestas ya escritas (misma `item_key`), se conservan.
     """
     info = ["n", "item_key", "foto", "name", "categoria", *A_REVISAR, "origen_tono"]
-    manual = [f"ok_{a}" for a in A_REVISAR] + ["correccion", "nota"]
+    ok = [f"ok_{a}" for a in A_REVISAR]
+    manual = ok + [f"corr_{a}" for a in A_REVISAR] + ["correccion", "nota"]
     df = muestra.copy()
     df.insert(0, "n", range(1, len(df) + 1))
     df["foto"] = ""
     for a in A_REVISAR:
         df[f"ok_{a}"] = df[a].map(lambda v: "-" if v in (DESCONOCIDO, NO_APLICA) else "")
+        df[f"corr_{a}"] = ""
     df["correccion"] = df["nota"] = ""
     if previa is not None:
         previa = previa.set_index("item_key")
@@ -114,12 +116,55 @@ def escribir_planilla(muestra, carpeta_fotos, ruta, previa=None):
         ws.column_dimensions[ws.cell(row=1, column=j).column_letter].width = anchos.get(c, 11)
     dv = DataValidation(type="list", formula1='"' + ",".join(RESPUESTAS) + '"', allow_blank=True)
     ws.add_data_validation(dv)
-    for c in manual[:-2]:
+    for c in ok:
         letra = ws.cell(row=1, column=columnas.index(c) + 1).column_letter
         dv.add(f"{letra}2:{letra}{len(df) + 1}")
     ws.freeze_panes = "D2"
     wb.save(ruta)
     return df
+
+
+def incorporar_ediciones(muestra, previa, revisada_completa):
+    """Pasa a las columnas manuales lo que se corrigió escribiendo sobre la columna del atributo.
+
+    - Valor conocido cambiado → `ok_<a> = no` y el valor nuevo en `corr_<a>`.
+    - Desconocido o no aplica rellenado → `ok_<a>` sigue en `-` (no es un error del método) y el
+      valor va a `corr_<a>` como etiqueta manual.
+    - Si quien revisó declara que revisó todo (`revisada_completa`), un valor conocido que no
+      cambió y no tiene marca cuenta como `si`.
+    Devuelve la planilla previa con esas columnas y la lista de valores fuera del vocabulario.
+    """
+    previa = previa.copy()
+    base = muestra.set_index("item_key")
+    fuera = []
+    for a in A_REVISAR:
+        ok, corr = f"ok_{a}", f"corr_{a}"
+        for c in (ok, corr):
+            if c not in previa.columns:
+                previa[c] = ""
+        original = previa["item_key"].map(base[a])
+        escrito = previa[a].astype(str).str.strip().str.lower()
+        cambio = escrito.ne(original) & escrito.ne("")
+        desconocido = original.isin([DESCONOCIDO, NO_APLICA])
+        previa.loc[cambio, corr] = escrito[cambio]
+        previa.loc[cambio & ~desconocido & previa[ok].isin(["", "si"]), ok] = "no"
+        if revisada_completa:
+            previa.loc[~cambio & ~desconocido & previa[ok].eq(""), ok] = "si"
+        previa[a] = original
+        validos = valores_validos(a)
+        for i in previa.index[cambio & ~previa[corr].isin(validos)]:
+            fuera.append((previa.at[i, "item_key"], a, previa.at[i, corr]))
+    return previa, fuera
+
+
+def etiquetas_manuales(revision):
+    """Valores escritos a mano donde el método dejó desconocido (atributo, valor, prendas)."""
+    filas = []
+    for a in A_REVISAR:
+        m = revision[revision[f"ok_{a}"].eq("-") & revision[f"corr_{a}"].ne("")]
+        for v, n in m[f"corr_{a}"].value_counts().items():
+            filas.append({"atributo": a, "valor_manual": v, "prendas": n})
+    return pd.DataFrame(filas, columns=["atributo", "valor_manual", "prendas"])
 
 
 def wilson(k, n, z=1.96):

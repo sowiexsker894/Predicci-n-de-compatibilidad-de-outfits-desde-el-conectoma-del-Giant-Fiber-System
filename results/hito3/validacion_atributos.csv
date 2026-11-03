@@ -1,9 +1,9 @@
 ﻿atributo;revisadas;correctas;precision_%;ic95_bajo_%;ic95_alto_%;sin_marcar
-slot;0;0;;;;200
-tono;0;0;;;;200
-familia_color;0;0;;;;200
-patron;0;0;;;;199
-material;0;0;;;;69
-estilo;0;0;;;;30
-calce;0;0;;;;20
-largo;0;0;;;;23
+slot;200;200;100.0;98.1;100.0;0
+tono;200;200;100.0;98.1;100.0;0
+familia_color;200;200;100.0;98.1;100.0;0
+patron;199;198;99.5;97.2;99.9;0
+material;70;70;100.0;94.8;100.0;0
+estilo;30;28;93.3;78.7;98.2;0
+calce;20;20;100.0;83.9;100.0;0
+largo;23;23;100.0;85.7;100.0;0
