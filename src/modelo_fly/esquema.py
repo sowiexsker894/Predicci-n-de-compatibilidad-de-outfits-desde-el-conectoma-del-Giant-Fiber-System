@@ -11,13 +11,14 @@ SLOTS = ["arriba", "abajo", "vestido", "exterior", "calzado", "bolso", "accesori
 
 TONOS = [
     "negro", "blanco", "crema", "gris", "beige", "marron",
-    "azul", "teal", "verde", "rojo", "rosa", "naranja", "amarillo", "morado", "plateado",
+    "azul", "teal", "verde", "rojo", "rosa", "naranja", "amarillo", "morado", "plateado", "dorado",
 ]
 # Familias de color para las reglas C1/C2 (revisión §2.5).
 FAMILIAS_COLOR = ["neutro", "suave", "fuerte"]
 
-PATRONES = ["liso", "floral", "grafico", "holografico"]
-MATERIALES = ["cuero", "denim", "encaje", "terciopelo"]
+# Los del catálogo propio más los que aparecen en Polyvore (01/11/2026).
+PATRONES = ["liso", "floral", "grafico", "holografico", "rayas", "cuadros", "lunares", "animal", "estampado"]
+MATERIALES = ["cuero", "denim", "encaje", "terciopelo", "gamuza", "lana", "seda", "algodon", "punto"]
 
 ESTILOS = ["casual", "formal", "deportivo", "athleisure", "vintage"]
 CALCES = ["oversize", "ajustado", "recto"]
