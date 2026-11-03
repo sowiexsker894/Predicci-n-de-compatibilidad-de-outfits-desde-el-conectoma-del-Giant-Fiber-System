@@ -61,9 +61,9 @@ def descargar_fotos(muestra, carpeta):
         return [x for x in ex.map(bajar, pendientes) if x]
 
 
-def _miniatura(ruta):
+def _miniatura(ruta, lado=MINIATURA):
     img = Image.open(ruta).convert("RGB")
-    img.thumbnail((MINIATURA, MINIATURA))
+    img.thumbnail((lado, lado))
     buf = io.BytesIO()
     img.save(buf, format="PNG")
     buf.seek(0)
@@ -165,6 +165,48 @@ def etiquetas_manuales(revision):
         for v, n in m[f"corr_{a}"].value_counts().items():
             filas.append({"atributo": a, "valor_manual": v, "prendas": n})
     return pd.DataFrame(filas, columns=["atributo", "valor_manual", "prendas"])
+
+
+def escribir_planilla_color(muestra, carpeta_fotos, ruta, previa=None, lado=180):
+    """Planilla corta para revisar solo el color, a ciegas: foto grande, tono y familia, sin el nombre
+    ni de dónde salió el color. Conserva las respuestas de `previa` (misma `item_key`)."""
+    columnas = ["n", "item_key", "foto", "tono", "familia_color", "ok_tono", "ok_familia_color", "tono_correcto", "nota"]
+    manual = columnas[5:]
+    df = muestra[["item_key", "tono", "familia_color"]].copy()
+    df.insert(0, "n", range(1, len(df) + 1))
+    df["foto"] = ""
+    for c in manual:
+        df[c] = ""
+    if previa is not None:
+        previa = previa.set_index("item_key")
+        for c in manual:
+            if c in previa.columns:
+                df[c] = df["item_key"].map(previa[c]).fillna("").astype(str).str.strip()
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "color"
+    ws.append(columnas)
+    for j, c in enumerate(columnas, start=1):
+        celda = ws.cell(row=1, column=j)
+        celda.font = Font(bold=True)
+        celda.fill = PatternFill("solid", fgColor="FFF2CC" if c in manual else "DDDDDD")
+    for i, (_, f) in enumerate(df.iterrows(), start=2):
+        ws.append([f[c] for c in columnas])
+        ws.row_dimensions[i].height = lado * 0.78
+        foto = ruta_foto(carpeta_fotos, muestra.iloc[i - 2])
+        if foto.exists():
+            ws.add_image(_miniatura(foto, lado), f"C{i}")
+        for j in range(1, len(columnas) + 1):
+            ws.cell(row=i, column=j).alignment = Alignment(vertical="center", horizontal="center", wrap_text=True)
+    for letra, ancho in zip("ABCDEFGHI", [5, 13, 27, 14, 15, 11, 16, 16, 28]):
+        ws.column_dimensions[letra].width = ancho
+    dv = DataValidation(type="list", formula1='"si,no"', allow_blank=True)
+    ws.add_data_validation(dv)
+    dv.add(f"F2:G{len(df) + 1}")
+    ws.freeze_panes = "D2"
+    wb.save(ruta)
+    return df
 
 
 def wilson(k, n, z=1.96):
