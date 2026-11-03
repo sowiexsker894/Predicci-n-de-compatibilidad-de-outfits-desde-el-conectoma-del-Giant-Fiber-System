@@ -197,6 +197,56 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
 ---
 
+## Etapa 4 · Negativos y reglas de armonía (`notebooks/hito3/04_negativos_reglas.ipynb`)
+
+*(En el plan §12.10 este notebook se llamaba `02_reglas_y_negativos`; se renumeró porque la validación y la partición ocuparon el 02 y el 03.)*
+
+### Negativos (etiqueta TTMn: real = 1 / falso = 0)
+
+- **Dos negativos por outfit real**, siempre con productos de **la misma partición** del paso 4b (así la partición sigue sin fuga):
+  - `aleatorio`: se cambian **todas** las prendas por otras del mismo slot (protocolo de compatibilidad de Han et al., 2017).
+  - `dificil`: se cambia **una sola** prenda por otra del mismo slot y, si se conoce, del mismo estilo (riesgo §12.11, "negativos demasiado fáciles").
+- **Controles:** 30 024 negativos (15 012 de cada tipo); 100 % con los mismos slots y el mismo número de prendas que su real (no reaparece el atajo `n_prendas` del Hito 2); 100 % de los productos en su partición; 0 negativos iguales a un outfit real y 0 repetidos. → *Fase 3 · Preparación.*
+- Total para la fase 2: **45 036 outfits** (train 31 875, valid 6 582, test 6 579; 1/3 reales). En la etapa 7 se decide si se entrena con uno o los dos tipos de negativo.
+- **Decisión técnica:** se trabaja por producto (`tid`); se verificó que un mismo producto tiene siempre los mismos atributos en todos sus outfits.
+
+### Reglas de armonía (etiqueta DLMn: 0–7)
+
+- **Cómo se calculan** (`src/modelo_fly/reglas.py`): el score es el número de reglas **no violadas**; una regla que no aplica cuenta como cumplida (§12.4). Los atributos desconocidos se ignoran. → *Fase 3.*
+
+  | Regla | Cómo se mide con los datos que hay |
+  |---|---|
+  | C1 | Como máximo 2 tonos no neutros distintos y 1 tono fuerte |
+  | C2 | Si hay ≥ 2 tonos no neutros, al menos una prenda neutra |
+  | P1 | Si hay dos tipos de estampado distintos, deben compartir un tono (**aproximación** del "color de fondo") |
+  | P2 | No repetir el mismo tipo de estampado (**aproximación** de "misma escala y familia") |
+  | P3 | Si hay ≥ 2 prendas estampadas, al menos una prenda de ropa lisa |
+  | E1 | Como máximo una prenda de ropa oversize (necesita ≥ 2 prendas de ropa con calce conocido) |
+  | Ep1 | No todas las prendas de ropa de la misma década (necesita ≥ 2 con década concreta; "contemporáneo" y "vintage genérico" no son década) |
+
+- **Limitación:** Polyvore no trae la escala del estampado ni su color de fondo, así que P1 y P2 son aproximaciones. Las fuentes de cada regla siguen en §12.9 de la revisión (hay que verificar las citas). → *Limitaciones.*
+
+### Hallazgos
+
+- **Cuánto aplica cada regla en los outfits reales:** C1 58,5 %, C2 15,6 %, P2 y P3 9,0 %, P1 4,3 %, E1 3,2 %, **Ep1 0 %** (ningún outfit de Polyvore tiene dos prendas con década concreta: el 97 % es contemporáneo). Ep1 solo podrá actuar con el catálogo propio. → *Fase 2 / Limitaciones.*
+- **El score casi siempre es alto:** el **80,8 %** de los outfits reales tiene 7/7 (reglas que no aplican cuentan como cumplidas). La etiqueta DLMn está muy desbalanceada; conviene reportar MAE junto con un baseline que siempre prediga 7. → *Fase 4 · Modelado.*
+- **Las reglas sí separan algo lo real de lo falso, pero poco:**
+
+  | | score medio real | score medio negativo | AUC del score | Mann-Whitney (p) |
+  |---|---|---|---|---|
+  | aleatorio | 6,768 | 6,678 | **0,539** | 1,8·10⁻⁵⁸ |
+  | difícil | 6,768 | 6,740 | 0,512 | 2,2·10⁻⁷ |
+
+  La diferencia es estadísticamente significativa pero pequeña. Eso **apoya el diseño de dos salidas**: las reglas (DLMn) no bastan para saber si un outfit es real (TTMn), así que el modelo tiene que aprender algo más que las reglas. → *Fase 5 · Evaluación / Discusión.*
+- **Regla por regla** (% de outfits que la violan, real vs. aleatorio): C1 **13,3 % vs 21,0 %** (la que más separa), P1 3,0 % vs 5,3 %, P3 1,6 % vs 2,4 %. **P2 va al revés:** los outfits reales repiten el mismo tipo de estampado **más** que los aleatorios (3,4 % vs 2,3 %). Es decir, la gente sí combina estampados iguales (conjuntos de dos piezas, rayas con rayas), y esa regla de la literatura no se cumple en Polyvore. C2 casi nunca se viola (≈ 1 %): casi todos los outfits tienen alguna prenda neutra. → *Discusión (hallazgo interesante para el informe).*
+
+### Salidas (en git)
+
+- `data/processed/hito3/fase2_outfits.csv`: 45 036 filas (outfit_id, tipo, real, partición, productos, aplica/cumple por regla, score).
+- `data/processed/hito3/fase2_productos.csv`: 65 366 productos con sus atributos. Con estos dos archivos las etapas siguientes no necesitan volver a descargar Polyvore.
+
+---
+
 ## Limitaciones para la sección de conclusiones
 
 1. El gusto de los usuarios es **simulado**; lo real es qué combinan las personas (Polyvore).
@@ -205,3 +255,4 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 4. El catálogo propio fue generado por una IA y sus atributos son casi aleatorios; se usa solo como prendas de clóset.
 5. El color se validó a ciegas en 40 prendas: tono correcto 82,5 % (IC 68–91 %) y familia 92,5 % (IC 80–97 %); la muestra es chica. La foto y el nombre coinciden solo en el 57 % de los tonos, y las prendas multicolor reciben un solo tono; el 17,3 % de las prendas sigue sin color (el nombre no lo dice y la copia Re-PolyVore no trae la foto).
 6. Para que ningún producto quede en dos particiones, la partición es 70,8/14,6/14,6 y valid/test tienen más vestidos que train (37 % frente a 24 %); los productos más populares (el grupo grande) solo están en train.
+7. Las reglas P1 y P2 son aproximaciones (no hay escala ni color de fondo del estampado), Ep1 no aplica a ningún outfit de Polyvore, y el 80,8 % de los outfits reales tiene score 7/7: la etiqueta DLMn tiene poca variación.
