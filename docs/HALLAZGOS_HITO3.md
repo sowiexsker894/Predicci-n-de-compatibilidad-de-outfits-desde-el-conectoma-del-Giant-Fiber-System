@@ -174,7 +174,17 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
   | largo | 23 | 23 | 100 % | 85,7–100 |
 
   Errores encontrados: un bolso marcado *liso* que es de cuadros, y dos zapatillas urbanas (Converse, Stan Smith) marcadas *athleisure* que la revisora considera *casual*. → *Fase 5 · Evaluación.*
-- **⚠ Cautela al informar el color:** el 100 % de tono no cuadra con el acuerdo texto–foto del paso 3b (57 % de tono exacto). Con aceptación implícita, un error que no se ve a simple vista cuenta como correcto. En el informe, estas cifras deben presentarse como **cota superior**, junto con el 57 % / 77 % del paso 3b. *(Pendiente: re-chequeo dirigido del color.)* → *Limitaciones.*
+- **⚠ Cautela al informar el color:** el 100 % de tono no cuadra con el acuerdo texto–foto del paso 3b (57 % de tono exacto). Con aceptación implícita, un error que no se ve a simple vista cuenta como correcto. Por eso el color se volvió a revisar aparte (siguiente punto), y el 100 % de la tabla de arriba debe presentarse solo como **cota superior**. → *Limitaciones.*
+- **Re-chequeo del color a ciegas (02/11/2026, `results/hito3/validacion_color.csv`):** 40 prendas (5 por slot, de la muestra de 200, semilla 7), con la foto grande y **sin el nombre ni el origen del color**; cada fila se marcó explícitamente (0 sin marcar).
+
+  | | revisadas | tono correcto | IC 95 % | familia correcta | IC 95 % |
+  |---|---|---|---|---|---|
+  | **todas** | 40 | **82,5 %** | 68,0–91,3 | **92,5 %** | 80,1–97,4 |
+  | color de la foto | 30 | 86,7 % | 70,3–94,7 | 93,3 % | 78,7–98,2 |
+  | color del nombre | 10 | 70,0 % | 39,7–89,2 | 90,0 % | 59,6–98,2 |
+
+  Estas son las **cifras a informar** para el color. Los 7 tonos marcados como incorrectos: marrón → "marrón claro", negro → "vino", blanco → "hueso", plateado → negro, negro → blanco, blanco → "acuamarina", marrón → "colorido" (prenda multicolor). Varios son matices (hueso ≈ crema, marrón claro ≈ beige), así que la cifra es estricta. Las 3 familias incorrectas: dos que la revisora ve *suaves* (marcadas fuerte y neutro) y una naranja que ve *neutra*. → *Fase 5 · Evaluación.*
+- **Lectura:** el color de la foto acierta más (87 %) que su acuerdo con el nombre (57 %, paso 3b); eso indica que buena parte del desacuerdo viene del **nombre** (colores de un detalle, nombres de fantasía), no de la foto. Con solo 10 casos, la precisión del color del nombre (70 %) tiene un intervalo muy ancho. Una limitación del método: las prendas multicolor reciben un solo tono. → *Fase 5 / Limitaciones.*
 - **Hallazgo — estilo desconocido:** donde el método dejó el estilo *desconocido*, la revisora pudo asignarlo en 66 prendas: formal 24, casual 23, vintage 8, athleisure 6, deportivo 2 (más 3 valores fuera del vocabulario: "verano" ×2, "collar" ×1, que no se cuentan). Es decir, el 82 % de estilo desconocido no significa que la prenda no tenga estilo, sino que el nombre no lo dice; la mayoría son casual o formal. → *Fase 2 · Calidad / Limitaciones.*
 - También rellenó 5 materiales desconocidos (cuero 2, seda 2, lana 1).
 
@@ -193,5 +203,5 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 2. Polyvore es mayoritariamente ropa de mujer (3 441 ítems de categorías de hombre de 142 480).
 3. Los atributos de Polyvore salen del texto y de la foto, no de etiquetas de expertos; se validan con una muestra manual de 200 prendas con foto (paso 4a; la muestra no cubre las prendas sin foto).
 4. El catálogo propio fue generado por una IA y sus atributos son casi aleatorios; se usa solo como prendas de clóset.
-5. El color de la foto coincide con el del nombre en el 57 % de los tonos y el 77 % de las familias (valid + test); el 17,3 % de las prendas sigue sin color (el nombre no lo dice y la copia Re-PolyVore no trae la foto).
+5. El color se validó a ciegas en 40 prendas: tono correcto 82,5 % (IC 68–91 %) y familia 92,5 % (IC 80–97 %); la muestra es chica. La foto y el nombre coinciden solo en el 57 % de los tonos, y las prendas multicolor reciben un solo tono; el 17,3 % de las prendas sigue sin color (el nombre no lo dice y la copia Re-PolyVore no trae la foto).
 6. Para que ningún producto quede en dos particiones, la partición es 70,8/14,6/14,6 y valid/test tienen más vestidos que train (37 % frente a 24 %); los productos más populares (el grupo grande) solo están en train.
