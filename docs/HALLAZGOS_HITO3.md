@@ -5,7 +5,7 @@ Registro de lo que se descubrió y se decidió en cada etapa del código, con la
 - **Plan completo y justificación:** `docs/REVISION_Hito2_y_brechas_Hito3.md` (§12 y §12.12).
 - **Dónde reproducir cada cifra:** el notebook indicado en cada sección.
 
-Última actualización: 01/11/2026.
+Última actualización: 05/11/2026.
 
 ---
 
@@ -247,6 +247,48 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
 ---
 
+## Etapa 5 · Conectoma del Giant Fiber System (`notebooks/hito3/05a_conectoma_descarga_colab.ipynb`, `05b_conectoma_red.ipynb`)
+
+*(`05a` se corre en Google Colab porque necesita el token de neuPrint, que se lee del secreto `NEUPRINT_TOKEN` y nunca se escribe. `05b` corre en local, sin token.)*
+
+### Descarga (05a, 05/11/2026)
+
+- **Es el mismo subgrafo del Hito 2:** MaleCNS v1.0 (`male-cns:v1.0`), 7 tipos (`LC4`, `LPLC2`, `DNp01`, `PSI`, `TTMn`, `DLMn a, b`, `DLMn c-f`) y **327 neuronas**. Se volvió a consultar por dos motivos: `nodes.csv`/`edges.csv` del Hito 2 no se guardaron en el repositorio, y faltaba el neurotransmisor para fijar el signo (Opción A). → *Fase 2 · Comprensión de los datos.*
+- **Corrección de una cifra del Hito 2:** **20 684 no son sinapsis, son conexiones** (pares pre→post distintos). El subgrafo tiene **79 950 sinapsis químicas**. Hay que corregirlo en el informe (revisión §1 dice "327 neuronas, 20 684 sinapsis"). → *Resumen de cambios respecto al Hito 2.*
+- **Control:** el peso total de cada par (`ConnectsTo.weight`) coincide en los 20 684 pares con la suma por ROI que usaba el Hito 2 (0 diferencias). No hay autoconexiones. → *Fase 3.*
+
+### Signo de cada conexión (`src/modelo_fly/conectoma.py`)
+
+- **Regla de decisión** del neurotransmisor de cada neurona: (1) `consensusNt` de MaleCNS si no es "unclear"; (2) si no, la predicción del tipo si su confianza es ≥ 0,5; (3) si no, la literatura para ese tipo. Signo: acetilcolina **+1**; glutamato, GABA e histamina **−1** (convención de Shiu et al., 2024, modelo de cerebro completo de *Drosophila*). El signo es el de la neurona **presináptica**. → *Fase 3 · Preparación / Fase 4 · Modelado.*
+
+  | Tipo | Neuronas | Lo que dice neuPrint | Confianza del tipo | Neurotransmisor usado | Origen | Signo |
+  |---|---|---|---|---|---|---|
+  | LC4 | 126 | acetilcolina | 0,96 | acetilcolina | consenso | + |
+  | LPLC2 | 185 | acetilcolina | 0,95 | acetilcolina | consenso | + |
+  | DNp01 (Giant Fiber) | 2 | acetilcolina | 0,53 | acetilcolina | consenso | + |
+  | PSI | 2 | unclear | 0,37 | acetilcolina | literatura | + |
+  | TTMn | 2 | consenso glutamato; predicción histamina | 0,52 | glutamato | consenso | − |
+  | DLMn a, b | 2 | unclear | 0,38 | glutamato | literatura | − |
+  | DLMn c-f | 8 | unclear | 0,45 | glutamato | literatura | − |
+
+- **12 de 327 neuronas** (PSI y los DLMn) no tienen neurotransmisor fiable en neuPrint y se toma de la literatura: PSI colinérgico (sinapsis PSI→DLMn) y motoneuronas glutamatérgicas. **Sergio: verificar y citar ambas fuentes** (p. ej. la revisión del GFS de Allen et al., 2006, y el uso de glutamato en la unión neuromuscular de *Drosophila*). → *Fase 3 / Limitaciones.*
+
+### Hallazgos
+
+- **La red es casi toda excitadora:** solo **55 de 20 684 conexiones (0,27 %)** y **166 de 79 950 sinapsis (0,21 %)** son inhibidoras, y todas salen de las motoneuronas (TTMn y DLMn hacia DNp01, PSI y entre DLMn). En el camino de entrada → decisión → salida **no hay ninguna conexión inhibidora**. Consecuencia para el modelo: en la Opción A el signo casi no restringe nada; lo que realmente aporta la biología es la **máscara** (qué neurona se conecta con cuál). Conviene decirlo en la discusión para no sobrevender el "signo por neurotransmisor". → *Fase 4 / Discusión.*
+- **La máscara es poco densa:** 19,3 % de los 327 × 327 pares posibles tienen conexión. → *Fase 4.*
+- **Casi toda la señal se queda en la entrada:** el **84,8 %** de las sinapsis son entre neuronas de entrada (LPLC2→LPLC2 46 178, LC4→LC4 18 392). Las **311 neuronas de entrada** conectan directo con el Giant Fiber (11 224 sinapsis). → *Fase 2 / Fase 4.*
+- **Cuello de botella en la salida:** todo pasa por **2 neuronas DNp01**. De ahí a TTMn hay solo 2 conexiones (90 sinapsis) y a PSI 4 conexiones (16 sinapsis); de PSI a los DLMn, 10 conexiones (449 sinapsis). Camino más corto desde la entrada: **2 saltos a TTMn** (entrada → GF → TTMn) y **3 a DLMn** (entrada → GF → PSI → DLMn), como describe la literatura del reflejo de escape. → *Fase 4 · Modelado (arquitectura) / Discusión.*
+- **Las sinapsis eléctricas no están:** neuPrint solo cuenta sinapsis químicas. Las conexiones GF→TTMn y GF→PSI son en buena parte **eléctricas** (gap junctions, ShakB), así que los pesos 90 y 16 subestiman justo el camino de salida (revisión §12, punto ya anotado). Para la Opción B (pesos fijos) esto pesa más que para la A, donde los pesos se aprenden. → *Limitaciones.*
+- **Figura:** `results/hito3/fig_conectoma_tipos.png`, sinapsis entre tipos (fila = envía, columna = recibe, con su signo). → *Fase 2.*
+
+### Salidas (en git)
+
+- Crudos de neuPrint: `data/processed/hito3/gfs_nodes.csv` (327 neuronas, 51 propiedades), `gfs_edges.csv` (20 684 conexiones), `gfs_meta.json` (dataset, fecha y versión).
+- Para el modelo: `gfs_neuronas.csv` (327 neuronas en el orden de la red: capa, tipo, lado, neurotransmisor, origen y signo; la columna `idx` es la fila/columna de la matriz) y `gfs_conexiones.csv` (aristas con `idx_pre`, `idx_post`, sinapsis y signo). Las etapas siguientes ya no necesitan el token.
+
+---
+
 ## Limitaciones para la sección de conclusiones
 
 1. El gusto de los usuarios es **simulado**; lo real es qué combinan las personas (Polyvore).
@@ -256,3 +298,4 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 5. El color se validó a ciegas en 40 prendas: tono correcto 82,5 % (IC 68–91 %) y familia 92,5 % (IC 80–97 %); la muestra es chica. La foto y el nombre coinciden solo en el 57 % de los tonos, y las prendas multicolor reciben un solo tono; el 17,3 % de las prendas sigue sin color (el nombre no lo dice y la copia Re-PolyVore no trae la foto).
 6. Para que ningún producto quede en dos particiones, la partición es 70,8/14,6/14,6 y valid/test tienen más vestidos que train (37 % frente a 24 %); los productos más populares (el grupo grande) solo están en train.
 7. Las reglas P1 y P2 son aproximaciones (no hay escala ni color de fondo del estampado), Ep1 no aplica a ningún outfit de Polyvore, y el 80,8 % de los outfits reales tiene score 7/7: la etiqueta DLMn tiene poca variación.
+8. El conectoma solo trae sinapsis químicas (las eléctricas GF→TTMn y GF→PSI no están); 12 de 327 neuronas (PSI y DLMn) no tienen neurotransmisor fiable en neuPrint y se toma de la literatura; y la red es casi toda excitadora (0,2 % de sinapsis inhibidoras), así que el signo por neurotransmisor restringe muy poco.
