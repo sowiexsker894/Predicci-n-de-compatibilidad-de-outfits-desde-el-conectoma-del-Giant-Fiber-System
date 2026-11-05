@@ -1,0 +1,37 @@
+{
+  "server": "https://neuprint.janelia.org",
+  "dataset": "male-cns:v1.0",
+  "neuprint_python": "0.6.4",
+  "fecha_descarga": "2026-11-05T18:06:54+00:00",
+  "tipos": [
+    "LC4",
+    "LPLC2",
+    "DNp01",
+    "PSI",
+    "TTMn",
+    "DLMn a, b",
+    "DLMn c-f"
+  ],
+  "capa": {
+    "LC4": "entrada",
+    "LPLC2": "entrada",
+    "DNp01": "decision",
+    "PSI": "decision",
+    "TTMn": "salida",
+    "DLMn a, b": "salida",
+    "DLMn c-f": "salida"
+  },
+  "columnas_nt": [
+    "consensusNt",
+    "celltypeTotalNtPredictions",
+    "predictedNt",
+    "totalNtPredictions",
+    "predictedNtConfidence",
+    "celltypePredictedNtConfidence",
+    "celltypePredictedNt"
+  ],
+  "n_neuronas": 327,
+  "n_conexiones": 20684,
+  "n_sinapsis": 79950,
+  "peso": "ConnectsTo.weight total del par (sinapsis químicas); neuPrint no trae sinapsis eléctricas"
+}
