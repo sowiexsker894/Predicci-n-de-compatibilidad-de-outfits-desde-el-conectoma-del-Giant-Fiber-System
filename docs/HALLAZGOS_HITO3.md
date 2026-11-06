@@ -5,7 +5,7 @@ Registro de lo que se descubrió y se decidió en cada etapa del código, con la
 - **Plan completo y justificación:** `docs/REVISION_Hito2_y_brechas_Hito3.md` (§12 y §12.12).
 - **Dónde reproducir cada cifra:** el notebook indicado en cada sección.
 
-Última actualización: 05/11/2026.
+Última actualización: 06/11/2026.
 
 ---
 
@@ -20,6 +20,7 @@ Registro de lo que se descubrió y se decidió en cada etapa del código, con la
 | Partición de los datos | 70 / 15 / 15 (train / validación / test) | 01/11/2026 | Fase 3 y Fase 5 |
 | Partición del DeepFM | Por usuario y en orden de fecha: de ~50 interacciones, 35 / 7 / 8 | 01/11/2026 | Fase 3 |
 | Color en Polyvore | Si el nombre no dice el color, se saca **de la foto del producto** (color dominante) | 01/11/2026 | Fase 3 · Preparación |
+| Usuarios simulados | 300 mixtos + 50 de transferencia (clóset 100 % propio); gusto = reglas + estilo + clima + neutros + **compatibilidad humana** aprendida de Polyvore | 06/11/2026 | Fase 3 · Preparación |
 
 ---
 
@@ -289,6 +290,47 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
 ---
 
+## Etapa 6 · Usuarios simulados (`notebooks/hito3/06_usuarios_simulados.ipynb`)
+
+*(En el plan §12.10 este notebook se llamaba `03_usuarios_simulados`; se renumeró.)*
+
+### Diseño (`src/modelo_fly/usuarios.py`) → *Fase 3 · Preparación de los datos*
+
+- **350 usuarios:** 300 **mixtos** (clóset 70 % Polyvore / 30 % catálogo propio; en promedio 41,7 + 17,9 prendas) y 50 de **transferencia** (clóset 100 % catálogo propio, 62,5 prendas en promedio) para la prueba de cambio de dominio (§12.12).
+- **Perfil:** arquetipo (minimalista 76, clásico 80, deportivo 71, vintage 62, atrevido 61), estilo favorito, edad (18–45), género (85 % mujer, porque Polyvore es casi todo ropa de mujer), ciudad del Perú y su clima (templado 216, frío 73, cálido 61). Los pesos de cada usuario salen de su arquetipo, perturbados al azar (log-normal, σ = 0,3). Se guardan todos (`usuarios.csv`) para medir si el DeepFM recupera los gustos programados.
+- **Clóset:** 40–80 prendas con cuotas por slot y **sesgo ×3 hacia su estilo favorito** (el 44 % de las prendas con estilo conocido son de su estilo). Las prendas Polyvore salen **solo de valid y test** de la partición del paso 4b: la fase 2 nunca las ve al entrenar.
+- **Outfits mostrados:** arriba + abajo + calzado, o vestido + calzado (30 %), más complementos con la frecuencia de los outfits reales (exterior 40 %, bolso 75 %, accesorio 45 %, joyería 55 %). Mayormente de 4 a 6 prendas, como en Polyvore.
+- **Gusto simulado:**
+  `utilidad = − Σ w_k · viola_k + b · coincide_estilo + c · clima + d · neutros + e · compatibilidad_humana`
+  `p(acepta) = sigmoide(1,5 · (utilidad − sesgo_u))`, donde el sesgo es la mediana de la utilidad del usuario (≈ 50 % de aceptación). Después la decisión se invierte con probabilidad de 5–10 % (ruido, §12.3).
+- **Decisión nueva: compatibilidad humana.** El plan §12.3 solo usaba reglas, estilo y clima, y eso hacía la etiqueta casi circular (el DLMn aprende las mismas reglas). Se añadió un término aprendido de Polyvore: para cada par de prendas se compara qué tan seguido aparecen juntos su tono, patrón, material y estilo (por slot) en outfits **reales** frente a negativos **aleatorios**, contado **solo en train**. Así el gusto también depende de lo que combinan las personas reales, que es lo que aprende TTMn. → *Fase 3 / Fase 4.*
+- **Historial:** 50 outfits por usuario, separados en promedio 3 días (2025). Partición temporal **35 / 7 / 8** (17 500 interacciones: 12 250 / 2 450 / 2 800).
+- **Controles:** ningún outfit se repite dentro de un usuario; **0 outfits** de test de un usuario aparecen en train de otro (regla §12.5; la primera versión tenía 14, todos de usuarios que comparten el catálogo propio, y se corrigió).
+
+### Hallazgos
+
+- **La compatibilidad humana separa lo real de lo falso mucho mejor que las reglas:** AUC en valid **0,702** contra 0,535 del score de reglas (negativos aleatorios); con negativos difíciles 0,562 contra 0,518. Es decir, en Polyvore hay una señal de "qué combina la gente" que las 7 reglas no capturan. → *Fase 2 · Comprensión / Discusión.*
+- **Aceptación:** 49,0 % global; el ruido invirtió el 7,4 % de las decisiones. Por arquetipo y partición se mueve entre 43 % y 54 %. → *Fase 3.*
+- **Qué explica las decisiones en test** (AUC contra lo aceptado):
+
+  | Señal | Todos | Mixtos | Transferencia |
+  |---|---|---|---|
+  | **Techo** (probabilidad real de la simulación) | **0,833** | 0,824 | 0,875 |
+  | Compatibilidad humana | 0,722 | 0,712 | 0,794 |
+  | Score de reglas (DLMn) | 0,622 | 0,619 | 0,635 |
+  | Coincide con el estilo favorito | 0,594 | 0,594 | 0,587 |
+  | Gusto por neutros | 0,584 | 0,586 | 0,567 |
+
+  Ninguna señal sola llega al techo: el modelo tiene que combinarlas y aprender los pesos de cada usuario. El techo (0,833) es el **máximo que puede lograr cualquier modelo**, porque el ruido no se puede predecir; conviene reportarlo junto a los resultados de la etapa 7. → *Fase 5 · Evaluación.*
+- **Figura:** `results/hito3/fig_usuarios_senales.png`. → *Fase 3 / Fase 5.*
+- **Casos borde:** 9 usuarios no aceptaron ningún outfit en valid y 3 ninguno en test; 2 aceptaron todo en valid. Para ellos Recall@K no se puede calcular y se excluyen de esa métrica (hay que decirlo en la etapa 7). → *Fase 5.*
+
+### Salidas (en git)
+
+- `data/processed/hito3/usuarios.csv` (350 usuarios con todos sus parámetros reales y su sesgo), `closets.csv` (user_id, item_id, origen, slot), `historial.csv` (17 500 interacciones con fecha, partición, reglas violadas, rasgos, utilidad, probabilidad real, si se invirtió y la decisión final) e `items_fase1.csv` (9 937 prendas de los clósets: 9 437 Polyvore + 500 propias, con sus atributos). Los ID de Polyvore llevan el prefijo `pv_`.
+
+---
+
 ## Limitaciones para la sección de conclusiones
 
 1. El gusto de los usuarios es **simulado**; lo real es qué combinan las personas (Polyvore).
@@ -299,3 +341,4 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 6. Para que ningún producto quede en dos particiones, la partición es 70,8/14,6/14,6 y valid/test tienen más vestidos que train (37 % frente a 24 %); los productos más populares (el grupo grande) solo están en train.
 7. Las reglas P1 y P2 son aproximaciones (no hay escala ni color de fondo del estampado), Ep1 no aplica a ningún outfit de Polyvore, y el 80,8 % de los outfits reales tiene score 7/7: la etiqueta DLMn tiene poca variación.
 8. El conectoma solo trae sinapsis químicas (las eléctricas GF→TTMn y GF→PSI no están); 12 de 327 neuronas (PSI y DLMn) no tienen neurotransmisor fiable en neuPrint y se toma de la literatura; y la red es casi toda excitadora (0,2 % de sinapsis inhibidoras), así que el signo por neurotransmisor restringe muy poco.
+9. Los usuarios y su gusto son simulados con 5 arquetipos; el término de compatibilidad humana viene de Polyvore (real), pero los pesos de cada usuario los fijamos nosotros. La edad, el género y la ciudad no influyen en el gusto salvo por el clima, así que el modelo no debería sacar nada de ellos.
