@@ -1,0 +1,17 @@
+{
+  "rama": "hito3/etapa7-modelos",
+  "dispositivo": "cuda",
+  "torch": "2.14.1+cu130",
+  "configuracion": {
+    "k": 8,
+    "dropout": 0.1,
+    "peso": 1e-05
+  },
+  "C_logistica": 0.01,
+  "semillas": [
+    0,
+    1,
+    2
+  ],
+  "minutos": 1.5
+}

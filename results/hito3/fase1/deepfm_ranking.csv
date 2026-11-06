@@ -1,0 +1,37 @@
+particion,modelo,columna,grupo,NDCG@5,Recall@5,HitRate@5,NDCG@10,Recall@10,HitRate@10,usuarios,excluidos
+valid,azar,azar,todos,0.49303,0.496,0.96571,0.48982,0.48971,1.0,350,0
+valid,azar,azar,mixto,0.49259,0.49667,0.96667,0.48915,0.48933,1.0,300,0
+valid,azar,azar,transferencia,0.49568,0.492,0.96,0.49379,0.492,1.0,50,0
+valid,techo (p_real),p_real,todos,0.89935,0.89543,1.0,0.87714,0.86457,1.0,350,0
+valid,techo (p_real),p_real,mixto,0.89563,0.89067,1.0,0.872,0.85833,1.0,300,0
+valid,techo (p_real),p_real,transferencia,0.92166,0.924,1.0,0.908,0.902,1.0,50,0
+valid,logistica,logreg,todos,0.67204,0.66571,0.98286,0.65533,0.64486,1.0,350,0
+valid,logistica,logreg,mixto,0.66509,0.65867,0.98667,0.64641,0.635,1.0,300,0
+valid,logistica,logreg,transferencia,0.71371,0.708,0.96,0.70886,0.704,1.0,50,0
+valid,deepfm,deepfm_s0,todos,0.72342,0.71657,0.98571,0.70441,0.69343,0.99714,350,0
+valid,deepfm,deepfm_s0,mixto,0.70834,0.70067,0.98333,0.69132,0.68067,0.99667,300,0
+valid,deepfm,deepfm_s0,transferencia,0.81389,0.812,1.0,0.78293,0.77,1.0,50,0
+valid,deepfm,deepfm_s1,todos,0.70844,0.70171,0.99143,0.68647,0.67286,1.0,350,0
+valid,deepfm,deepfm_s1,mixto,0.69168,0.68333,0.99,0.6732,0.66033,1.0,300,0
+valid,deepfm,deepfm_s1,transferencia,0.80898,0.812,1.0,0.76611,0.748,1.0,50,0
+valid,deepfm,deepfm_s2,todos,0.69373,0.69029,0.98857,0.67036,0.65771,1.0,350,0
+valid,deepfm,deepfm_s2,mixto,0.68149,0.676,0.99,0.65864,0.64533,1.0,300,0
+valid,deepfm,deepfm_s2,transferencia,0.76717,0.776,0.98,0.7407,0.732,1.0,50,0
+test,azar,azar,todos,0.49214,0.49314,0.96571,0.48927,0.48829,1.0,350,0
+test,azar,azar,mixto,0.4873,0.48933,0.96667,0.487,0.48733,1.0,300,0
+test,azar,azar,transferencia,0.52115,0.516,0.96,0.50293,0.494,1.0,50,0
+test,techo (p_real),p_real,todos,0.91864,0.92,1.0,0.90489,0.9,1.0,350,0
+test,techo (p_real),p_real,mixto,0.91638,0.91733,1.0,0.90316,0.89833,1.0,300,0
+test,techo (p_real),p_real,transferencia,0.93222,0.936,1.0,0.9153,0.91,1.0,50,0
+test,logistica,logreg,todos,0.69739,0.696,0.99714,0.68708,0.68114,1.0,350,0
+test,logistica,logreg,mixto,0.69536,0.69333,0.99667,0.68396,0.67733,1.0,300,0
+test,logistica,logreg,transferencia,0.70957,0.712,1.0,0.70586,0.704,1.0,50,0
+test,deepfm,deepfm_s0,todos,0.76684,0.75486,0.99429,0.74862,0.73457,1.0,350,0
+test,deepfm,deepfm_s0,mixto,0.76561,0.75333,0.99333,0.74622,0.73167,1.0,300,0
+test,deepfm,deepfm_s0,transferencia,0.77423,0.764,1.0,0.76299,0.752,1.0,50,0
+test,deepfm,deepfm_s1,todos,0.74456,0.73771,0.99429,0.72547,0.71286,1.0,350,0
+test,deepfm,deepfm_s1,mixto,0.74326,0.73267,0.99667,0.72232,0.707,1.0,300,0
+test,deepfm,deepfm_s1,transferencia,0.75236,0.768,0.98,0.74438,0.748,1.0,50,0
+test,deepfm,deepfm_s2,todos,0.73971,0.72914,0.99714,0.7265,0.716,1.0,350,0
+test,deepfm,deepfm_s2,mixto,0.74072,0.728,0.99667,0.7237,0.71067,1.0,300,0
+test,deepfm,deepfm_s2,transferencia,0.73365,0.736,1.0,0.74328,0.748,1.0,50,0

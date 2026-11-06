@@ -43,3 +43,53 @@ def resumen(candidatos, columna, ks=KS):
     out["usuarios"] = len(d)
     out["excluidos"] = candidatos["user_id"].nunique() - len(d)
     return out
+
+
+def matrices(candidatos, columna):
+    """Candidatos de una partición (misma cantidad por usuario) → (usuarios, Y, S): una fila por
+    usuario con lo aceptado y el puntaje, en el orden de `candidatos`."""
+    g = candidatos.groupby("user_id", sort=False)
+    n = g.size()
+    if n.nunique() != 1:
+        raise ValueError("Todos los usuarios deben tener la misma cantidad de candidatos")
+    usuarios = n.index.to_numpy()
+    Y = candidatos["aceptado"].to_numpy().reshape(len(usuarios), -1)
+    S = candidatos[columna].to_numpy(dtype=float).reshape(len(usuarios), -1)
+    return usuarios, Y, S
+
+
+def metricas_rapidas(Y, S, ks=KS):
+    """Misma definición que `por_usuario`, vectorizada (empates: orden estable). → dict de arrays
+    por usuario, con NaN en los usuarios que no se pueden medir."""
+    orden = np.argsort(-S, axis=1, kind="stable")
+    Yo = np.take_along_axis(Y, orden, axis=1)
+    pos = Y.sum(axis=1)
+    medible = (pos > 0) & (pos < Y.shape[1])
+    descuento = 1 / np.log2(np.arange(2, Y.shape[1] + 2))
+    out = {}
+    for k in ks:
+        dcg = (Yo[:, :k] * descuento[:k]).sum(axis=1)
+        idcg = np.array([descuento[:min(k, p)].sum() for p in pos])
+        hits = Yo[:, :k].sum(axis=1)
+        out[f"NDCG@{k}"] = np.where(medible, dcg / np.maximum(idcg, 1e-12), np.nan)
+        out[f"Recall@{k}"] = np.where(medible, hits / np.maximum(np.minimum(k, pos), 1), np.nan)
+        out[f"HitRate@{k}"] = np.where(medible, (hits > 0).astype(float), np.nan)
+    return out
+
+
+def percentil(S):
+    """Rango percentil de cada puntaje dentro de su usuario (fila), entre 0 y 1."""
+    r = np.argsort(np.argsort(S, axis=1, kind="stable"), axis=1, kind="stable")
+    return (r + 1) / S.shape[1]
+
+
+def dos_etapas(P_dfm, T, D, alfa, beta, top):
+    """Ranking final (revisión §12.4): el DeepFM elige su top `top` y la fase 2 lo reordena con
+    score = α · pct(DeepFM) + (1 − α) · [β · pct(TTMn) + (1 − β) · pct(DLMn)].
+    Los candidatos fuera del top quedan debajo, en el orden del DeepFM. α = 1 es el DeepFM solo."""
+    dfm = percentil(P_dfm)
+    fase2 = beta * percentil(T) + (1 - beta) * percentil(D)
+    final = alfa * dfm + (1 - alfa) * fase2
+    corte = np.sort(P_dfm, axis=1)[:, -top][:, None]
+    en_top = P_dfm >= corte
+    return np.where(en_top, 2 + final, dfm)
