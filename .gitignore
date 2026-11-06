@@ -24,3 +24,6 @@ data/revision/fotos_muestra/
 
 # Predicciones grandes de la primera corrida de la fase 2 (ReLU); quedan solo en local
 results/hito3/fase2_corrida1_relu/fase2_pred_*.csv
+
+# Rúbrica del curso (solo guía local, no se publica)
+TP-TF-1ACC0057*.pdf
