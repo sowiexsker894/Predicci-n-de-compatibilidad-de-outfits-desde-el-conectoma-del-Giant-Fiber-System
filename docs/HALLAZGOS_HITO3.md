@@ -343,7 +343,10 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
 - Entrada común (`src/modelo_fly/caracteristicas.py`): por cada slot, el número de prendas y el conteo de cada valor de cada atributo (464 columnas). Todos los modelos ven el mismo vector. → *Fase 3.*
 - Red GFS (`src/modelo_fly/redes.py`): el outfit entra por una capa lineal a las 311 neuronas de entrada y se propaga 4 pasos por W = signo ⊙ softplus(θ) ⊙ máscara (un peso por cada conexión real, inicializado con log(1 + sinapsis) normalizado por neurona); se lee en las 2 TTMn (real/falso) y las 10 DLMn (armonía). El MLP de control tiene el mismo número de parámetros entrenables; la red barajada conserva grados de entrada y salida (solo el 24 % de sus conexiones coincide con la real). → *Fase 4 · Modelado.*
-- *(Resultados pendientes de la corrida en Colab.)*
+- **Primera corrida (06/11/2026, `results/hito3/fase2_corrida1_relu/`), AUC de TTMn en test:** XGBoost **0,640**, MLP 0,630 ± 0,005, Random Forest 0,623, red GFS-A 0,532 ± 0,044, GFS barajada 0,524 ± 0,035, GFS-B 0,534 ± 0,027. DLMn (MAE): XGBoost 0,179, RF 0,190, MLP 0,278; las redes GFS (0,30–0,36) no superan a predecir siempre 7 (0,307). → *Fase 4 · Modelado.*
+- **Falla de entrenamiento detectada, no resultado de H1:** dos de tres semillas de GFS-A quedaron en AUC ≈ 0,50 y su pérdida en validación (0,635–0,644) es peor que la del MLP (0,620–0,626). Causa: con ReLU la señal se apaga en las **2 neuronas DNp01**, el único camino hacia TTMn (neuronas "muertas"). Corrección antes de comparar: leaky ReLU (pendiente 0,1) en **todas** las redes, incluido el MLP, y tuning de la tasa de aprendizaje en validación para cada red (como el tuning de los árboles); se agrega un control de cuántos outfits activan DNp01. La decisión se tomó mirando validación, no test. Es un buen punto para la sección de lecciones aprendidas. → *Fase 4 / Limitaciones.*
+- **Lo que ya se puede decir:** el real vs. falso con atributos es difícil (AUC ~0,64 con el mejor modelo; los trabajos con imágenes en Polyvore pasan de 0,85). Contra negativos aleatorios XGBoost llega a 0,714; contra los difíciles (una sola prenda cambiada) a 0,565. → *Fase 5 / Discusión.*
+- *(Segunda corrida pendiente.)*
 
 ---
 

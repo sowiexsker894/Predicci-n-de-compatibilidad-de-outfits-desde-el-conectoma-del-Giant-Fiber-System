@@ -16,6 +16,13 @@ import torch.nn.functional as F
 from torch import nn
 
 PASOS = 4  # la entrada llega a TTMn en 2 saltos y a DLMn en 3
+# Leaky ReLU en todas las redes: con ReLU la señal moría en las 2 neuronas DNp01 (cuello de
+# botella hacia TTMn) y la red GFS quedaba en AUC ≈ 0,5 en 2 de 3 semillas (primera corrida, 06/11/2026).
+PENDIENTE = 0.1
+
+
+def activar(x):
+    return F.leaky_relu(x, PENDIENTE)
 
 
 def _softplus_inv(w):
@@ -47,13 +54,18 @@ class RedGFS(nn.Module):
         W = torch.zeros(self.n, self.n, device=self.theta.device)
         return W.index_put((self.post, self.pre), self.signo_arista * F.softplus(self.theta))
 
-    def forward(self, x):
+    def actividad(self, x):
+        """Estado de las 327 neuronas después de los PASOS de propagación."""
         u = torch.zeros(x.shape[0], self.n, device=x.device)
         u[:, self.idx_entrada] = self.entrada(x)
         W = self.matriz()
-        h = F.relu(u)
+        h = activar(u)
         for _ in range(PASOS):
-            h = F.relu(h @ W.T + self.sesgo + u)
+            h = activar(h @ W.T + self.sesgo + u)
+        return h
+
+    def forward(self, x):
+        h = self.actividad(x)
         return self.ttmn(h[:, self.idx_ttmn]).squeeze(1), self.dlmn(h[:, self.idx_dlmn]).squeeze(1)
 
 
@@ -62,7 +74,8 @@ class MLP(nn.Module):
 
     def __init__(self, n_entrada, oculto):
         super().__init__()
-        self.cuerpo = nn.Sequential(nn.Linear(n_entrada, oculto), nn.ReLU(), nn.Linear(oculto, oculto), nn.ReLU())
+        self.cuerpo = nn.Sequential(nn.Linear(n_entrada, oculto), nn.LeakyReLU(PENDIENTE),
+                                    nn.Linear(oculto, oculto), nn.LeakyReLU(PENDIENTE))
         self.ttmn = nn.Linear(oculto, 1)
         self.dlmn = nn.Linear(oculto, 1)
 
