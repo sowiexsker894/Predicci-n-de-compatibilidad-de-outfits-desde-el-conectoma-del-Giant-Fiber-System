@@ -29,3 +29,27 @@ def codificar(outfits, atrib):
                 if j is not None:
                     X[fila, j] += 1
     return X
+
+
+# Campos del usuario que ve el DeepFM. Son los que daría una persona al registrarse en la app;
+# el arquetipo y los pesos del gusto simulado quedan ocultos (son lo que el modelo debe aprender).
+CAMPOS_USUARIO = ["user_id", "edad", "genero", "ciudad", "clima", "estilo_fav"]
+GRUPOS_SLOT = {s: [i for i, c in enumerate(COLUMNAS) if c.startswith(f"{s}|")] for s in SLOTS}
+
+
+def _edad(e):
+    return "18-24" if e < 25 else ("25-34" if e < 35 else "35-45")
+
+
+def codificar_usuarios(usuarios):
+    """Tabla de usuarios → (dict user_id → fila de índices, uno por campo, y tamaño del vocabulario).
+    Cada campo tiene su propio rango de índices en un vocabulario común."""
+    valores = usuarios.assign(edad=usuarios["edad"].map(_edad))[CAMPOS_USUARIO].astype(str)
+    indice, base = {}, 0
+    for campo in CAMPOS_USUARIO:
+        for v in sorted(valores[campo].unique()):
+            indice[(campo, v)] = base
+            base += 1
+    filas = {u: [indice[(c, r[c])] for c in CAMPOS_USUARIO]
+             for u, r in zip(usuarios["user_id"], valores.to_dict("records"))}
+    return filas, base
