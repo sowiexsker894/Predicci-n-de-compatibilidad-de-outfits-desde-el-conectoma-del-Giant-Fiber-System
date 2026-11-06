@@ -331,6 +331,22 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
 ---
 
+## Etapa 7 · Modelos
+
+### Paso 7a · Candidatos para el ranking (`notebooks/hito3/07a_candidatos.ipynb`)
+
+- **Qué es:** para medir Recall@K y NDCG@K, cada usuario tiene una lista de outfits de su clóset a ordenar: **valid 50** (sus 7 del historial + 43 nuevos, para ajustar α) y **test 100** (sus 8 del historial + 92 nuevos, para reportar). Los nuevos se etiquetan con el mismo gusto, sesgo y ruido del usuario. Se generan antes de entrenar para que todos los modelos ordenen exactamente los mismos outfits. → *Fase 5 · Evaluación (protocolo).*
+- **Controles:** 52 500 candidatos; 0 están en el train de algún usuario y 0 repetidos. Aceptados por usuario en test: mediana 49 de 100 (mínimo 37).
+- **Referencias del ranking en test:** NDCG@5 **al azar 0,507** y **techo 0,919** (ordenando por la probabilidad real de la simulación). Todo modelo debe quedar entre esos dos valores; conviene reportarlos en la tabla final. Como cerca de la mitad de los candidatos son aceptados, Recall@5 tiene un máximo bajo (5/49); se reportará normalizado por min(K, aceptados). → *Fase 5.*
+
+### Paso 7b · Fase 2 en Colab (`notebooks/hito3/07b_fase2_colab.ipynb`)
+
+- Entrada común (`src/modelo_fly/caracteristicas.py`): por cada slot, el número de prendas y el conteo de cada valor de cada atributo (464 columnas). Todos los modelos ven el mismo vector. → *Fase 3.*
+- Red GFS (`src/modelo_fly/redes.py`): el outfit entra por una capa lineal a las 311 neuronas de entrada y se propaga 4 pasos por W = signo ⊙ softplus(θ) ⊙ máscara (un peso por cada conexión real, inicializado con log(1 + sinapsis) normalizado por neurona); se lee en las 2 TTMn (real/falso) y las 10 DLMn (armonía). El MLP de control tiene el mismo número de parámetros entrenables; la red barajada conserva grados de entrada y salida (solo el 24 % de sus conexiones coincide con la real). → *Fase 4 · Modelado.*
+- *(Resultados pendientes de la corrida en Colab.)*
+
+---
+
 ## Limitaciones para la sección de conclusiones
 
 1. El gusto de los usuarios es **simulado**; lo real es qué combinan las personas (Polyvore).

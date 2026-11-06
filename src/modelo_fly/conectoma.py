@@ -69,3 +69,29 @@ def matrices(tabla, edges):
     mascara = (conteo > 0).astype(np.int8)
     con_signo = conteo * tabla["signo"].to_numpy()[None, :]
     return conteo, mascara, con_signo
+
+
+def barajar_conexiones(tabla, edges, semilla, vueltas=10):
+    """Control del experimento 6: mismas neuronas, mismo nº de aristas y mismos grados de
+    entrada y salida, pero conexiones al azar. Se intercambian los destinos de pares de
+    aristas (a→b, c→d) → (a→d, c→b) sin crear autoconexiones ni aristas repetidas. Cada arista
+    conserva su conteo sináptico y el signo sigue siendo el de la neurona presináptica."""
+    rng = np.random.default_rng(semilla)
+    idx = dict(zip(tabla["bodyId"], tabla["idx"]))
+    pre = edges["bodyId_pre"].map(idx).to_numpy().copy()
+    post = edges["bodyId_post"].map(idx).to_numpy().copy()
+    existentes = set(zip(pre.tolist(), post.tolist()))
+    hechos = 0
+    for _ in range(vueltas * len(pre)):
+        i, j = rng.integers(len(pre), size=2)
+        a, b, c, d = pre[i], post[i], pre[j], post[j]
+        if a == d or c == b or (a, d) in existentes or (c, b) in existentes:
+            continue
+        existentes -= {(a, b), (c, d)}
+        existentes |= {(a, d), (c, b)}
+        post[i], post[j] = d, b
+        hechos += 1
+    n = len(tabla)
+    conteo = np.zeros((n, n))
+    conteo[post, pre] = edges["weight"].to_numpy()
+    return conteo, hechos
