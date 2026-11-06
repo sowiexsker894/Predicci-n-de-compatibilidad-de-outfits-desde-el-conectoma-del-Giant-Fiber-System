@@ -364,6 +364,45 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 - **Curvas ROC** de todos los modelos: `fig_fase2_roc.png`. → *Fase 5.*
 - **Importancia (SHAP de XGBoost, `fig_fase2_shap_xgboost.png`):** para TTMn pesan prendas concretas muy típicas de Polyvore (pantalón de denim, calzado athleisure o negro, bolso formal o negro, joyería dorada): el modelo aprende **qué prendas suele combinar la gente**. Para DLMn pesan los colores fuertes en cada slot y las prendas lisas, que es justo lo que miden las reglas C1, C2 y P3: el modelo recupera las reglas. → *Fase 5 · Interpretabilidad.*
 
+
+### Paso 7c · DeepFM, fase 1 (`notebooks/hito3/07c_deepfm_colab.ipynb`, Colab)
+
+- **Modelo** (`src/modelo_fly/deepfm.py`, Guo et al., 2017): parte lineal + FM (interacciones de a pares usuario × prenda y prenda × prenda) + red profunda, con embeddings compartidos. Ve los 6 datos de registro del usuario (ID, edad, género, ciudad, clima, estilo favorito) y el outfit (464 columnas). **No ve** el arquetipo ni los pesos del gusto simulado. → *Fase 4.*
+- **Tuning:** 8 configuraciones (k ∈ {8, 16}, dropout ∈ {0,1; 0,3}, regularización ∈ {10⁻⁵, 10⁻³}) por pérdida en el historial de valid; ganó k = 8, dropout 0,1, 10⁻⁵ (las 8 quedaron entre 0,660 y 0,664: el modelo es poco sensible). 3 semillas. → *Fase 4 · Ajuste de hiperparámetros.*
+- **Experimento 1 (DeepFM solo), test:** NDCG@5 **0,750 ± 0,014**, NDCG@10 0,734, Recall@5 0,741; regresión logística con las mismas variables 0,697; azar 0,492; techo 0,919. AUC en el historial de test 0,651–0,656 (logística 0,646). Usuarios de transferencia (clóset 100 % propio): 0,753, igual que los mixtos (0,750): **no hay caída por cambio de dominio**. → *Fase 5.*
+
+### Paso 7d · Ranking final y contraste de H1 (`notebooks/hito3/07d_ranking_final.ipynb`, local)
+
+- **Protocolo** (`src/modelo_fly/ranking.py`): el DeepFM elige el top 25 % de los candidatos de cada usuario (25 de 100) y la fase 2 lo reordena con `score = α·pct(DeepFM) + (1 − α)·[β·pct(TTMn) + (1 − β)·pct(DLMn)]`. α ∈ {0; 0,1; …; 1} y β ∈ {0; 0,5; 1} se eligen en **valid** por NDCG@5, por experimento y semilla. Se usa un α global por experimento (no por usuario como decía §12.4: con 50 candidatos de valid por usuario se sobreajusta). Los α elegidos quedaron entre 0,4 y 0,9: la fase 2 pesa entre 10 % y 60 %. → *Fase 4 / Fase 5.*
+- **Resultados en test** (media por usuario, ± d.e. entre 3 semillas; figura `results/hito3/ranking/fig_ranking_experimentos.png`):
+
+  | Exp. | Modelo | NDCG@5 | NDCG@10 | Recall@5 |
+  |---|---|---|---|---|
+  | — | Azar | 0,492 | 0,493 | 0,496 |
+  | 1 | DeepFM solo | 0,750 ± 0,014 | 0,734 | 0,741 |
+  | 2 | + XGBoost | 0,758 ± 0,006 | 0,740 | 0,752 |
+  | 3 | **+ Random Forest** | **0,767 ± 0,009** | **0,742** | **0,757** |
+  | 4 | + GFS (Opción A) | 0,744 ± 0,009 | 0,726 | 0,738 |
+  | 5 | + MLP igual tamaño | 0,744 ± 0,015 | 0,731 | 0,739 |
+  | 6 | + GFS barajada | 0,748 ± 0,016 | 0,732 | 0,742 |
+  | Anexo | + GFS (Opción B) | 0,751 ± 0,012 | 0,730 | 0,743 |
+  | — | Techo | 0,919 | 0,905 | 0,920 |
+
+- **Contraste de H1** (Wilcoxon pareado por usuario sobre NDCG@5, n = 350; IC 95 % por bootstrap; corrección de Holm, `ranking_pruebas.csv`):
+
+  | Comparación | Diferencia | IC 95 % | p | p Holm |
+  |---|---|---|---|---|
+  | 4 vs 5 (GFS vs MLP igual tamaño) | −0,0003 | [−0,013; 0,012] | 0,98 | 1,00 |
+  | 4 vs 6 (GFS vs barajada) | −0,005 | [−0,014; 0,006] | 0,48 | 1,00 |
+  | 4 vs 1 (GFS vs DeepFM solo) | −0,007 | [−0,018; 0,006] | 0,16 | 0,79 |
+  | 3 vs 1 (RF vs DeepFM solo) | +0,017 | [0,001; 0,033] | 0,036 | 0,29 |
+  | 2 vs 1 (XGBoost vs DeepFM solo) | +0,007 | [−0,012; 0,025] | 0,58 | 1,00 |
+  | 4 vs 2 (GFS vs XGBoost) | −0,014 | [−0,030; 0,003] | 0,09 | 0,54 |
+
+- **Conclusión sobre H1:** la red GFS **empata** con el MLP de igual tamaño (diferencia −0,0003, p = 0,98) y **no se distingue** de su versión barajada (p = 0,48). La primera parte de H1 ("igual o mayor que el control de igual tamaño") se cumple en sentido de no inferioridad; la segunda (que la conectividad específica de la mosca importe) **no se sostiene**: barajar las conexiones no empeora el ranking. Ninguna segunda fase supera al DeepFM solo después de corregir por comparaciones múltiples; la mejor, Random Forest, suma +0,017 de NDCG@5 (p = 0,036 sin corregir). → *Conclusiones (H1 / H0).*
+- **Análisis de errores por arquetipo** (NDCG@5 del DeepFM solo): minimalista 0,835, clásico 0,789, vintage 0,757, deportivo 0,739, **atrevido 0,601**. El atrevido es el más difícil: sus pesos en las reglas son casi 0 y prefiere colores fuertes, así que su gusto es más ruidoso y menos parecido al de los demás. La segunda fase (RF) ayuda más justo ahí (+0,040) y en clásico (+0,026); en minimalista empeora levemente. Por clima: frío 0,736, templado 0,744, cálido 0,792. Figura `fig_ranking_arquetipos.png`. → *Fase 5 · Análisis de errores.*
+- **¿El DeepFM recupera el gusto programado?** Correlación de Spearman media por usuario entre su probabilidad y la probabilidad real de la simulación: **0,50** (minimalista 0,66, clásico 0,66, deportivo 0,49, vintage 0,48, atrevido **0,14**). La salida TTMn de la fase 2 (que no ve al usuario) llega a 0,25 con XGBoost y 0,19 con la GFS: capta la parte del gusto que es común a todos (la compatibilidad humana). → *Fase 5 / Discusión.*
+
 ---
 
 ## Limitaciones para la sección de conclusiones
@@ -377,3 +416,4 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 7. Las reglas P1 y P2 son aproximaciones (no hay escala ni color de fondo del estampado), Ep1 no aplica a ningún outfit de Polyvore, y el 80,8 % de los outfits reales tiene score 7/7: la etiqueta DLMn tiene poca variación.
 8. El conectoma solo trae sinapsis químicas (las eléctricas GF→TTMn y GF→PSI no están); 12 de 327 neuronas (PSI y DLMn) no tienen neurotransmisor fiable en neuPrint y se toma de la literatura; y la red es casi toda excitadora (0,2 % de sinapsis inhibidoras), así que el signo por neurotransmisor restringe muy poco.
 9. Los usuarios y su gusto son simulados con 5 arquetipos; el término de compatibilidad humana viene de Polyvore (real), pero los pesos de cada usuario los fijamos nosotros. La edad, el género y la ciudad no influyen en el gusto salvo por el clima, así que el modelo no debería sacar nada de ellos.
+10. La red GFS tiene un cuello de botella de 2 neuronas (DNp01) hacia TTMn y es inestable de entrenar (1 de 3 semillas sin aprender en la fase 2). El resultado sobre H1 vale para esta forma de conectar el outfit al conectoma (capa lineal a las 311 neuronas de entrada, 4 pasos de propagación); otras formas no se probaron.
