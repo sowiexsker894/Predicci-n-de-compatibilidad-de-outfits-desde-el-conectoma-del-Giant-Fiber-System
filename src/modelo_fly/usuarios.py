@@ -233,3 +233,56 @@ def simular_historial(rng, usuario, closet, atrib, compat, compat_media, compat_
                       "coincide_estilo": round(estilo, 3), "utilidad": round(u, 4), "p_real": round(p, 4),
                       "invertido": invertido, "aceptado": gusto ^ invertido})
     return pd.DataFrame(filas), sesgo
+
+
+def candidatos(rng, usuario, closet, atrib, compat, compat_media, compat_desv, historial_u, n, particion, ocupados):
+    """Outfits para el ranking de valid o test (etapa 7): los del historial de esa partición más
+    outfits nuevos del clóset hasta llegar a `n`, todos con la decisión simulada del usuario
+    (mismo gusto, sesgo y ruido que el historial). Ninguno puede estar en el train de nadie ni
+    en el historial del usuario."""
+    por_slot = {s: g["item_id"].tolist() for s, g in closet.groupby("slot")}
+    propios = historial_u[historial_u["particion"] == particion]
+    filas = [{"user_id": usuario["user_id"], "outfit_id": o, "item_ids": i, "particion": particion,
+              "origen": "historial", "p_real": p, "aceptado": a}
+             for o, i, p, a in zip(propios["outfit_id"], propios["item_ids"], propios["p_real"], propios["aceptado"])]
+    vistos = {frozenset(i.split("|")) for i in historial_u["item_ids"]}
+    intentos = 0
+    while len(filas) < n and intentos < 50 * n:
+        intentos += 1
+        ids = armar_outfit(rng, por_slot)
+        clave = frozenset(ids)
+        if clave in vistos or "train" in ocupados.get(clave, set()):
+            continue
+        vistos.add(clave)
+        ocupados.setdefault(clave, set()).add(particion)
+        r = rasgos([atrib[i] for i in ids], usuario["clima"], compat)
+        u, _ = utilidad(r, usuario, compat_media, compat_desv)
+        p = 1 / (1 + np.exp(-ESCALA * (u - usuario["sesgo"])))
+        decision = int(rng.random() < p) ^ int(rng.random() < usuario["ruido"])
+        filas.append({"user_id": usuario["user_id"], "outfit_id": f"{usuario['user_id']}_{particion[0].upper()}{len(filas) + 1:03d}",
+                      "item_ids": "|".join(ids), "particion": particion, "origen": "nuevo",
+                      "p_real": round(p, 4), "aceptado": decision})
+    return pd.DataFrame(filas)
+
+
+def cargar_items(proc):
+    """Prendas de Polyvore (prefijo `pv_`) y del catálogo propio con sus atributos, como en el
+    notebook 06. Devuelve la tabla, el diccionario ID → atributos y los outfits de la fase 2."""
+    productos = pd.read_csv(proc / "fase2_productos.csv", dtype=str, keep_default_na=False)
+    propio = pd.read_csv(proc / "catalogo_propio.csv", dtype=str, keep_default_na=False)
+    propio = propio[propio["calidad"] != "excluido"]
+    productos["item_id"] = "pv_" + productos["tid"]
+    cols = ["item_id", "origen", "particion", "name", *ATRIBUTOS]
+    items = pd.concat([productos.assign(origen="polyvore")[cols],
+                       propio.assign(particion="", name=propio["texto"])[cols]], ignore_index=True)
+    outfits = pd.read_csv(proc / "fase2_outfits.csv", dtype={"tids": str, "particion": str, "tipo": str})
+    outfits["ids"] = outfits["tids"].str.split("|").map(lambda t: ["pv_" + x for x in t])
+    return items, items.set_index("item_id")[ATRIBUTOS].to_dict("index"), outfits
+
+
+def compatibilidad_polyvore(outfits, atrib):
+    """La compatibilidad humana del notebook 06 (contada en train) y su media y desviación en valid."""
+    tr = outfits[outfits["particion"] == "train"]
+    compat = Compatibilidad(tr.loc[tr["tipo"] == "real", "ids"], tr.loc[tr["tipo"] == "aleatorio", "ids"], atrib)
+    va = [compat.puntaje([atrib[i] for i in ids]) for ids in outfits.loc[outfits["particion"] == "valid", "ids"]]
+    return compat, float(np.mean(va)), float(np.std(va, ddof=1))

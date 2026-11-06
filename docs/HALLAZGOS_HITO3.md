@@ -331,6 +331,41 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
 ---
 
+## Etapa 7 · Modelos
+
+### Paso 7a · Candidatos para el ranking (`notebooks/hito3/07a_candidatos.ipynb`)
+
+- **Qué es:** para medir Recall@K y NDCG@K, cada usuario tiene una lista de outfits de su clóset a ordenar: **valid 50** (sus 7 del historial + 43 nuevos, para ajustar α) y **test 100** (sus 8 del historial + 92 nuevos, para reportar). Los nuevos se etiquetan con el mismo gusto, sesgo y ruido del usuario. Se generan antes de entrenar para que todos los modelos ordenen exactamente los mismos outfits. → *Fase 5 · Evaluación (protocolo).*
+- **Controles:** 52 500 candidatos; 0 están en el train de algún usuario y 0 repetidos. Aceptados por usuario en test: mediana 49 de 100 (mínimo 37).
+- **Referencias del ranking en test:** NDCG@5 **al azar 0,507** y **techo 0,919** (ordenando por la probabilidad real de la simulación). Todo modelo debe quedar entre esos dos valores; conviene reportarlos en la tabla final. Como cerca de la mitad de los candidatos son aceptados, Recall@5 tiene un máximo bajo (5/49); se reportará normalizado por min(K, aceptados). → *Fase 5.*
+
+### Paso 7b · Fase 2 en Colab (`notebooks/hito3/07b_fase2_colab.ipynb`)
+
+- Entrada común (`src/modelo_fly/caracteristicas.py`): por cada slot, el número de prendas y el conteo de cada valor de cada atributo (464 columnas). Todos los modelos ven el mismo vector. → *Fase 3.*
+- Red GFS (`src/modelo_fly/redes.py`): el outfit entra por una capa lineal a las 311 neuronas de entrada y se propaga 4 pasos por W = signo ⊙ softplus(θ) ⊙ máscara (un peso por cada conexión real, inicializado con log(1 + sinapsis) normalizado por neurona); se lee en las 2 TTMn (real/falso) y las 10 DLMn (armonía). El MLP de control tiene el mismo número de parámetros entrenables; la red barajada conserva grados de entrada y salida (solo el 24 % de sus conexiones coincide con la real). → *Fase 4 · Modelado.*
+- **Primera corrida (06/11/2026, `results/hito3/fase2_corrida1_relu/`), AUC de TTMn en test:** XGBoost **0,640**, MLP 0,630 ± 0,005, Random Forest 0,623, red GFS-A 0,532 ± 0,044, GFS barajada 0,524 ± 0,035, GFS-B 0,534 ± 0,027. DLMn (MAE): XGBoost 0,179, RF 0,190, MLP 0,278; las redes GFS (0,30–0,36) no superan a predecir siempre 7 (0,307). → *Fase 4 · Modelado.*
+- **Falla de entrenamiento detectada, no resultado de H1:** dos de tres semillas de GFS-A quedaron en AUC ≈ 0,50 y su pérdida en validación (0,635–0,644) es peor que la del MLP (0,620–0,626). Causa: con ReLU la señal se apaga en las **2 neuronas DNp01**, el único camino hacia TTMn (neuronas "muertas"). Corrección antes de comparar: leaky ReLU (pendiente 0,1) en **todas** las redes, incluido el MLP, y tuning de la tasa de aprendizaje en validación para cada red (como el tuning de los árboles); se agrega un control de cuántos outfits activan DNp01. La decisión se tomó mirando validación, no test. Es un buen punto para la sección de lecciones aprendidas. → *Fase 4 / Limitaciones.*
+- **Lo que ya se puede decir:** el real vs. falso con atributos es difícil (AUC ~0,64 con el mejor modelo; los trabajos con imágenes en Polyvore pasan de 0,85). Contra negativos aleatorios XGBoost llega a 0,714; contra los difíciles (una sola prenda cambiada) a 0,565. → *Fase 5 / Discusión.*
+- **Segunda corrida, la que vale (06/11/2026, `results/hito3/fase2/`).** Tasas de aprendizaje elegidas en validación: GFS-A, GFS barajada y GFS-B 0,001; MLP 0,0003. → *Fase 4 · Modelado (tabla principal).*
+
+  | Exp. | Modelo | Parámetros | AUC TTMn test | vs. aleatorio | vs. difícil | MAE DLMn |
+  |---|---|---|---|---|---|---|
+  | 2 | XGBoost | — | **0,640** | 0,714 | 0,565 | **0,179** |
+  | 3 | Random Forest | — | 0,623 | 0,691 | 0,555 | 0,190 |
+  | 4 | **Red GFS, Opción A** | 165 640 | 0,549 ± 0,039 | 0,576 | 0,523 | 0,341 |
+  | 5 | MLP de igual tamaño | 165 207 | **0,645 ± 0,002** | 0,723 | 0,567 | 0,294 |
+  | 6 | GFS con conexiones barajadas | 165 640 | 0,529 ± 0,043 | 0,538 | 0,520 | 0,302 |
+  | Anexo | GFS, Opción B (pesos fijos) | 144 956 | 0,529 ± 0,023 | 0,541 | 0,517 | 0,393 |
+
+  (± = desviación estándar de 3 semillas. Referencias de DLMn: predecir siempre 7 da MAE 0,307; la media de train, 0,434. CV en train: XGBoost AUC 0,645 / MAE 0,174; RF 0,634 / 0,169.)
+- **Lectura para H1 (fase 2):** la red con la conectividad de la mosca **no supera** a los controles de igual tamaño: el MLP (0,645) y XGBoost (0,640) le ganan por ~0,10 de AUC. Frente a la red barajada, la GFS real queda apenas arriba (0,549 vs 0,529), pero la diferencia es menor que la variación entre semillas, así que no es concluyente. Con pesos fijos de neuPrint (Opción B) casi no aprende. En DLMn ninguna red GFS mejora a "predecir siempre 7"; los árboles sí (0,18). → *Fase 5 · Evaluación / Conclusiones sobre H1.*
+- **Por qué le cuesta a la red GFS (interpretación):** toda la información del outfit tiene que pasar por las **2 neuronas DNp01** antes de llegar a TTMn; es un cuello de botella de 2 dimensiones frente a 235 neuronas por capa del MLP. Aun con leaky ReLU, 1 de 3 semillas de GFS-A (y 2 de 3 de la barajada) siguió en AUC ≈ 0,50: la red es **inestable de entrenar**. → *Discusión / Limitaciones.*
+- **Matriz de confusión de XGBoost** (`fig_fase2_confusion_xgboost.png`), umbral 0,25 elegido en validación por F1: recall de reales 0,76, precisión 0,39, F1 0,52, accuracy 0,527. Ojo: predecir siempre "falso" da accuracy 0,667 porque hay 2 falsos por cada real; por eso se reporta AUC y F1, no accuracy. → *Fase 5 · Análisis de errores.*
+- **Curvas ROC** de todos los modelos: `fig_fase2_roc.png`. → *Fase 5.*
+- **Importancia (SHAP de XGBoost, `fig_fase2_shap_xgboost.png`):** para TTMn pesan prendas concretas muy típicas de Polyvore (pantalón de denim, calzado athleisure o negro, bolso formal o negro, joyería dorada): el modelo aprende **qué prendas suele combinar la gente**. Para DLMn pesan los colores fuertes en cada slot y las prendas lisas, que es justo lo que miden las reglas C1, C2 y P3: el modelo recupera las reglas. → *Fase 5 · Interpretabilidad.*
+
+---
+
 ## Limitaciones para la sección de conclusiones
 
 1. El gusto de los usuarios es **simulado**; lo real es qué combinan las personas (Polyvore).

@@ -1,0 +1,17 @@
+{
+  "rama": "hito3/etapa7-modelos",
+  "dispositivo": "cuda",
+  "torch": "2.14.1+cu130",
+  "xgboost": "3.4.1",
+  "n_columnas": 464,
+  "semillas": [
+    0,
+    1,
+    2
+  ],
+  "baselines_dlmn": {
+    "MAE siempre 7": 0.3068855449156407,
+    "MAE media de train": 0.4339943241865829
+  },
+  "minutos": 18.2
+}
