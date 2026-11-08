@@ -7,6 +7,7 @@ seaborn==0.13.2
 scikit-learn==1.9.1
 joblib==1.6.0
 openpyxl==3.1.5
+pillow==13.0.0     # 02_validacion_muestra (fotos)
 
 # Conectoma (03_conectoma_neuprint.ipynb)
 neuprint-python==0.6.4
@@ -15,3 +16,5 @@ networkx==3.7
 # Ejecutar notebooks
 ipykernel==7.4.0
 nbclient==0.11.0
+
+# Solo en Colab (los notebooks *_colab los instalan solos): torch, xgboost

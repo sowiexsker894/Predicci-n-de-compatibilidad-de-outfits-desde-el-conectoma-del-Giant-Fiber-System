@@ -3,8 +3,11 @@
 __pycache__/
 .ipynb_checkpoints/
 
-# Modelos entrenados (se regeneran con los notebooks)
-models/
+# Modelos entrenados (se regeneran con los notebooks); los pesos del DeepFM sí se suben: recomendar() los necesita
+models/*
+!models/deepfm_pesos.npz
+!models/deepfm_pesos_meta.json
+!models/deepfm_verificacion.csv.gz
 
 # Secretos
 .env
