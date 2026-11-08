@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modelo Fly · Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="marca">
+      <span class="logo" aria-hidden="true">MF</span>
+      <div>
+        <h1>Modelo Fly</h1>
+        <p>Outfits con la ropa que ya tienes</p>
+      </div>
+    </div>
+    <nav class="pestanas" role="tablist">
+      <button role="tab" class="pestana activa" data-vista="closet" aria-selected="true">Mi clóset</button>
+      <button role="tab" class="pestana" data-vista="resultados" aria-selected="false">Resultados del modelo</button>
+    </nav>
+    <div id="estado" class="estado cargando">Cargando modelo…</div>
+  </header>
+
+  <main>
+    <!-- ===== Vista del usuario ===== -->
+    <section id="vista-closet" class="vista">
+      <aside class="lateral">
+        <label for="buscar" class="etiqueta">Usuario</label>
+        <input id="buscar" type="search" placeholder="Buscar: U001, Lima, formal…" autocomplete="off" disabled>
+        <ul id="lista-usuarios" class="lista-usuarios" aria-label="Usuarios"></ul>
+        <div id="perfil" class="perfil oculto"></div>
+      </aside>
+
+      <div class="contenido">
+        <div id="bienvenida" class="bienvenida">
+          <h2>Elige un usuario</h2>
+          <p>El recomendador arma outfits solo con las prendas de su clóset. Primero el DeepFM filtra según su gusto
+             y luego el Random Forest verifica que el outfit combine.</p>
+        </div>
+
+        <div id="panel-usuario" class="oculto">
+          <div class="barra-accion">
+            <div>
+              <h2 id="titulo-usuario"></h2>
+              <p class="nota" id="sub-usuario"></p>
+            </div>
+            <button id="btn-recomendar" class="btn-principal">Recomendar 3 outfits</button>
+          </div>
+
+          <div id="recomendaciones" class="outfits"></div>
+
+          <h3 class="seccion">Recomendaciones anteriores</h3>
+          <div id="previas" class="outfits previas"></div>
+
+          <h3 class="seccion">Su clóset <span id="n-closet" class="nota"></span></h3>
+          <div id="filtros-slot" class="filtros" role="group" aria-label="Filtrar por tipo de prenda"></div>
+          <div id="closet" class="closet"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Vista de resultados ===== -->
+    <section id="vista-resultados" class="vista oculto">
+      <div class="tarjeta">
+        <h2>Ranking final: NDCG@5 en test</h2>
+        <p class="nota">350 usuarios × 100 outfits candidatos; media de 3 semillas. El experimento 3 es el que usa este dashboard.</p>
+        <div id="grafico-ranking" class="barras" role="img" aria-label="NDCG@5 por experimento"></div>
+        <details class="tabla-datos">
+          <summary>Ver como tabla</summary>
+          <table id="tabla-ranking"></table>
+        </details>
+      </div>
+      <div class="tarjeta">
+        <h2>Impacto en el ODS 12</h2>
+        <p class="nota">Medido con el gusto simulado de los 350 usuarios (hoja impacto_ods de la BD común).</p>
+        <div id="impacto" class="impacto"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    Modelo Fly · Grupo 5 · Machine Learning (1ACC0057), UPC · Datos: <span id="pie-bd">BD_modelo_fly.xlsx</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

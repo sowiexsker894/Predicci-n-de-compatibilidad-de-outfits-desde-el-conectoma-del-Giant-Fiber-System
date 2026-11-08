@@ -429,6 +429,15 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 
   **Límite:** el juez es la simulación; con personas reales habría que medirlo con 👍/👎. → *Fase 5 / Impacto ODS.*
 
+### Paso 8c · Dashboard (`app/`, FastAPI + HTML/JS)
+
+- **Arquitectura:** backend en FastAPI (`app/backend/`) que usa `recomendar()` sin cambios y lee/escribe la misma BD común; frontend sin dependencias (`app/frontend/`, HTML + CSS + JavaScript, Cambria y la paleta naranja de la presentación). Se eligió FastAPI porque todo el modelo está en Python y así el frontend queda separado del modelo (se puede cambiar por otro sin tocar el backend). → *Fase 6 / Integración.*
+- **Qué ve el usuario:** su perfil y su clóset (filtrable por tipo de prenda, con la muestra del color de cada prenda); el botón «Recomendar 3 outfits» devuelve los 3 outfits con tres puntajes legibles (su gusto = DeepFM, parece real = TTMn, armonía = DLMn de 0 a 7) y botones **Me gusta / No me gusta**. La pestaña «Resultados del modelo» muestra el NDCG@5 de los 6 experimentos y los indicadores del ODS 12, leídos de las hojas `metricas` e `impacto_ods`.
+- **La opinión del usuario se guarda en la BD común:** columna `aceptado` (1/0) de la hoja `predicciones`, en la fila de ese outfit. Es la medida con personas reales que pide el límite de arriba.
+- **Escritura en segundo plano:** abrir y guardar el Excel con openpyxl tarda 2–3 min (88 s solo en abrirlo), así que la API responde al momento (recomendar ≈ 1 s) y un hilo escritor junta los cambios pendientes en una sola escritura. El estado se ve arriba a la derecha («Guardando en la BD (n)…»).
+- **Evidencia (sobre una copia de la BD):** 2 recomendaciones (U301 y U001) y un «Me gusta» → `predicciones` 7 009 → 7 015, `candidatos` 53 100 → 53 500, y `aceptado = 1` en `U001_R20261108003330_095`.
+- **Arranque:** ~2 min la primera vez (lee la BD y reentrena el Random Forest, que queda en `models/fase2_random_forest.joblib`, 24 MB, fuera de git); después, ~40 s.
+
 ---
 
 ## Limitaciones para la sección de conclusiones

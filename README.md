@@ -48,6 +48,7 @@ data/
 notebooks/hito2/       01_EDA → 02_baseline · 03_conectoma_neuprint
 notebooks/hito3/       00 → 08b (ver la tabla de abajo)
 src/modelo_fly/        Código compartido por los notebooks
+app/                   Dashboard: backend FastAPI y frontend HTML/JS
 models/                Pesos del DeepFM para recomendar() (el resto de modelos no se sube)
 results/hito2/         Métricas y figuras del Hito 2
 results/hito3/         Métricas, figuras y tablas del Hito 3 (fase1/, fase2/, ranking/)
@@ -109,6 +110,30 @@ candidatos, recomendaciones = recomendar("U001", ROOT / "data" / "BD_modelo_fly.
 ```
 
 `recomendar()` lee del Excel el clóset y el historial del usuario y arma 200 outfits nuevos. Los pasa por las dos fases y escribe los 3 mejores, sin prendas repetidas, en las hojas `candidatos` y `predicciones`. Leer el libro tarda unos 40 s. Con `escribir=False` solo devuelve las filas.
+
+## Dashboard
+
+Interfaz web para el usuario, sobre la misma BD común. Backend en FastAPI (`app/backend/`) y frontend en HTML, CSS y JavaScript (`app/frontend/`):
+
+```bash
+uvicorn app.backend.main:app --port 8000      # desde la raíz del repositorio
+```
+
+Abrir http://localhost:8000 (o `http://localhost:8000/#U001` para ir directo a un usuario). La primera vez tarda ~2 min en cargar; las siguientes, ~40 s.
+
+- **Mi clóset:** elige un usuario, ve su perfil y su clóset y pide 3 outfits. Cada outfit muestra su gusto (DeepFM), si parece real (TTMn) y su armonía (DLMn). Los botones **Me gusta / No me gusta** guardan la opinión en la columna `aceptado` de la hoja `predicciones`.
+- **Resultados del modelo:** NDCG@5 de los 6 experimentos e indicadores del ODS 12.
+
+Las recomendaciones y opiniones se escriben en `data/BD_modelo_fly.xlsx` en segundo plano, porque guardar el Excel tarda 2–3 min. Para probar sin modificar la BD del repositorio, apunta a una copia: `MODELO_FLY_BD=ruta/a/copia.xlsx`.
+
+| Método | Ruta | Qué hace |
+|---|---|---|
+| GET | `/api/estado` | Si el modelo está cargado y cuántas escrituras faltan |
+| GET | `/api/usuarios` | Lista de usuarios |
+| GET | `/api/usuarios/{id}` | Perfil, clóset, historial y recomendaciones anteriores |
+| POST | `/api/usuarios/{id}/recomendar` | 3 outfits nuevos (`recomendar()`) |
+| POST | `/api/opiniones` | `{"outfit_id": "...", "aceptado": true}` |
+| GET | `/api/resumen` | Métricas del ranking e impacto ODS 12 |
 
 ## Hito 2
 
