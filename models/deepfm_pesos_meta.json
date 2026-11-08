@@ -1,0 +1,53 @@
+{
+  "configuracion": {
+    "k": 8,
+    "dropout": 0.1,
+    "peso": 1e-05
+  },
+  "semilla": 0,
+  "epocas": 16,
+  "perdida_valid": 0.6609179973602295,
+  "torch": "2.14.1+cpu",
+  "capas": {
+    "emb_o": [
+      464,
+      8
+    ],
+    "emb_u.weight": [
+      371,
+      8
+    ],
+    "lin_u.weight": [
+      371,
+      1
+    ],
+    "lin_o.weight": [
+      1,
+      464
+    ],
+    "lin_o.bias": [
+      1
+    ],
+    "deep.0.weight": [
+      128,
+      112
+    ],
+    "deep.0.bias": [
+      128
+    ],
+    "deep.3.weight": [
+      64,
+      128
+    ],
+    "deep.3.bias": [
+      64
+    ],
+    "deep.6.weight": [
+      1,
+      64
+    ],
+    "deep.6.bias": [
+      1
+    ]
+  }
+}

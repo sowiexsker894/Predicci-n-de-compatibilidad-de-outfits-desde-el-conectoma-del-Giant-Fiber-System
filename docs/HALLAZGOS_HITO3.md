@@ -403,6 +403,32 @@ Composición de los 15 012: 4 172 con vestido, 10 840 arriba + abajo (570 con do
 - **Análisis de errores por arquetipo** (NDCG@5 del DeepFM solo): minimalista 0,835, clásico 0,789, vintage 0,757, deportivo 0,739, **atrevido 0,601**. El atrevido es el más difícil: sus pesos en las reglas son casi 0 y prefiere colores fuertes, así que su gusto es más ruidoso y menos parecido al de los demás. La segunda fase (RF) ayuda más justo ahí (+0,040) y en clásico (+0,026); en minimalista empeora levemente. Por clima: frío 0,736, templado 0,744, cálido 0,792. Figura `fig_ranking_arquetipos.png`. → *Fase 5 · Análisis de errores.*
 - **¿El DeepFM recupera el gusto programado?** Correlación de Spearman media por usuario entre su probabilidad y la probabilidad real de la simulación: **0,50** (minimalista 0,66, clásico 0,66, deportivo 0,49, vintage 0,48, atrevido **0,14**). La salida TTMn de la fase 2 (que no ve al usuario) llega a 0,25 con XGBoost y 0,19 con la GFS: capta la parte del gusto que es común a todos (la compatibilidad humana). → *Fase 5 / Discusión.*
 
+
+## Etapa 8 · Integración con la BD común
+
+### Paso 8a · Exportar el DeepFM (`notebooks/hito3/08a_exportar_deepfm_colab.ipynb`, Colab)
+
+- Se reentrena el DeepFM elegido en 7c (k = 8, dropout 0,1, 10⁻⁵, semilla 0; 16 épocas, pérdida valid 0,661) y se guardan sus pesos en `models/deepfm_pesos.npz` (115 KB). `src/modelo_fly/deepfm_numpy.py` repite el cálculo sin PyTorch: diferencia máxima con PyTorch **1,95·10⁻⁷** en 35 000 candidatos. Así el sistema corre en cualquier computadora con `requirements.txt`. → *Fase 6 · Despliegue (preparación).*
+
+### Paso 8b · Excel y `recomendar(user_id)` (`notebooks/hito3/08b_bd_comun.ipynb`, local)
+
+- **BD común = `data/BD_modelo_fly.xlsx`** (15,6 MB, 11 hojas): `leeme`, `items` (65 866), `outfits` (45 036), `usuarios` (350), `closets` (20 997), `historial` (17 500), `candidatos` (52 500), `predicciones` (7 000: top 10 de valid y test del experimento 3), `metricas` (194, formato largo), `impacto_ods`, `diccionario` (116 columnas). El diccionario también está en `docs/DICCIONARIO_DATOS.md`; las columnas de la simulación que el modelo no ve van marcadas **OCULTO**. → *Fase 2 · Diccionario de datos / Integración.*
+- **`recomendar(user_id)`** (`src/modelo_fly/recomendador.py`) usa el mejor sistema del paso 7d (experimento 3, DeepFM + Random Forest, α = 0,6 y β = 0,5 elegidos en valid). Flujo:
+  1. lee del Excel el perfil, el clóset y el historial del usuario;
+  2. arma 200 outfits nuevos (que no estén en su historial);
+  3. el DeepFM se queda con el top 25 % y el Random Forest lo reordena;
+  4. elige 3 outfits **sin prendas repetidas**;
+  5. escribe en `candidatos` y `predicciones`.
+
+  **Evidencia:** con 3 usuarios (U001 mixto, U004 mixto, U301 transferencia), `candidatos` pasó de 52 500 a 53 100 filas (+600) y `predicciones` de 7 000 a 7 009 (+9), con `origen = recomendar` y marca de tiempo. Comprobación: el Random Forest reentrenado repite el paso 7b (AUC 0,624 vs 0,623; MAE 0,190). → *Fase 6 / Integración.*
+- **Impacto ODS 12** (hoja `impacto_ods`; 350 usuarios, 3 recomendaciones cada uno, juzgadas con el gusto simulado):
+  - El 100 % de lo recomendado se arma con prendas del clóset (por diseño).
+  - Probabilidad de que el usuario acepte: **80,3 %**, frente a **52,4 %** eligiendo 3 outfits al azar de su clóset (**+53 %**). Con el DeepFM solo, 80,5 %: la fase 2 no suma, igual que en el paso 7d.
+  - En usuarios con clóset 100 % del catálogo propio: 88,6 %.
+  - 12,6 prendas distintas puestas en uso por usuario (de 60 en promedio). El 13,1 % de lo recomendado son prendas que el usuario nunca había usado en un outfit aceptado.
+
+  **Límite:** el juez es la simulación; con personas reales habría que medirlo con 👍/👎. → *Fase 5 / Impacto ODS.*
+
 ---
 
 ## Limitaciones para la sección de conclusiones
